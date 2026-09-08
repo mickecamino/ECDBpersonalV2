@@ -1,4 +1,4 @@
-# ECDBpersonalv2
+# ECDBpersonalV2
 
 NOTE: This is a forked standalone version of ECDBpersonal from Pete Willard.  
 I have made so many changes to it and decided to create it as ECDBpersonalV2 instead
