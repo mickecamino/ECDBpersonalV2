@@ -22,7 +22,7 @@ require_once "include/debug.php";
 // END
     echo '<body><div id="wrapper">';
 // Header
-    echo '<div><img src="img/logo.png" alt="ECDB" style="width:175px;height:75px;"></div>';
+    echo '<div><img src="img/logov2.png" alt="ECDB personalV2" style="width:175px;height:75px;"></div>';
 // END
 // Main menu
     echo '<div id="menu"><ul>';
