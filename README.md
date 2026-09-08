@@ -5,9 +5,13 @@ I have made so many changes to it and decided to create it as ECDBpersonalV2 ins
 ## UNSUPPORTED
 However, it is still unsupported, I have made all the changes to suit my need. YMMV.
 
+## What is ECDBpersonalV2?
+It is a web-based program that keeps track of your components such as resistors, capacitors, IC's, transistors etc etc.  
+It can be installed on a Raspberry PI or in a virtual server on Hyper-V or VirtualBox
+
 ## Documentation
 Currently there is no detailed documentation available.  
-However, I will publish a guide on how to set up ecDBpersonalV2 om Debian Trixie and on a RaspBerry PI.
+However, I will publish a guide on how to set up ecDBpersonalV2 om Debian Trixie and on a Raspberry PI.
 
 ## Installation
 
@@ -16,14 +20,12 @@ However, I will publish a guide on how to set up ecDBpersonalV2 om Debian Trixie
 - Import `ecdb.sql` database structure to your MySQL-database.
 - You will need to create a database user ECDB with a PASSWORD and grant all Priv's.  Easiest done with PHPmyadmin
 
-`mysql -u root -p`
-
-`CREATE USER 'ecdb'@'localhost' IDENTIFIED BY 'user_password';`
-
-`GRANT ALL PRIVILEGES ON ecdb.* TO 'ecdb'@'localhost';`
-
-`exit`
-
+```
+mysql -u root -p
+CREATE USER 'ecdb'@'localhost' IDENTIFIED BY 'user_password';
+GRANT ALL PRIVILEGES ON ecdb.* TO 'ecdb'@'localhost';
+exit
+```
 
 - Insert your MySQL credential data in the configuration file, `include/login/config.php`.
 - **You are now set to go!** The default username is `demo` and password `demo`.
