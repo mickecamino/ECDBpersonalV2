@@ -64,7 +64,7 @@ $pageTitle = _("Import/Export");
 
     if(isset($_POST['submit'])) {
         $filename = $_FILES["file"]["tmp_name"];
-        var_dump($filenname);
+//        var_dump($filenname);
         // Check if the file is a CSV file
         if (pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION) != "csv") {
             echo "Please upload a CSV file.";
