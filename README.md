@@ -18,7 +18,7 @@ However, I will publish a guide on how to set up ecDBpersonalV2 om Debian Trixie
 
 `mysql -u root -p`
 
-`CREATE USER 'ecdb'@'%' IDENTIFIED BY 'user_password';`
+`CREATE USER 'ecdb'@'localhost' IDENTIFIED BY 'user_password';`
 
 `GRANT ALL PRIVILEGES ON ecdb.* TO 'ecdb'@'localhost';`
 
