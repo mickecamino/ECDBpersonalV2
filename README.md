@@ -1,14 +1,13 @@
-# ECDBpersonal
+# ECDBpersonalv2
 
-NOTE: This is a fork of ECDBpersonal from Pete Willard.  
-I forked it just because I found it useful. I will be making some major changes to it, but it is only for my own use. As such it is **** Not Supported ****
-
-This version also allows for uploading of PDF datasheets, PDF Application Notes and Parts Images.  These are all stored as files and not *in* the database.  To make working with files that reside in folders, jquery autocomplete has been employed to locate files even when only part of the name is entered, though it remains case sensitive.
+NOTE: This is a forked standalone version of ECDBpersonal from Pete Willard.  
+I have made so many changes to it and decided to create it as ECDBperosnalV2 instead
+## UNSUPPORTED
+However, it is still unsupported, I have made all the changes to suit my need. YMMV.
 
 ## Documentation
-
 Currently there is no detailed documentation available.  
-However, I will publish a guide on how to set up ecDBpersonal om Debian Trixie.
+However, I will publish a guide on how to set up ecDBpersonalV2 om Debian Trixie and on a RaspBerry PI.
 
 ## Installation
 
@@ -63,7 +62,7 @@ You can also add an FTP user the same way replacing `$USER` with an actual accou
 
 This is free and unencumbered software released into the public domain.  
 
-Note that the original author released as Creative Commons but placed restrictions on public use. This is a release intended for non-public use.
+Note that the original author released as Creative Commons but placed restrictions on public use. **This is a release intended for non-public use.**
 
 ## Original License
 
