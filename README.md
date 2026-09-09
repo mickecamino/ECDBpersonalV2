@@ -1,11 +1,11 @@
-# ECDBpersonalV2
+# ECDB personal V2
 
 NOTE: This is a forked standalone version of ECDBpersonal from Pete Willard.  
-I have made so many changes to it and decided to create it as ECDBpersonalV2 instead
+I have made so many changes to it and decided to create it as ECDB personal V2 instead
 ## UNSUPPORTED
 However, it is still unsupported, I have made all the changes to suit my need. YMMV.
 
-## What is ECDBpersonalV2?
+## What is ECDB personal V2?
 It is a web-based program that keeps track of your components such as resistors, capacitors, IC's, transistors etc etc.  
 It can be installed on a Raspberry PI or in a virtual server on Hyper-V or VirtualBox
 
@@ -18,12 +18,15 @@ However, I will publish a guide on how to set up ecDBpersonalV2 om Debian Trixie
 - Download this git.
 - Create a MySQL database.
 - Import `ecdb.sql` database structure to your MySQL-database.
-- You will need to create a database user ECDB with a PASSWORD and grant all Priv's.  Easiest done with PHPmyadmin
+- You will need to create a database user ECDB with a PASSWORD and grant all privileges.
+* NOTE: If you are a user in a different country than Sweden, you might change the character set and collation.
 
 ```
 mysql -u root -p
+CREATE DATABASE `ecdb` DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci;
 CREATE USER 'ecdb'@'localhost' IDENTIFIED BY 'user_password';
 GRANT ALL PRIVILEGES ON ecdb.* TO 'ecdb'@'localhost';
+FLUSH PRIVILEGES;
 exit
 ```
 
@@ -41,13 +44,13 @@ exit
 
 Also, verify permissions and ownership on the /var/www/html directories.
 
-Currently, `www-data` is the default apache user on ubuntu flavors (like Raspberry Pi OS)  so this should be the owner your web files/directory to work properly.
+Currently, `www-data` is the default apache user on Debian flavors (like Raspberry Pi OS)  so this should be the owner your web files/directory to work properly.
 
 If you need to, you sould `chown` the whole web root as `www-data` for both user and group.
 
 So if your document root is `/var/www/html`, `cd` or change directory to `/var/www` and run this to change ownership on all files and directories.
 
-`chown -R www-data: html/`
+`chown -R www-data:www-data html/`
 
 while still in the /var/www directory add write permissions to the group for files and directories by running this command.
 
@@ -62,9 +65,7 @@ You can also add an FTP user the same way replacing `$USER` with an actual accou
 
 ## License
 
-This is free and unencumbered software released into the public domain.  
-
-Note that the original author released as Creative Commons but placed restrictions on public use. **This is a release intended for non-public use.**
+* This software is released under Attribution-NonCommercial-ShareAlike 3.0 Unported License
 
 ## Original License
 

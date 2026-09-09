@@ -66,6 +66,17 @@ sudo systemctl start apache2
 sudo systemctl start mariadb
 ```
 
+* Add your user to groups www-data and adm.
+```
+sudo usermod -a -G www-data <your user> 
+sudo usermod -a -G adm
+```
+
+* Start mariadb
+```
+sudo systemctl start mariadb
+```
+
 # Secure the mariadb
 ```
 sudo mariadb-secure-installation
@@ -97,4 +108,5 @@ sudo mysql ecdb < ecdb.sql
 sudo mysql
 CREATE USER 'ecdb'@'localhost' IDENTIFIED BY 'your-secure-password';
 GRANT ALL PRIVILEGES ON ecdb.* TO 'ecdb'@'localhost';
+FLUSH PRIVILEGES;
 ```
