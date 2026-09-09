@@ -69,7 +69,7 @@ sudo systemctl start mariadb
 * Add your user to groups www-data and adm.
 ```
 sudo usermod -a -G www-data <your user> 
-sudo usermod -a -G adm
+sudo usermod -a -G adm <your user>
 ```
 
 * Start mariadb
