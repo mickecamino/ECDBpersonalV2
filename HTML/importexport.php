@@ -1,7 +1,7 @@
 <?php
 // File: importexport.php
 // Function: Export, import, add or delete components from the database
-// Revision date: 2026-09-4
+// Revision date: 2026-09-09
 // Created by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -402,6 +402,9 @@ function export_components($array, $filename, $delimiter=";")
     header("Content-Type: application/csv; charset=UTF-8");
 //    header("Content-Length: " . $filesize);
     header("Content-Disposition: attachment; filename=\"" . $filename. "\";" );
+
+    // clean the output buffer
+    ob_clean();
 
     $handle = fopen( 'php://output', 'w' );
 
