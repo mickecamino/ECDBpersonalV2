@@ -31,12 +31,12 @@
         echo '<button class="button green" name="exportdata" type="submit"><span class="fa fa-file-export"></span> ' . _(" Export components") . '</button> ';
     echo '</div></div></form>';
 
-    echo '<br></div><h1>' . _("File Import") . '</h1>';
+    echo '<br><h1>' . _("File Import") . '</h1>';
     echo '<form action="importexport.php" method="post" enctype="multipart/form-data">';
     echo '<input type="file" class = "bold" name="file" id="file"><br>';
     echo '<input type="submit" value="Upload" name="submit">';
     echo '<input type="hidden" name="MAX_FILE_SIZE" value="5242880" />';
-    echo '</form></div>';
+    echo '</form>';
 
 // END
     if(isset($_POST['exportdata'])) {
@@ -59,7 +59,7 @@
 // No need for a footer on this page
 //    include "include/footer.php";
 // END
-    echo "</div></body></html>";
+    echo "</div></div></body></html>";
 
 
 function import_components($owner, $connection, $filename)
@@ -126,7 +126,9 @@ function import_components($owner, $connection, $filename)
                             $sql_exec = mysqli_query($connection,$SearchQuery); // execute the search
                             $anymatches = mysqli_num_rows($sql_exec); // get number of matches
                             if ($anymatches > 0) { // we found a match
+                                echo '<span style="color: red">';
                                 echo sprintf(_("Component with name = '%s' and category %s is already in the database"), $find, $categoryname["name"]) . "<br>";
+                                echo '</span>';
                                 // echo that there is a duplicate
                                 break; // Get next record
                             } // end if ($anymatches)
@@ -136,9 +138,9 @@ function import_components($owner, $connection, $filename)
                             } // end if strcmp
                         } // end if($data["action"] == "add")
                     } // end if else
-                //} 
+                //}
                         $name = $data["name"]; // Everything is OK, save data and continue
-                } else { 
+                } else {
                     echo sprintf(_("ERROR - %s must be defined"), "name"); // name is required
                     break;
                 }
@@ -347,7 +349,7 @@ function import_components($owner, $connection, $filename)
                 elseif ($data["action"] == "edit") {
                     $sqlquery = substr($sqlquery, 0, -1); // Get rid of the last comma:
                     $sqlquery = $sqlquery . " WHERE `id` = $id;";
-                    if($sqlqueryIsGoodToGo) { 
+                    if($sqlqueryIsGoodToGo) {
                         $sql_exec = mysqli_query($connection,$sqlquery);
                     }
                     echo '<body><div id="content">';
