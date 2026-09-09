@@ -90,21 +90,20 @@ function import_components($owner, $connection, $filename)
             switch ($data["action"]) { // What shall we do? add, edit or delete?
             case "add":
             case "edit": // We are here on add or edit component
-                if($data["action"] == "edit" || $data["action"] == "delete") { // If edit or delete, id is required
-                    if (isset($data["id"])) { // Do we have a value?
-                        if (strlen($data["id"]) > 11) { // is it larger than whats accepted in the database?
-                            echo sprintf(_("Error, %s to large, needs to be less than %s"), "id", "11" ); // Yes, print error, get next record
-                            break;
-                        } else
-                            $id = $data["id"]; // id provided in the csv-file, get it and proceed
-                            $GetDataComponent = mysqli_query($connection, "SELECT * FROM data WHERE id = " . $id . " AND owner = " . $owner . "");
-                            $indatabase       = mysqli_fetch_assoc($GetDataComponent);
-                            $sqlquery = "UPDATE `data` SET "; // start of UPDATE query
-                    } else {
-                        echo sprintf(_("ERROR - %s must be defined"), "id"); // name is required
+                if (isset($data["id"]) && ctype_digit($data["id"])) { // Do we have a value? Is it an integer?
+                    if (strlen($data["id"]) > 11) { // is it larger than whats accepted in the database?
+                        echo sprintf(_("Error, %s to large, needs to be less than %s"), "id", "11" ); // Yes, print error, get next record
                         break;
-                    } // end else
-                } // end if $data["action"] == "edit" || "delete" 
+                    } else
+                        $id = $data["id"]; // id provided in the csv-file, get it and proceed
+                        $GetDataComponent = mysqli_query($connection, "SELECT * FROM data WHERE id = " . $id . " AND owner = " . $owner . "");
+                        $indatabase       = mysqli_fetch_assoc($GetDataComponent);
+                        $sqlquery = "UPDATE `data` SET "; // start of UPDATE query
+                } else {
+                    echo sprintf(_("ERROR - %s must be defined"), "id"); // id is required
+                    break;
+                } // end else
+
                 /*****************************************************************
                 * We are here on add and edit
                 *****************************************************************/
@@ -348,7 +347,7 @@ function import_components($owner, $connection, $filename)
                     $sql="INSERT into data (owner, name, manufacturer, package, pins, quantity, location, scrap, datasheet, comment, category, cimage, appnote, price, order_quantity) VALUES   ('$owner', '$name', '$manufacturer', '$package', '$pins', '$quantity', '$location', '$scrap', '$datasheet', '$comment', '$category', '$cimage', '$appnote' ,'$price',     '$order_quantity')";
                     $result = @mysqli_query($connection,$sql);
                     echo '<span style="color: green">';
-                    echo sprintf(_("Row, %s with name %s and category %s imported"), $row, $name, $categoryname["name"]) . "<br>";
+                    echo sprintf(_("Row %s with name %s and category %s imported"), $row, $name, $categoryname["name"]) . "<br>";
                     echo '<span>';
                 }
                 elseif ($data["action"] == "edit") {
@@ -357,29 +356,37 @@ function import_components($owner, $connection, $filename)
                     if($sqlqueryIsGoodToGo) {
                         $sql_exec = mysqli_query($connection,$sqlquery);
                         echo '<span style="color: green">';
-                        echo _("Row") . $row . _("with name ") . $name . " " . _(" imported") . "<br>";
+                        echo sprintf(_("Row %s with name %s imported"), $row, $name) . "<br>";
                         echo '<span>';
                     }
                     if($sqlqueryIsGoodToGo != true) {
                         echo '<span style="color: green">';
-                        echo _("No update needed for row") . " " . $row;
+                        echo sprintf(_("Update not needed for row %s"), $row);
                         echo '<span>';
-                    } //else {
-                        //echo "This is the SQL-query for the edit: " . $sqlquery . "<br>";
-                    //}
-//                    echo "</div>";
+                    }
                     $sqlquery = "";  // empty for next row
                 }
                 break;
             case "delete":
-                $sqlDeleteComponent = "DELETE FROM data WHERE id = ".$data["id"]." ";
-                $sql_exec_component_delete = mysqli_query($connection,$sqlDeleteComponent);
-                echo '<span style="color: red">';
-                echo _("Deleted ") . $sqlDeleteComponent . "<br>";
-                echo "</span>";
-                break;
+                if (isset($data["id"]) && ctype_digit($data["id"])) { // Do we have a value? Is it an integer?
+                    $sqlDeleteComponent = "DELETE FROM data WHERE id = ".$data["id"]." ";
+                    $deleteresult = mysqli_query($connection,$sqlDeleteComponent);
+                    if (mysqli_affected_rows($connection) > 0) { // 
+                        echo '<span style="color: green">';
+                        echo sprintf(_("Row %s - Deleted component with id %s"), $row, $data["id"]) . "<br>";
+                        echo "</span>";
+                    } else {
+                        echo '<span style="color: red">';
+                        echo sprintf(_("Row %s - Component with id %s is not in the database"), $row, $data["id"]) . "<br>";
+                        echo "</span>";
+                    }
+                    break;
+                } else {
+                    echo '<span style="color: red">';
+                    echo sprintf(_("Row %s - id is not an integer"), $row) . "<br>";
+                    echo '</span>';
+                }
             case "default":
-
                 break;
             }
         } else { // header and csvdata differs in fields
@@ -402,9 +409,6 @@ function export_components($array, $filename, $delimiter=";")
     header("Content-Type: application/csv; charset=UTF-8");
 //    header("Content-Length: " . $filesize);
     header("Content-Disposition: attachment; filename=\"" . $filename. "\";" );
-
-    // clean the output buffer
-    ob_clean();
 
     $handle = fopen( 'php://output', 'w' );
 
