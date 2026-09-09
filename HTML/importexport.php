@@ -83,13 +83,13 @@ function import_components($owner, $connection, $filename)
     $headers=fgetcsv($handle, 1400, ";"); // read the header, we use it as key
 
     while (($csvdata = fgetcsv($handle, 1400, ";")) !== FALSE) // Loop through all records
-    { //var_dump($csvdata);
+    {
         if( count($headers) == count($csvdata)) { // If the header and the data contains the same number of ojects, then continue
             $data = array_combine($headers, $csvdata); // combine header with the data
             // Check the action
             switch ($data["action"]) { // What shall we do? add, edit or delete?
-            case "add":            // Add component
-            case "edit":           // Edit component
+            case "add":
+            case "edit": // We are here on add or edit component
                 if($data["action"] == "edit" || $data["action"] == "delete") { // If edit or delete, id is required
                     if (isset($data["id"])) { // Do we have a value?
                         if (strlen($data["id"]) > 11) { // is it larger than whats accepted in the database?
@@ -103,46 +103,49 @@ function import_components($owner, $connection, $filename)
                     } else {
                         echo sprintf(_("ERROR - %s must be defined"), "id"); // name is required
                         break;
-                    }
-                } // end if edit
+                    } // end else
+                } // end if $data["action"] == "edit" || "delete" 
+                /*****************************************************************
+                * We are here on add and edit
+                *****************************************************************/
                 if (isset($data["name"])) { // Do we have a value?
                     if (strlen($data["name"]) > 64) { // is it larger than whats accepted in the database?
-                        echo sprintf(_("Error, %s to large, needs to be less than %s"), "name", "64" ); // Yes, print error, get next record
-                        break;
-                    } else {
+                    echo sprintf(_("Error, %s to large, needs to be less than %s"), "name", "64" ); // Yes, print error, get next record
+                    break;
+                    } else {  // data not larger than 64
                         if($data["action"] == "edit") { // If edit, then compare with whats in the database
                             if (strcmp($data["name"], $indatabase["name"]) <> 0) { // data differs
-                                $sqlquery = " name = " . $data["name"] * ","; // add trailing comma
+                                $sqlquery = " name = " . $data["name"] . ","; // add trailing comma
                                 $sqlqueryIsGoodToGo = true;
-                            } // end if strcmp
+                            } // end if strcmp name
                         } // end if $data["action"] == "edit"
-                        if($data["action"] == "add") { // If add, then compare with whats in the database to detect duplicates
-                            $find = $data["name"];
-                            $componentcategory = $data["category"]; // we must search with category as the same name can be in different categories
-                            $SearchQuery = "SELECT name FROM category_sub WHERE id = " . $componentcategory;
-                            $sql_exec = mysqli_query($connection,$SearchQuery); // execute the search
-                            $categoryname = mysqli_fetch_assoc($sql_exec);
-                            $SearchQuery = "SELECT name FROM data WHERE name = '" . $find . "'  AND owner = '" . $owner . "' AND category = '" . $componentcategory . "'";
-                            $sql_exec = mysqli_query($connection,$SearchQuery); // execute the search
-                            $anymatches = mysqli_num_rows($sql_exec); // get number of matches
-                            if ($anymatches > 0) { // we found a match
-                                echo '<span style="color: red">';
-                                echo sprintf(_("Component with name = '%s' and category %s is already in the database"), $find, $categoryname["name"]) . "<br>";
-                                echo '</span>';
-                                // echo that there is a duplicate
-                                break; // Get next record
-                            } // end if ($anymatches)
-                            if (strcmp($data["name"], $indatabase["name"]) == 0) { // data differs
-                                $sqlquery = " name = " . $data["name"] * ","; // add trailing comma
-                                $sqlqueryIsGoodToGo = true;
-                            } // end if strcmp
-                        } // end if($data["action"] == "add")
-                    } // end if else
-                //}
-                        $name = $data["name"]; // Everything is OK, save data and continue
-                } else {
-                    echo sprintf(_("ERROR - %s must be defined"), "name"); // name is required
+                    } // End else isset($data["name"])
+                } else { // name not defined on add, report it
+                    echo sprintf(_("ERROR - row %s - %s must be defined in the csv file"), $row, "name"); // name is required
                     break;
+                }
+
+                // If add, then compare with whats in the database to detect duplicates
+                if($data["action"] == "add") {
+                    $find = $data["name"];
+                    $componentcategory = $data["category"]; // we must search with category as the same name can be in different categories
+                    $SearchQuery = "SELECT name FROM category_sub WHERE id = " . $componentcategory; // get the category name
+                    $sql_exec = mysqli_query($connection,$SearchQuery); // execute the search
+                    $categoryname = mysqli_fetch_assoc($sql_exec);
+                    $SearchQuery = "SELECT name FROM data WHERE name = '" . $find . "'  AND owner = '" . $owner . "' AND category = '" . $componentcategory . "'";
+                    $sql_exec = mysqli_query($connection,$SearchQuery); // execute the search
+                    $anymatches = mysqli_num_rows($sql_exec); // get number of matches
+                    if ($anymatches > 0) { // we found a match
+                        echo '<span style="color: red">';
+                        echo sprintf(_("Component with name = '%s' and category %s is already in the database"), $find, $categoryname["name"]) . "<br>";
+                        echo '</span>';
+                        // echo that there is a duplicate
+                        break; // Get next record
+                    } else { // On add, if no match found, just add the component
+                        $name = $data["name"]; // Everything is OK, save data and continue
+                        $sqlquery = " name = " . $data["name"] . ","; // add trailing comma
+                        $sqlqueryIsGoodToGo = true;
+                    } // end else
                 }
                 if (isset($data["manufacturer"])) {
                     if (strlen($data["manufacturer"]) > 64) {
@@ -344,37 +347,48 @@ function import_components($owner, $connection, $filename)
                 if ($data["action"] == "add") {
                     $sql="INSERT into data (owner, name, manufacturer, package, pins, quantity, location, scrap, datasheet, comment, category, cimage, appnote, price, order_quantity) VALUES   ('$owner', '$name', '$manufacturer', '$package', '$pins', '$quantity', '$location', '$scrap', '$datasheet', '$comment', '$category', '$cimage', '$appnote' ,'$price',     '$order_quantity')";
                     $result = @mysqli_query($connection,$sql);
-                    echo $row . " imported <br>";
+                    echo '<span style="color: green">';
+                    echo sprintf(_("Row, %s with name %s and category %s imported"), $row, $name, $categoryname["name"]) . "<br>";
+                    echo '<span>';
                 }
                 elseif ($data["action"] == "edit") {
                     $sqlquery = substr($sqlquery, 0, -1); // Get rid of the last comma:
                     $sqlquery = $sqlquery . " WHERE `id` = $id;";
                     if($sqlqueryIsGoodToGo) {
                         $sql_exec = mysqli_query($connection,$sqlquery);
+                        echo '<span style="color: green">';
+                        echo _("Row") . $row . _("with name ") . $name . " " . _(" imported") . "<br>";
+                        echo '<span>';
                     }
-                    echo '<body><div id="content">';
                     if($sqlqueryIsGoodToGo != true) {
+                        echo '<span style="color: green">';
                         echo _("No update needed for row") . " " . $row;
-                    } else {
-                        echo "This is the SQL-query for the edit: " . $sqlquery . "<br>";
-                    }
-                    echo "</div>";
+                        echo '<span>';
+                    } //else {
+                        //echo "This is the SQL-query for the edit: " . $sqlquery . "<br>";
+                    //}
+//                    echo "</div>";
                     $sqlquery = "";  // empty for next row
                 }
                 break;
             case "delete":
                 $sqlDeleteComponent = "DELETE FROM data WHERE id = ".$data["id"]." ";
                 $sql_exec_component_delete = mysqli_query($connection,$sqlDeleteComponent);
-                echo "Deleted " . $sqlDeleteComponent . "<br>";
-
+                echo '<span style="color: red">';
+                echo _("Deleted ") . $sqlDeleteComponent . "<br>";
+                echo "</span>";
                 break;
             case "default":
 
                 break;
-
-            } // switch action
-        $row++;
-        } // end if count
+            }
+        } else { // header and csvdata differs in fields
+            echo '<span style="color: red">';
+            echo sprintf(_("Row, %s - The number of header fields differs against the number of data fields"), $row) . "<br>";
+            echo '</span>';
+            exit();
+        } // end header and csvdata differs in fields
+    $row++;
     } // end while
 } // end function
 
