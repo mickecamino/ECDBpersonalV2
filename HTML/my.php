@@ -1,7 +1,7 @@
 <?php
 // File: my.php
 // Function: Personal setting for a user
-// Revision date: 2026-09-03
+// Revision date: 2026-09-10
 // Revised by: Mikael Karlsson
 // This file is distributed under the license: 
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -52,21 +52,21 @@
             echo '<td><input name="newpass" class="medium" type="password" value="" onpaste="return false;" /></td>'; // fourth column
             echo '</tr><tr>'; // end second row, start third row
             echo '<td class="boldText">' . _("Currency") . '</td>'; // first column
-            echo '<td><select name="currency"><option value="SEK" '; // start second column
-                if(!isset($_POST['submit']) && $executesql['currency'] == 'SEK') { echo ' selected';}
-                if(isset($_POST['submit']) && $_POST['currency'] == 'SEK') { echo ' selected';}
+            echo '<td><select name="currency"><option value="kr" '; // start second column
+                if(!isset($_POST['submit']) && $executesql['currency'] == 'kr') { echo ' selected';}
+                if(isset($_POST['submit']) && $_POST['currency'] == 'kr') { echo ' selected';}
                 echo '>SEK</option>';
-                echo '<option value="USD"';
-                if(!isset($_POST['submit']) && $executesql['currency'] == 'USD') { echo ' selected';}
-                if(isset($_POST['submit']) && $_POST['currency'] == 'USD') { echo ' selected';}
+                echo '<option value="$"';
+                if(!isset($_POST['submit']) && $executesql['currency'] == '$') { echo ' selected';}
+                if(isset($_POST['submit']) && $_POST['currency'] == '$') { echo ' selected';}
                 echo '>USD</option>';
-                echo '<option value="EUR"';
-                if(!isset($_POST['submit']) && $executesql['currency'] == 'EUR') { echo ' selected';}
-                if(isset($_POST['submit']) && $_POST['currency'] == 'EUR') { echo ' selected';}
+                echo '<option value="€"';
+                if(!isset($_POST['submit']) && $executesql['currency'] == '€') { echo ' selected';}
+                if(isset($_POST['submit']) && $_POST['currency'] == '€') { echo ' selected';}
                 echo '>EUR</option>';
-                echo '<option value="GBP"';
-                if(!isset($_POST['submit']) && $executesql['currency'] == 'GBP') { echo ' selected';}
-                if(isset($_POST['submit']) && $_POST['currency'] == 'GBP') { echo ' selected';}
+                echo '<option value="£"';
+                if(!isset($_POST['submit']) && $executesql['currency'] == '£') { echo ' selected';}
+                if(isset($_POST['submit']) && $_POST['currency'] == '£') { echo ' selected';}
                 echo '>GBP</option>';
             echo '</select></td>'; // end second column
             echo '<td class="boldText">' . _("Language") . '</td>'; // third column
