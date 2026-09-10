@@ -432,7 +432,7 @@ function report_error($row, $field1, $field2, $errorlevel)
     }
     if ( $errorlevel == 3 ) {
         echo '<span style="color: red">';
-        echo sprintf(_("Component with name = %s and category %s is already in the database"), $field1, $field2) . "<br>";
+        echo sprintf(_("Component with name %s and category %s is already in the database"), $field1, $field2) . "<br>";
         echo '</span>';
         return;
     }
