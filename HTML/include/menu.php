@@ -1,10 +1,12 @@
-<!-- menu.php -->
 <?php
-// Call the language translator
-    require_once('include/localize.php');
-// Get the current script
-    $domain = basename($_SERVER["REQUEST_URI"], ".php");
-    SetLanguage('sv_SE.utf8', 'menu' );
+// File: include/menu.php
+// Function: Display the menu tabs
+// Revision date: 2026-09-10
+// Revised by: Mikael Karlsson
+// This file is distributed under the license:
+// Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+//
+
 echo '<div id="menu"><ul><li><a href="." class="';
     if ($_SERVER["REQUEST_URI"] == '/' or
         $_SERVER["REQUEST_URI"] == '/index.php'or isset($_GET['view']) or
