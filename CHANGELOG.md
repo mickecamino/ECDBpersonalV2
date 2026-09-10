@@ -1,19 +1,35 @@
 # Changelog
-This is a list of changes made to my version of ECDBpersonal.
+This is a list of changes made to my version of ECDB personal V2.
 
-## 
 
-* Fixed some bugs in the code.
-* Changed the database collation to utf8mb3_swedish_ci.
-* Removed some dead code.
-* Changed css to display a wider area.
-* Fixed some things in the database.
+## [2026-09-10]
+# BREAKING CHANGES
+* I have switched from int to unsigned smallint on and from varchar to smallint. Run the script below to change the database. 
+It might break a few things, I have tested a lot, but there might be some quirks lingering around in the code.
+```
+sudo mysql
+use ecdb;
+ALTER TABLE data MODIFY id smallint UNSIGNED NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=702; 
+ALTER TABLE data MODIFY owner smallint UNSIGNED NOT NULL;
+ALTER TABLE data MODIFY pins smallint UNSIGNED NOT NULL;
+ALTER TABLE data MODIFY quantity smallint UNSIGNED NOT NULL;
+ALTER TABLE data MODIFY order_quantity smallint UNSIGNED NOT NULL;
+ALTER TABLE data MODIFY category smallint UNSIGNED NOT NULL;
 
-## [Unreleased]
+ALTER TABLE members MODIFY member_id smallint UNSIGNED NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1801;
 
-* Started to look att export and import of the database with option to add, delete or change records in the database.
-* Started to look at implementing PDF output of shopping list
-* Used an online translator for po-files. Looked promising, but I will keep this on hold as for now.
+ALTER TABLE projects MODIFY project_id smallint UNSIGNED NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+ALTER TABLE projects MODIFY project_owner smallint UNSIGNED NOT NULL;
+
+ALTER TABLE projects_data MODIFY projects_data_id smallint UNSIGNED NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+ALTER TABLE projects_data MODIFY projects_data_owner_id smallint UNSIGNED;
+ALTER TABLE projects_data MODIFY projects_data_project_id smallint UNSIGNED;
+ALTER TABLE projects_data MODIFY projects_data_component_id smallint UNSIGNED;
+ALTER TABLE projects_data MODIFY projects_data_quantity smallint UNSIGNED;
+```
+* Updated importexport.php, fixed a bunch of bugs, added output for success and errors and a lot of checking before importing.
+
+
 
 ## [2026-09-03]
 
@@ -30,3 +46,11 @@ This is a list of changes made to my version of ECDBpersonal.
 * Replaced the All section with statistics that shows each head category and the number of components in each category.
 * Started to localize all text strings to be able to use php i18n
 * Clean up code, switch from tabs to 4 spaces
+
+## 
+
+* Fixed some bugs in the code.
+* Changed the database collation to utf8mb3_swedish_ci.
+* Removed some dead code.
+* Changed css to display a wider area.
+* Fixed some things in the database.
