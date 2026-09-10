@@ -32,7 +32,7 @@ USE `ecdb`;
 --
 
 CREATE TABLE IF NOT EXISTS `category_head` (
-  `id` int(11) NOT NULL,
+  `id` smallint UNSIGNED NOT NULL,
   `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -68,7 +68,7 @@ INSERT INTO `category_head` (`id`, `name`) VALUES(18, 'Oscillator');
 --
 
 CREATE TABLE IF NOT EXISTS `category_sub` (
-  `id` int(11) NOT NULL,
+  `id` smallint UNSIGNED NOT NULL,
   `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -259,19 +259,19 @@ INSERT INTO `category_sub` (`id`, `name`) VALUES(1899, 'Misc');
 --
 
 CREATE TABLE IF NOT EXISTS `data` (
-  `id` int(11) NOT NULL,
-  `owner` int(11) NOT NULL,
+  `id` smallint UNSIGNED NOT NULL,
+  `owner` smallint UNSIGNED NOT NULL,
   `name` varchar(64) NOT NULL,
   `manufacturer` varchar(64) NOT NULL,
   `package` varchar(64) NOT NULL,
-  `pins` varchar(11) NOT NULL,
-  `quantity` varchar(11) NOT NULL DEFAULT '0',
-  `order_quantity` varchar(11) NOT NULL DEFAULT '0',
+  `pins` smallint UNSIGNED NOT NULL,
+  `quantity` smallint UNSIGNED NOT NULL DEFAULT '0',
+  `order_quantity` smallint UNSIGNED NOT NULL DEFAULT '0',
   `location` varchar(32) NOT NULL,
   `scrap` varchar(3) NOT NULL DEFAULT 'No',
   `datasheet` varchar(256) NOT NULL,
   `comment` tinytext NOT NULL,
-  `category` varchar(11) NOT NULL,
+  `category` smallint UNSIGNED NOT NULL,
   `cimage` varchar(256) NOT NULL,
   `appnote` varchar(256) NOT NULL,
   `price` varchar(11) NOT NULL DEFAULT '0'
@@ -288,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `data` (
 --
 
 CREATE TABLE IF NOT EXISTS `members` (
-`member_id` int(11) NOT NULL,
+  `member_id` smallint UNSIGNED NOT NULL,
   `firstname` varchar(32) NOT NULL,
   `lastname` varchar(32) NOT NULL,
   `login` varchar(32) NOT NULL,
@@ -313,8 +313,8 @@ INSERT INTO `members` (`member_id`, `firstname`, `lastname`, `login`, `passwd`, 
 --
 
 CREATE TABLE IF NOT EXISTS `projects` (
-`project_id` int(11) NOT NULL,
-  `project_owner` int(11) NOT NULL,
+  `project_id` smallint UNSIGNED NOT NULL,
+  `project_owner` smallint UNSIGNED NOT NULL,
   `project_name` varchar(64) NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -334,11 +334,11 @@ INSERT INTO `projects` (`project_id`, `project_owner`, `project_name`) VALUES(1,
 --
 
 CREATE TABLE IF NOT EXISTS `projects_data` (
-`projects_data_id` int(11) NOT NULL,
-  `projects_data_owner_id` int(11) NOT NULL,
-  `projects_data_project_id` int(11) NOT NULL,
-  `projects_data_component_id` int(11) NOT NULL,
-  `projects_data_quantity` int(11) NOT NULL
+  `projects_data_id` smallint UNSIGNED NOT NULL,
+  `projects_data_owner_id` smallint UNSIGNED NOT NULL,
+  `projects_data_project_id` smallint UNSIGNED NOT NULL,
+  `projects_data_component_id` smallint UNSIGNED NOT NULL,
+  `projects_data_quantity` smallint UNSIGNED NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
@@ -395,22 +395,22 @@ ALTER TABLE `projects_data`
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=702;
+MODIFY `id` smallint UNSIGNED NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=702;
 --
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1801;
+MODIFY `member_id` smallint UNSIGNED NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1801;
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `project_id` smallint UNSIGNED NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `projects_data`
 --
 ALTER TABLE `projects_data`
-MODIFY `projects_data_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `projects_data_id` smallint UNSIGNED NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

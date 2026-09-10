@@ -13,9 +13,9 @@
     $DataCount = mysqli_num_rows(mysqli_query($connection,"SELECT `id` FROM `data` WHERE `owner` = " . $owner . ""));
     echo '<h1>' . _("You have") . " " . $DataCount;
     if($DataCount == 1 ) {
-        echo " " .  _("component, and");
+        echo " " .  _("component and");
     } else {
-        echo " " .  _("components, and");
+        echo " " .  _("components and");
     }
     echo " ";
 // Get the number of project from the projects table
