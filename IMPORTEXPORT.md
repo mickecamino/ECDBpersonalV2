@@ -11,12 +11,12 @@ id;owner;name;manufacturer;package;pins;quantity;order_quantity;location;scrap;d
 735;1801;"MM 5313N";NS;DIP;28;1;0;;No;mm5309-15.pdf;"Digital Clock";599;;;0
 ```
 
-The upload routine can either *add*, *edit* or *delete* components:
+The upload routine can either **add**, **edit** or **delete** components:
 
 # The format of the CSV-file is:
 ## Add components
-The first field is an *action* field, for adding components the action is *add*.  
-Mandatory fields are: name, category and scrap ("No" or "Yes"). The rest can be empty.
+The first field is an *action* field, for adding components the action is **add**.  
+Mandatory fields are: name, category and scrap ("No" or "Yes"). Set pins, quantity and order_quantity to 0 (zero). The rest can be empty.
 ```
 action;name;manufacturer;package;pins;quantity;order_quantity;location;scrap;datasheet;comment;category;cimage;appnote;price
 add;74LS00;;DIP;14;0;0;;No;;Quad 2-input NAND gate;cat;;;;
@@ -26,8 +26,8 @@ add;74LS08;;DIP;14;0;0;;No;;Quad 2-input AND gate;cat;;;;
 add;74LS138;;DIP;16;0;0;;No;;3-to-8-line decoder;cat;;;;
 add;74LS156N;;DIP;16;0;0;;No;;dual 2-to-4-line decoder;cat;;;;
 ```
-
-The first field is an *action* field, for edit components the action is *edit*.  
+## Edit components
+The first field is an **action** field, for edit components the action is **edit**.  
 Mandatory fields are: name and id, the rest is from your export with the changes that you will make. This example is updating the Quantity.  
 ```
 action;id,name;manufacturer;package;pins;quantity;order_quantity;location;scrap;datasheet;comment;category;cimage;appnote;price
@@ -38,9 +38,8 @@ edit;857;74LS08;;DIP;14;25;0;;No;;Quad 2-input AND gate;cat;;;;
 edit;858;74LS138;;DIP;16;2;0;;No;;3-to-8-line decoder;cat;;;;
 edit;859;74LS156N;;DIP;16;9;0;;No;;dual 2-to-4-line decoder;cat;;;;
 ```
-
-
-The first field is an *action* field, for deleting components the action is *delete*.  
+## Delete components
+The first field is an **action** field, for deleting components the action is **delete**.  
 Mandatory fields are: name and id.
 ```
 action;id
