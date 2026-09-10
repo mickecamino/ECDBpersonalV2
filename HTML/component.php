@@ -1,7 +1,7 @@
 <?php
 // File: component.php
 // Function: Show components
-// Revision date: 2026-08-31
+// Revision date: 2026-09-10
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -144,14 +144,12 @@ include "include/head.php";
                                 }
                             ?>
                         </div>
-                        
                     </div>
-    
                     <div class="componentComment">
                         <?php echo nl2br($executesql['comment']); ?>
                     </div>
                 </div>
-                
+
                 <div class="componentInfo">
                     <table class="globalTables leftAlign noHover" cellpadding="0" cellspacing="0">
                         <tbody>
@@ -175,7 +173,7 @@ include "include/head.php";
                             <tr>
                                 <?php echo '<td class="boldText">' . _("Quantity") . '</td>';
                                 echo '<td>';
-                                        if ($executesql['quantity'] == "") {
+                                        if ($executesql['quantity'] == 0) {
                                             echo "-";
                                         }
                                         else {
@@ -201,7 +199,7 @@ include "include/head.php";
                                 </td>
                                 <?php echo '<td class="boldText">' . _("Order quantity") . '</td>';
                                 echo '<td>';
-                                        if ($executesql['order_quantity'] == "") {
+                                        if ($executesql['order_quantity'] == 0) {
                                             echo "0";
                                         }
                                         else {
@@ -235,7 +233,7 @@ include "include/head.php";
                                 echo '</td>';
                                 echo '<td class="boldText">' . _("Pins") . '</td>';
                                 echo '<td>';
-                                        if ($executesql['pins'] == "") {
+                                        if ($executesql['pins'] == 0) {
                                             echo "-";
                                         }
                                         else {
@@ -274,10 +272,10 @@ include "include/head.php";
                                         else {
                                             echo '<a href="appnotes/';
                                             echo $executesql['appnote'];
-                                            echo '" target="_blank"><span class="fa fa-file-pdf-o fa-lg"></a>'; 
+                                            echo '" target="_blank"><span class="fa fa-file-pdf-o fa-lg"></a>';
                                         }
                                     ?>
-                                </td>   
+                                </td>
                                 <td></td>
                                 <td></td>
                             </tr>
@@ -289,7 +287,7 @@ include "include/head.php";
                     <div class="buttons">
                         <div class="input">
                             <?php
-                            echo '<button class="button" name="edit" type="submit"><span class=" fa fa-pencil fa-lg"></span>' . _(" Edit Component") . '</button> ';
+                            echo '<button class="button" name="edit" type="submit"><span class=" fa fa-pencil fa-lg"></span> ' . _(" Edit Component") . '</button> ';
                             echo '<button class="button" name="based" type="submit"><span class="fa fa-plus-square fa-lg"></span> ' . _(" New based on this") . '</button> ';
                             echo '<button class="button red" name="delete" type="submit"><span class="fa fa-trash fa-lg"></span> ' . _(" Delete component") . '</button> ';
                             ?>

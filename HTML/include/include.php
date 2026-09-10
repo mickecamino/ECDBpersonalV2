@@ -1,7 +1,7 @@
 <?php
 // File: include/include.php
 // Function: Add functions: Index, Category, Seacrh and Add
-// Revision date: 2026-09-02
+// Revision date: 2026-09-10
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -13,18 +13,18 @@ class ShowComponents {
         include "mysql_connect.php";
 
         $owner = $_SESSION['SESS_MEMBER_ID'];
-    
+
         if(isset($_GET['by'])) {
             $by      = strip_tags(mysqli_real_escape_string($connection,$_GET["by"]));
             $order_q = strip_tags(mysqli_real_escape_string($connection,$_GET["order"]));
-    
+
             if($order_q == 'desc' or $order_q == 'asc'){
                 $order = $order_q;
             }
             else{
                 $order = 'asc';
             }
-    
+
             if($by == 'location' or $by == 'pins' or $by == 'quantity') {
                 $GetDataComponentsAll = "SELECT id, name, category, package, pins, datasheet, cimage, location, quantity, comment FROM data WHERE owner = ".$owner." ORDER by ".$by." +0 ".$order.    "";
             }
@@ -38,7 +38,7 @@ class ShowComponents {
         else {
                 $GetDataComponentsAll = "SELECT id, name, category, package, pins, datasheet, cimage, location, quantity, comment FROM data WHERE owner = ".$owner." ORDER by name ASC";
         }
-    
+
         $sql_exec = mysqli_Query($connection,$GetDataComponentsAll);
         while($showDetails = mysqli_fetch_array($sql_exec)) {
 // first row
@@ -47,14 +47,14 @@ class ShowComponents {
             echo '<td class="edit"><a href="component_edit.php?edit=';
             echo $showDetails['id'];
             echo '"><span class="fa fa-pencil fa-lg"></span></a></td>';
-// second column    
+// second column
             echo '<td><a href="component.php?view=';
             echo $showDetails['id'];
             echo '">';
-    
+
             echo $showDetails['name'];
             echo "</a></td>";
-// third column    
+// third column
             echo "<td>";
             if ($showDetails['category'] < 999) {
                 $head_cat_id = substr($showDetails['category'], -3, 1);
@@ -65,13 +65,13 @@ class ShowComponents {
             $subcatid = $showDetails['category'];
             $CategoryName = "SELECT * FROM category_head WHERE id = ".$head_cat_id."";
             $sql_exec_catname = mysqli_Query($connection,$CategoryName);
-    
+
             while($showDetailsCat = mysqli_fetch_array($sql_exec_catname)) {
                 $catname = $showDetailsCat['name'];
             }
             echo "<a href='category.php?cat=$head_cat_id'>$catname</a>";
             echo "</td>";
-// Fourth column    
+// Fourth column
             echo "<td>";
             $package = $showDetails['package'];
             if ($package == ""){
@@ -81,10 +81,10 @@ class ShowComponents {
                 echo $package;
             }
             echo "</td>";
-// fifth column    
+// fifth column
             echo "<td>";
             $pins = $showDetails['pins'];
-            if ($pins == ""){
+            if ($pins == 0){
                 echo "-";
             }
             else{
@@ -104,7 +104,7 @@ class ShowComponents {
                 echo $image;
                 echo '" /></span></a></td>';
             }
-// seventh column    
+// seventh column
             echo "<td>";
             $datasheet = $showDetails['datasheet'];
             if ($datasheet==""){
@@ -152,23 +152,23 @@ class ShowComponents {
     } // end public function Index()
 
     public function Category() {
-    
+
         require_once "include/login/auth.php";
         include "include/mysql_connect.php";
-    
+
         $owner = $_SESSION['SESS_MEMBER_ID'];
-    
+
         if(isset($_GET['cat'])) {
             $cat = (int)$_GET['cat'];
             $subcatfrom = $cat*100;
             $subcatto = $subcatfrom+99;
             $CategoryName = "SELECT * FROM category_sub WHERE id = ".$cat."";
             $sql_exec_catname = mysqli_Query($connection,$CategoryName);
-            
+
             if(isset($_GET['by'])) {
                 $by      = strip_tags(mysqli_real_escape_string($connection,$_GET["by"]));
                 $order_q = strip_tags(mysqli_real_escape_string($connection,$_GET["order"]));
-    
+
                 if($order_q == 'desc' or $order_q == 'asc') {
                     $order = $order_q;
                 }
@@ -188,21 +188,21 @@ class ShowComponents {
             else {
                 $ComponentsCategory = "SELECT id, name, category, package, pins, datasheet, cimage, location, quantity, comment FROM data WHERE category BETWEEN ".$subcatfrom." AND ".$subcatto."     AND owner = ".$owner." ORDER by name ASC";
             }
-    
+
             $sql_exec_component = mysqli_Query($connection,$ComponentsCategory);
-    
+
             while ($showDetails = mysqli_fetch_array($sql_exec_component)) {
                 echo "<tr>";
                 echo '<td class="edit"><a href="component_edit.php?edit=';
                 echo $showDetails['id'];
                 echo '"><span class="fa fa-pencil fa-lg"></span></a></td>';
-    
+
                 echo '<td><a href="component.php?view=';
                 echo $showDetails['id'];
                 echo '">';
                 echo $showDetails['name'];
                 echo "</a></td>";
-    
+
                 echo "<td>";
                 $subcatid = $showDetails['category'];
                 $CategoryName = "SELECT * FROM category_sub WHERE id = ".$subcatid."";
@@ -212,7 +212,7 @@ class ShowComponents {
                 }
                 echo "<a href='category.php?subcat=$subcatid'>$catname</a>";
                 echo "</td>";
-    
+
                 echo "<td>";
                 $package = $showDetails['package'];
                 if ($package == ""){
@@ -222,17 +222,17 @@ class ShowComponents {
                     echo $package;
                 }
                 echo "</td>";
-    
+
                 echo "<td>";
                 $pins = $showDetails['pins'];
-                if ($pins == ""){
+                if ($pins == 0){ // Pin is zero in the database
                     echo "-";
                 }
                 else{
                     echo $pins;
                     }
                 echo "</td>";
-    
+
                 echo "<td>";
                 $image = $showDetails['cimage'];
                 if ($image==""){
@@ -268,7 +268,7 @@ class ShowComponents {
                     echo $location;
                     }
                 echo "</td>";
-    
+
                 echo "<td>";
                 $quantity = $showDetails['quantity'];
                 if ($quantity == ""){
@@ -278,7 +278,7 @@ class ShowComponents {
                     echo $quantity;
                     }
                 echo "</td>";
-    
+
                 $comment = $showDetails['comment'];
                 if ($comment == ""){
                     echo '<td class="comment"><div>';
@@ -293,7 +293,7 @@ class ShowComponents {
                 echo "</tr>";
             } // end while
         } // end first if isset
-    
+
         if(isset($_GET['subcat'])) {
             $subcat = (int)$_GET['subcat'];
             $CategoryName = "SELECT * FROM category_sub WHERE id = ".$subcat."";
@@ -326,20 +326,20 @@ class ShowComponents {
                 echo '<td class="edit"><a href="component_edit.php?edit=';
                 echo $showDetails['id'];
                 echo '"><span class="fa fa-pencil fa-lg"> </span></a></td>';
-    
+
                 echo '<td><a href="component.php?view=';
                 echo $showDetails['id'];
                 echo '">';
                 echo $showDetails['name'];
                 echo "</a></td>";
-    
+
                 echo "<td>";
                 while($showDetailsCat = mysqli_fetch_array($sql_exec_catname)) {
                     $catname = $showDetailsCat['name'];
                 }
                 echo $catname;
                 echo "</td>";
-    
+
                 echo "<td>";
                 $package = $showDetails['package'];
                 if ($package == ""){
@@ -349,17 +349,17 @@ class ShowComponents {
                     echo $package;
                 }
                 echo "</td>";
-    
+
                 echo "<td>";
                 $pins = $showDetails['pins'];
-                if ($pins == ""){
+                if ($pins == 0){
                     echo "-";
                 }
                 else{
                     echo $pins;
                 }
                 echo "</td>";
-    
+
                 echo "<td>";
                 $image = $showDetails['cimage'];
                 if ($image==""){
@@ -372,7 +372,7 @@ class ShowComponents {
                     echo $image;
                     echo '" /></span></a></td>';
                 }
-    
+
                 echo "<td>";
                 $datasheet = $showDetails['datasheet'];
                 if ($datasheet==""){
@@ -383,7 +383,7 @@ class ShowComponents {
                     echo $datasheet;
                     echo '" target="_blank"><span class="fa fa-file-pdf-o fa-lg"> </span></a></td>';
                 }
-    
+
                 echo "<td>";
                 $location = $showDetails['location'];
                 if ($location == ""){
@@ -393,7 +393,7 @@ class ShowComponents {
                     echo $location;
                 }
                 echo "</td>";
-    
+
                 echo "<td>";
                 $quantity = $showDetails['quantity'];
                 if ($quantity == ""){
@@ -403,7 +403,7 @@ class ShowComponents {
                     echo $quantity;
                 }
                 echo "</td>";
-    
+
                 $comment = $showDetails['comment'];
                 if ($comment == ""){
                     echo '<td class="comment"><div>';
@@ -466,19 +466,19 @@ class ShowComponents {
                     echo _("Sorry, but we can not find an entry to match your query.");
                     echo '</div>';
                 }
-    
+
                 while($showDetails = mysqli_fetch_array($sql_exec)) {
                     echo "<tr>";
                     echo '<td class="edit"><a href="component_edit.php?edit=';
                     echo $showDetails['id'];
                     echo '"><span class="fa fa-pencil fa-lg"> </span></a></td>';
-        
+
                     echo '<td><a href="component.php?view=';
                     echo $showDetails['id'];
                     echo '">';
                     echo $showDetails['name'];
                     echo "</a></td>";
-        
+
                     echo "<td>";
                     if ($showDetails['category'] < 999) {
                         $head_cat_id = substr($showDetails['category'], -3, 1);
@@ -489,13 +489,13 @@ class ShowComponents {
                     $subcatid = $showDetails['category'];
                     $CategoryName = "SELECT * FROM category_head WHERE id = ".$head_cat_id."";
                     $sql_exec_catname = mysqli_Query($connection,$CategoryName);
-        
+
                     while($showDetailsCat = mysqli_fetch_array($sql_exec_catname)) {
                         $catname = $showDetailsCat['name'];
                     }
                     echo $catname;
                     echo "</td>";
-        
+
                     echo "<td>";
                     $manufacturer = $showDetails['manufacturer'];
                     if ($manufacturer == ""){
@@ -505,7 +505,7 @@ class ShowComponents {
                         echo $manufacturer;
                     }
                     echo "</td>";
-        
+
                     echo "<td>";
                     $package = $showDetails['package'];
                     if ($package == ""){
@@ -515,17 +515,17 @@ class ShowComponents {
                         echo $package;
                     }
                     echo "</td>";
-        
+
                     echo "<td>";
                     $pins = $showDetails['pins'];
-                    if ($pins == ""){
+                    if ($pins == 0){
                         echo "-";
                     }
                     else{
                         echo $pins;
                     }
                     echo "</td>";
-        
+
                     echo "<td>";
                     $image = $showDetails['cimage'];
                     if ($image==""){
@@ -538,7 +538,7 @@ class ShowComponents {
                         echo $image;
                         echo '" /></span></a></td>';
                     }
-        
+
                     echo "<td>";
                     $datasheet = $showDetails['datasheet'];
                     if ($datasheet==""){
@@ -549,7 +549,7 @@ class ShowComponents {
                         echo $datasheet;
                         echo '" target="_blank"><span class="fa fa-file-pdf-o fa-lg"> </span></a></td>';
                     }
-        
+
                     echo "<td>";
                     $location = $showDetails['location'];
                     if ($location == ""){
@@ -559,11 +559,11 @@ class ShowComponents {
                         echo $location;
                     }
                     echo "</td>";
-        
+
                     echo "<td>";
                     echo $showDetails['quantity'];
                     echo "</td>";
-        
+
                     $comment = $showDetails['comment'];
                     if ($comment == ""){
                         echo '<td class="comment"><div>';
@@ -607,31 +607,34 @@ class ShowComponents {
                 $quantity = 0;
             }
             else{
-                $quantity = str_replace(',', '.', strip_tags(mysqli_real_escape_string($connection,$_POST['quantity'])));
+//                $quantity = str_replace(',', '.', strip_tags(mysqli_real_escape_string($connection,$_POST['quantity'])));
+            $quantity = (int)$_POST['quantity'];
             }
 
             if (empty($_POST['category'])) {
                 $category = '';
             }
             else{
-                $category = strip_tags(mysqli_real_escape_string($connection,$_POST['category']));
+//                $category = strip_tags(mysqli_real_escape_string($connection,$_POST['category']));
+                $category = (int)$_POST['category'];
             }
 
             if (empty($_POST['project'])) {
                 $project = '';
             }
             else{
-                $project = strip_tags(mysqli_real_escape_string($connection,$_POST['project']));
+                $project = (int)$_POST['project'];                
+//                $project = strip_tags(mysqli_real_escape_string($connection,$_POST['project']));
             }
 
             $comment          = strip_tags(mysqli_real_escape_string($connection,$_POST['comment']));
-            $order_quantity   = str_replace(',', '.', strip_tags(mysqli_real_escape_string($connection,$_POST['orderquant'])));
-            $project_quantity = str_replace(',', '.', strip_tags(mysqli_real_escape_string($connection,$_POST['projquant'])));
+            $order_quantity   = (int)$_POST['orderquant'];
+            $project_quantity = (int)$_POST['projquant'];
             $price            = str_replace(',', '.', strip_tags(mysqli_real_escape_string($connection,$_POST['price'])));
             $location         = strip_tags(mysqli_real_escape_string($connection,$_POST['location']));
             $manufacturer     = strip_tags(mysqli_real_escape_string($connection,$_POST['manufacturer']));
             $package          = strip_tags(mysqli_real_escape_string($connection,$_POST['package']));
-            $pins             = str_replace(',', '.', strip_tags(mysqli_real_escape_string($connection,$_POST['pins'])));
+            $pins             = (int)$_POST['pins'];
             $scrap            = strip_tags(mysqli_real_escape_string($connection,$_POST['scrap']));
             $datasheet        = strip_tags(mysqli_real_escape_string($connection,$_POST['datasheet']));
             $cimage           = strip_tags(mysqli_real_escape_string($connection,$_POST['cimage']));
@@ -738,7 +741,6 @@ class ShowComponents {
                                 $proj_edit="INSERT into projects_data (projects_data_owner_id, projects_data_project_id, projects_data_component_id, projects_data_quantity) VALUES ('$owner', '$projects', '$id', '$quantity_proj_add')";
 
                                 $sql_exec = mysqli_query($connection,$proj_edit);
-
                             }
                         }
                     } // end if (isset($_POST['projquantedit']))
