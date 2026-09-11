@@ -105,11 +105,11 @@
 // Main content
     echo '<div id="content"><h2><a href="category.php?cat=';
     echo $executesql_head_catname['id'] . '"> ';
-    echo $executesql_head_catname['name'] . '</a> / ';
+    echo gettext($executesql_head_catname['name']) . '</a> / ';
 
     echo '<a href="category.php?subcat=';
     echo $executesql_sub_catname['id'] . '"> ';
-    echo $executesql_sub_catname['name'] . '</a> ';
+    echo gettext($executesql_sub_catname['name']) . '</a> ';
 
     echo  '<a href="component.php?view=';
     echo $executesql['id'] . '">';

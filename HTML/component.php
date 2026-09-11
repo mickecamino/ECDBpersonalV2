@@ -115,13 +115,13 @@ include "include/head.php";
                     <?php
                         echo $executesql_head_catname['id'];
                         echo '"> ';
-                        echo $executesql_head_catname['name'];
+                        echo gettext($executesql_head_catname['name']);
                         echo '</a> / ';
 
                         echo '<a href="category.php?subcat=';
                         echo $executesql_sub_catname['id'];
                         echo '"> ';
-                        echo $executesql_sub_catname['name'];
+                        echo gettext($executesql_sub_catname['name']);
                     ?>
                 </a>  <?php echo $executesql['name']; ?>
                 </h2>

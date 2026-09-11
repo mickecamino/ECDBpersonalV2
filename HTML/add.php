@@ -1,7 +1,7 @@
 <?php
-// File: include/include_component_add_category_menu.php
-// Function: show menu in add component
-// Revision date: 2026-08-31
+// File: add.php
+// Function: sadd component
+// Revision date: 2026-09-11
 // Revised by: Mikael Karlsson
 // This file is distributed under the license: 
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.

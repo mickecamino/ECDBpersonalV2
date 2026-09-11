@@ -1,4 +1,11 @@
 <?php
+// File: include/include_component_add_category_menu.php
+// Function: show categories in add component
+// Revision date: 2026-08-31
+// Revised by: Mikael Karlsson
+// This file is distributed under the license: 
+// Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+// 
 class AddMenuCat {
     public function MenuCat() {
 
@@ -16,7 +23,7 @@ class AddMenuCat {
             echo '<option class="main_category" value="';
             echo $HeadCategory['id'];
             echo '" disabled="disabled">';
-            echo $HeadCategory['name'];
+            echo gettext($HeadCategory['name']);
             echo '</option>';
 
             $subcatfrom = $HeadCategory['id'] * 100;
@@ -37,7 +44,7 @@ class AddMenuCat {
                     }
                 }
                 echo '>';
-                echo $SubCategory['name'];
+                echo gettext($SubCategory['name']);
                 echo '</option>';
             }
         }
