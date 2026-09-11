@@ -1,0 +1,14 @@
+action;name;manufacturer;package;pins;quantity;order_quantity;location;scrap;datasheet;comment;category;cimage;appnote;price
+add;0.1uF 35V;;2,5mm;0;0;0;;No;;;204;;;
+add;0.22uF 35V;;2,5mm;0;0;0;;No;;;204;;;
+add;0.47uF 35V;;2,5mm;0;0;0;;No;;;204;;;
+add;1uF 35V;;2,5mm;0;0;0;;No;;;204;;;
+add;2.2uF 35V;;2,5mm;0;0;0;;No;;;204;;;
+add;3.3uF 35V;;2,5mm;0;0;0;;No;;;204;;;
+add;4.7uF 35V;;2,5mm;0;0;0;;No;;;204;;;
+add;6.8uF 35V;;2,5mm;0;0;0;;No;;;204;;;
+add;10uF 35V;;2,5mm;0;0;0;;No;;;204;;;
+add;22uF 25V;;2,5mm;0;0;0;;No;;;204;;;
+add;33uF 25V;;2,5mm;0;0;0;;No;;;204;;;
+add;47uF 25V;;2,5mm;0;0;0;;No;;;204;;;
+add;100uF 16V;;2,5mm;0;0;0;;No;;;204;;;
