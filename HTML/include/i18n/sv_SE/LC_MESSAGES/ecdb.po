@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ecdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-10 16:30+0200\n"
+"POT-Creation-Date: 2026-09-11 09:49+0200\n"
 "PO-Revision-Date: 2026-09-10 16:30+0200\n"
 "Last-Translator: Mikael Karlsson>\n"
 "Language-Team: Svenska\n"
@@ -22,81 +22,81 @@ msgstr "Lägg till komponent"
 msgid "Add new component"
 msgstr "Lägg till en komponent"
 
-#: add.php:33 search.php:143 category.php:87 component_edit.php:123
-#: add_based.php:73 shoplist.php:125
+#: add.php:33 search.php:143 category.php:87 component_edit.php:124
+#: add_based.php:73 shoplist.php:126
 msgid "Comment"
 msgstr "Notering"
 
-#: add.php:40 search.php:48 category.php:47 component_edit.php:128
-#: add_based.php:76 proj_list.php:53 proj_show.php:57 shoplist.php:42
+#: add.php:40 search.php:48 category.php:47 component_edit.php:129
+#: add_based.php:76 proj_list.php:53 proj_show.php:57 shoplist.php:43
 msgid "Name"
 msgstr "Namn"
 
 #: add.php:44 search.php:63 category.php:54 include/statistics.php:38
-#: component_edit.php:132 add_based.php:78 proj_show.php:73
+#: component_edit.php:133 add_based.php:78 proj_show.php:73
 msgid "Category"
 msgstr "Kategori"
 
-#: add.php:51 add.php:117 search.php:141 category.php:85 component_edit.php:164
-#: component_edit.php:237 component_edit.php:250 component.php:176
-#: add_based.php:114 add_based.php:154 shoplist.php:107
+#: add.php:51 add.php:117 search.php:141 category.php:85 component_edit.php:165
+#: component_edit.php:238 component_edit.php:251 component.php:176
+#: add_based.php:114 add_based.php:154 shoplist.php:108
 msgid "Quantity"
 msgstr "Antal"
 
-#: add.php:56 search.php:78 component_edit.php:172 component.php:218
-#: add_based.php:116 proj_show.php:89 shoplist.php:59
+#: add.php:56 search.php:78 component_edit.php:173 component.php:218
+#: add_based.php:116 proj_show.php:89 shoplist.php:60
 msgid "Manufacturer"
 msgstr "Tillverkare"
 
-#: add.php:60 search.php:93 category.php:61 component_edit.php:176
-#: component.php:227 add_based.php:118 proj_show.php:105 shoplist.php:75
+#: add.php:60 search.php:93 category.php:61 component_edit.php:177
+#: component.php:227 add_based.php:118 proj_show.php:105 shoplist.php:76
 msgid "Package"
 msgstr "Förpackning"
 
-#: add.php:64 search.php:108 category.php:68 component_edit.php:180
+#: add.php:64 search.php:108 category.php:68 component_edit.php:181
 #: component.php:236 add_based.php:120
 msgid "Pins"
 msgstr "Antal ben"
 
-#: add.php:69 search.php:126 category.php:78 component_edit.php:186
+#: add.php:69 search.php:126 category.php:78 component_edit.php:187
 #: component.php:159 add_based.php:122 proj_show.php:120
 msgid "Location"
 msgstr "Plats"
 
-#: add.php:73 component_edit.php:190 component.php:190 add_based.php:124
-#: proj_show.php:136 shoplist.php:91
+#: add.php:73 component_edit.php:191 component.php:190 add_based.php:124
+#: proj_show.php:136 shoplist.php:92
 msgid "Price"
 msgstr "Pris"
 
-#: add.php:77 component_edit.php:194 add_based.php:126
+#: add.php:77 component_edit.php:195 add_based.php:126
 msgid "To order"
 msgstr "Att beställa"
 
-#: add.php:84 component_edit.php:202 component.php:246 add_based.php:128
+#: add.php:84 component_edit.php:203 component.php:246 add_based.php:128
 msgid "Recycled"
 msgstr "Återanvänd"
 
-#: add.php:87 add.php:91 component_edit.php:206 component_edit.php:210
+#: add.php:87 add.php:91 component_edit.php:207 component_edit.php:211
 #: maintenance.php:56 add_based.php:132 add_based.php:137
 msgid "Yes"
 msgstr "Ja"
 
-#: add.php:88 add.php:92 component_edit.php:207 component_edit.php:211
+#: add.php:88 add.php:92 component_edit.php:208 component_edit.php:212
 #: maintenance.php:49 add_based.php:133 add_based.php:138
 msgid "No"
 msgstr "Nej"
 
-#: add.php:99 search.php:112 category.php:71 component_edit.php:217
+#: add.php:99 search.php:112 category.php:71 component_edit.php:218
 #: component.php:258 add_based.php:144
 msgid "Datasheet"
 msgstr "Datablad"
 
-#: add.php:103 search.php:110 category.php:70 component_edit.php:221
+#: add.php:103 search.php:110 category.php:70 component_edit.php:222
 #: add_based.php:146
 msgid "Image"
 msgstr "Bild"
 
-#: add.php:109 component_edit.php:227 component.php:269 add_based.php:149
+#: add.php:109 component_edit.php:228 component.php:269 add_based.php:149
 msgid "Application Note"
 msgstr "Applikationsnot"
 
@@ -104,7 +104,7 @@ msgstr "Applikationsnot"
 msgid "Add component to project"
 msgstr "Addera komponent till projekt"
 
-#: add.php:133 proj_edit.php:49 add_based.php:172 my.php:100
+#: add.php:133 proj_edit.php:49 add_based.php:172 my.php:96
 msgid "Save"
 msgstr "Spara"
 
@@ -132,48 +132,48 @@ msgstr "Ange en sökterm"
 msgid "Sorry, but we can not find an entry to match your query."
 msgstr "Tyvärr, hittade ingenting"
 
-#: include/include.php:642
+#: include/include.php:645
 msgid "You have to specify a name!"
 msgstr "Du måste ange ett namn!"
 
-#: include/include.php:647
+#: include/include.php:650
 msgid "You have to choose a category!"
 msgstr "Du måste ange en kategori"
 
-#: include/include.php:652
+#: include/include.php:655
 msgid "You have to choose a project!"
 msgstr "Du måste välja ett projekt!"
 
-#: include/include.php:657
+#: include/include.php:660
 msgid ""
 "You have to specify a quantity for this component to add to the project!"
 msgstr "Du måste ange ett antal för att kunna lägga till i projektet"
 
-#: include/include.php:662
-msgid "Max 2500 characters in the comment!"
-msgstr "Maximala antal tecken i kommentarer är 2 500"
+#: include/include.php:665
+msgid "Max 255 characters in the comment!"
+msgstr ""
 
-#: include/include.php:667
+#: include/include.php:670
 msgid "The quantity must only be a number!"
 msgstr "Antal skall vara numeriskt"
 
-#: include/include.php:672
+#: include/include.php:675
 msgid "The pin-count must only be a number!"
 msgstr "Antal ben skall vara numeriskt"
 
-#: include/include.php:677
+#: include/include.php:680
 msgid "The price must only be a number!"
 msgstr "Pris skall vara numeriskt"
 
-#: include/include.php:682
+#: include/include.php:685
 msgid "The order quantity must only be a number!"
 msgstr "Beställt antal skall vara numeriskt"
 
-#: include/include.php:698
+#: include/include.php:701
 msgid "Component added!"
 msgstr "Komponenten tillagd"
 
-#: include/include.php:700 component.php:96
+#: include/include.php:703 component.php:96
 msgid "View component"
 msgstr "Visa komponent"
 
@@ -214,31 +214,696 @@ msgstr "Antal komponenter"
 msgid " - Project - "
 msgstr " - Projekt - "
 
-#: include/menu.php:14
+#: include/category_text.php:21
+msgid "Cable"
+msgstr "Kablage"
+
+#: include/category_text.php:22
+msgid "Capacitor"
+msgstr "Kondensatorer"
+
+#: include/category_text.php:23
+msgid "Connector"
+msgstr "Kontakter"
+
+#: include/category_text.php:24
+msgid "Diode"
+msgstr "Dioder"
+
+#: include/category_text.php:25
+msgid "IC"
+msgstr "IC"
+
+#: include/category_text.php:26 include/category_text.php:110
+msgid "Inductor"
+msgstr "Induktor"
+
+#: include/category_text.php:27
+msgid "Mechanic"
+msgstr "Mekanik"
+
+#: include/category_text.php:28
+msgid "Optical"
+msgstr "Opto"
+
+#: include/category_text.php:29
+msgid "Vaccum tubes"
+msgstr "Radiorör"
+
+#: include/category_text.php:30
+msgid "Switch"
+msgstr "Omkopplare"
+
+#: include/category_text.php:31
+msgid "Power"
+msgstr "Strömförsörjning"
+
+#: include/category_text.php:32
+msgid "Resistor"
+msgstr "Motstånd"
+
+#: include/category_text.php:33
+msgid "Transistor"
+msgstr "Transistorer"
+
+#: include/category_text.php:34
+msgid "Display"
+msgstr "Display"
+
+#: include/category_text.php:35
+msgid "Sensor"
+msgstr "Sensorer"
+
+#: include/category_text.php:36
+msgid "Module"
+msgstr "Moduler"
+
+#: include/category_text.php:37
+msgid "Miscellaneous"
+msgstr "Övrigt"
+
+#: include/category_text.php:38
+msgid "Oscillator"
+msgstr "Oscillator"
+
+#: include/category_text.php:40
+msgid "Ribbon"
+msgstr "Bandkabel"
+
+#: include/category_text.php:41 include/category_text.php:54
+msgid "Coax"
+msgstr "Koaxial"
+
+#: include/category_text.php:42
+msgid "Standard"
+msgstr "Kopplingstråd"
+
+#: include/category_text.php:43 include/category_text.php:59
+msgid "Mains"
+msgstr "Starkström"
+
+#: include/category_text.php:44
+msgid "Signal/Data"
+msgstr "Signal/Data"
+
+#: include/category_text.php:45
+msgid "Fiber optic"
+msgstr "Fiberoptik"
+
+#: include/category_text.php:46 include/category_text.php:52
+#: include/category_text.php:61 include/category_text.php:72
+#: include/category_text.php:107 include/category_text.php:112
+#: include/category_text.php:122 include/category_text.php:131
+#: include/category_text.php:137 include/category_text.php:145
+#: include/category_text.php:149 include/category_text.php:160
+#: include/category_text.php:176 include/category_text.php:182
+#: include/category_text.php:192 include/category_text.php:204
+#: include/category_text.php:205 include/category_text.php:210
+msgid "Misc"
+msgstr "Övrigt"
+
+#: include/category_text.php:47
+msgid "Ceramic"
+msgstr "Keramiska"
+
+#: include/category_text.php:48
+msgid "Electrolytic"
+msgstr "Elektrolyter"
+
+#: include/category_text.php:49
+msgid "Polyester"
+msgstr "Polyester"
+
+#: include/category_text.php:50
+msgid "Tantalum"
+msgstr "Tantaler"
+
+#: include/category_text.php:51
+msgid "Variable"
+msgstr "Variabla"
+
+#: include/category_text.php:53
+msgid "Audio"
+msgstr "Ljud"
+
+#: include/category_text.php:55
+msgid "DC"
+msgstr "DC"
+
+#: include/category_text.php:56
+msgid "D-Sub"
+msgstr "D-sub"
+
+#: include/category_text.php:57
+msgid "HF"
+msgstr "HF"
+
+#: include/category_text.php:58
+msgid "PCB"
+msgstr "Kretskort"
+
+#: include/category_text.php:60
+msgid "Data"
+msgstr "Data"
+
+#: include/category_text.php:62
+msgid "Rectifier"
+msgstr "Likriktare"
+
+#: include/category_text.php:63
+msgid "Schottky"
+msgstr "Schottky"
+
+#: include/category_text.php:64
+msgid "Small Signal"
+msgstr "Signal"
+
+#: include/category_text.php:65
+msgid "Zener"
+msgstr "Zener"
+
+#: include/category_text.php:66
+msgid "Bridge"
+msgstr "Bryggor"
+
+#: include/category_text.php:67
+msgid "Triac"
+msgstr "Triac"
+
+#: include/category_text.php:68
+msgid "Diac"
+msgstr "Diac"
+
+#: include/category_text.php:69
+msgid "Sidac"
+msgstr "Sidac"
+
+#: include/category_text.php:70 include/category_text.php:169
+msgid "Photo"
+msgstr "Foto"
+
+#: include/category_text.php:71
+msgid "SCR"
+msgstr "SCR"
+
+#: include/category_text.php:73
+msgid "4xxx"
+msgstr "4xxx"
+
+#: include/category_text.php:74
+msgid "74xx"
+msgstr "74xx"
+
+#: include/category_text.php:75
+msgid "74HC4xxx"
+msgstr "74HC4xxx"
+
+#: include/category_text.php:76
+msgid "Comparator"
+msgstr "Komparatorer"
+
+#: include/category_text.php:77
+msgid "Op. Amp."
+msgstr "OP-förstärkare"
+
+#: include/category_text.php:78 include/category_text.php:171
+#: include/category_text.php:184
+msgid "Temperature"
+msgstr "Temperatur"
+
+#: include/category_text.php:79
+msgid "Timer & Osc."
+msgstr "Timer & Osc."
+
+#: include/category_text.php:80
+msgid "Voltage Ref."
+msgstr "Spänningsreferens"
+
+#: include/category_text.php:81
+msgid "Voltage Reg."
+msgstr "Spänningsregulatorer"
+
+#: include/category_text.php:82
+msgid "A/D-D/A"
+msgstr "A/D-D/A"
+
+#: include/category_text.php:83
+msgid "Switching"
+msgstr "Switching"
+
+#: include/category_text.php:84
+msgid "Driver"
+msgstr "Driver"
+
+#: include/category_text.php:85
+msgid "DataComm"
+msgstr "Datacom"
+
+#: include/category_text.php:86
+msgid "DC/DC Converter"
+msgstr "DC/DC konverter"
+
+#: include/category_text.php:87
+msgid "Audio/Video"
+msgstr "Audio/Video"
+
+#: include/category_text.php:88
+msgid "Memory"
+msgstr "Minnen"
+
+#: include/category_text.php:89
+msgid "Logic"
+msgstr "Logik"
+
+#: include/category_text.php:90
+msgid "Microcontroller"
+msgstr "Mikrokontroller"
+
+#: include/category_text.php:91
+msgid "Microprocessor"
+msgstr "Mikroprocessor"
+
+#: include/category_text.php:92
+msgid "I2C"
+msgstr "I2C"
+
+#: include/category_text.php:93
+msgid "1-wire"
+msgstr ""
+
+#: include/category_text.php:94
+msgid "Isolator"
+msgstr ""
+
+#: include/category_text.php:95
+msgid "Endode/Decode"
+msgstr ""
+
+#: include/category_text.php:96
+msgid "Converter"
+msgstr "Konvertorer"
+
+#: include/category_text.php:97
+msgid "EPROM"
+msgstr "EPROM"
+
+#: include/category_text.php:98
+msgid "RAM"
+msgstr "RAM"
+
+#: include/category_text.php:99
+msgid "Counter/Timer"
+msgstr "Räknare/timers"
+
+#: include/category_text.php:100
+msgid "PIO"
+msgstr "PIO"
+
+#: include/category_text.php:101
+msgid "VIA"
+msgstr "VIA"
+
+#: include/category_text.php:102
+msgid "PTM"
+msgstr "PTM"
+
+#: include/category_text.php:103
+msgid "CTC"
+msgstr "CTC"
+
+#: include/category_text.php:104
+msgid "ACIA"
+msgstr "ACIA"
+
+#: include/category_text.php:105
+msgid "PIA"
+msgstr "PIA"
+
+#: include/category_text.php:106
+msgid "Real Time Clock"
+msgstr "Realtidsklockor"
+
+#: include/category_text.php:108
+msgid "Ferrite"
+msgstr "Ferriter"
+
+#: include/category_text.php:109
+msgid "Filter"
+msgstr "Filter"
+
+#: include/category_text.php:111 include/category_text.php:147
+msgid "Transformer"
+msgstr "Transförmatorer"
+
+#: include/category_text.php:113
+msgid "Box"
+msgstr "Lådor"
+
+#: include/category_text.php:114
+msgid "Distance"
+msgstr "Distanser"
+
+#: include/category_text.php:115
+msgid "Fuse"
+msgstr "Säkrningar"
+
+#: include/category_text.php:116
+msgid "Motor"
+msgstr "Motorer"
+
+#: include/category_text.php:117
+msgid "Screw"
+msgstr "Skruvar"
+
+#: include/category_text.php:118
+msgid "IC Socket"
+msgstr "Socklar"
+
+#: include/category_text.php:119
+msgid "Heat Sink"
+msgstr "Kylflänsar"
+
+#: include/category_text.php:120
+msgid "Knob"
+msgstr "Rattar"
+
+#: include/category_text.php:121
+msgid "Meter"
+msgstr "Mätare"
+
+#: include/category_text.php:123
+msgid "SSR[Relay]"
+msgstr "SSR[relä]"
+
+#: include/category_text.php:124
+msgid "Laser"
+msgstr "Laser"
+
+#: include/category_text.php:125 include/category_text.php:180
+msgid "LED"
+msgstr "LED"
+
+#: include/category_text.php:126
+msgid "LED 3mm"
+msgstr "LED 3mm"
+
+#: include/category_text.php:127
+msgid "LED 5mm"
+msgstr "LED 5mm"
+
+#: include/category_text.php:128
+msgid "Optocoupler"
+msgstr "Optokipplare"
+
+#: include/category_text.php:129
+msgid "IR LED"
+msgstr "IR LED"
+
+#: include/category_text.php:130
+msgid "7-segment LED"
+msgstr "/-segmens LED"
+
+#: include/category_text.php:132
+msgid "Octal"
+msgstr "Oktal"
+
+#: include/category_text.php:133
+msgid "Loctal B8G"
+msgstr "Loktal B8G"
+
+#: include/category_text.php:134
+msgid "Heptal B7G"
+msgstr "Heptal B7G"
+
+#: include/category_text.php:135
+msgid "Noval B9A"
+msgstr "Noval B9A"
+
+#: include/category_text.php:136
+msgid "Nixie"
+msgstr "Nixie"
+
+#: include/category_text.php:138
+msgid "Keypad"
+msgstr "Tangentbord"
+
+#: include/category_text.php:139
+msgid "Momentary"
+msgstr "Momentan"
+
+#: include/category_text.php:140
+msgid "PCB Mounted"
+msgstr "Kretskortsmonterad"
+
+#: include/category_text.php:141
+msgid "Rotary Encoder"
+msgstr "Rotationsenkoder"
+
+#: include/category_text.php:142
+msgid "Toggle Switch"
+msgstr "Omkopplare"
+
+#: include/category_text.php:143
+msgid "Relay"
+msgstr "Reläs"
+
+#: include/category_text.php:144
+msgid "DIP"
+msgstr "DIP"
+
+#: include/category_text.php:146
+msgid "Power Supply"
+msgstr "Spänningsaggregat"
+
+#: include/category_text.php:148
+msgid "Wall Adapter"
+msgstr "Väggadapter"
+
+#: include/category_text.php:150
+msgid "IGBT"
+msgstr "IGBT"
+
+#: include/category_text.php:151
+msgid "MOSFET N"
+msgstr "MOSFET N"
+
+#: include/category_text.php:152
+msgid "MOSFET P"
+msgstr "MOSFET P"
+
+#: include/category_text.php:153
+msgid "NPN"
+msgstr "NPN"
+
+#: include/category_text.php:154
+msgid "PNP"
+msgstr "PNP"
+
+#: include/category_text.php:155
+msgid "UJT"
+msgstr "UJT"
+
+#: include/category_text.php:156
+msgid "PUT"
+msgstr "PUT"
+
+#: include/category_text.php:157
+msgid "JFET N"
+msgstr "JFET N"
+
+#: include/category_text.php:158
+msgid "JFET P"
+msgstr "JFET P"
+
+#: include/category_text.php:159
+msgid "SIPMOS"
+msgstr ""
+
+#: include/category_text.php:161
+msgid "0,25W Carbon 5%"
+msgstr "0,25W kolfilm 5%"
+
+#: include/category_text.php:162
+msgid "0,25W Metal 1%"
+msgstr "0,25W metallfilm 1%"
+
+#: include/category_text.php:163
+msgid "0,6W Metal 1%"
+msgstr "0,6W metallfilm 1%"
+
+#: include/category_text.php:164
+msgid "1W Carbon 5%"
+msgstr "1W kolfilm 5%"
+
+#: include/category_text.php:165
+msgid "0,1W SMD 0603"
+msgstr "0,1W SMD 0603"
+
+#: include/category_text.php:166
+msgid "0,125W SMD 0805"
+msgstr "0,125W SMD 0805"
+
+#: include/category_text.php:167
+msgid "0,25W SMD 1206"
+msgstr "0,25W SMD 1206"
+
+#: include/category_text.php:168
+msgid "Effect"
+msgstr "Effekt"
+
+#: include/category_text.php:170
+msgid "Network"
+msgstr "Nätverk"
+
+#: include/category_text.php:172
+msgid "Potentiometer"
+msgstr "Potentiometrar"
+
+#: include/category_text.php:173
+msgid "Trimpots"
+msgstr "Trimpottar"
+
+#: include/category_text.php:174
+msgid "Trimpots multiturn"
+msgstr "Trimpottar flervarv"
+
+#: include/category_text.php:175
+msgid "Precision"
+msgstr "Precision"
+
+#: include/category_text.php:177
+msgid "LCD"
+msgstr "LCD"
+
+#: include/category_text.php:178
+msgid "VFD"
+msgstr "VFD"
+
+#: include/category_text.php:179
+msgid "TFT"
+msgstr "TFT"
+
+#: include/category_text.php:181
+msgid "Nixie tubes"
+msgstr "Nixierör"
+
+#: include/category_text.php:183
+msgid "Moisture"
+msgstr "Fukts"
+
+#: include/category_text.php:185
+msgid "Pressure"
+msgstr "Tryck"
+
+#: include/category_text.php:186
+msgid "Magnetic"
+msgstr "Magnetiska"
+
+#: include/category_text.php:187
+msgid "Hall Effect"
+msgstr "Halleffekt"
+
+#: include/category_text.php:188
+msgid "Gas"
+msgstr "Gas"
+
+#: include/category_text.php:189
+msgid "Accelerometer"
+msgstr "Rörelse"
+
+#: include/category_text.php:190
+msgid "Light"
+msgstr "Ljus"
+
+#: include/category_text.php:191
+msgid "Proximity"
+msgstr "Avstånd"
+
+#: include/category_text.php:193
+msgid "GSM"
+msgstr "GSM"
+
+#: include/category_text.php:194
+msgid "GPS"
+msgstr "GPS"
+
+#: include/category_text.php:195
+msgid "Bluetooth"
+msgstr "Blåtand"
+
+#: include/category_text.php:196
+msgid "WiFi"
+msgstr "WiFI"
+
+#: include/category_text.php:197
+msgid "ZigBee"
+msgstr ""
+
+#: include/category_text.php:198
+msgid "RFID"
+msgstr ""
+
+#: include/category_text.php:199
+msgid "Arduino"
+msgstr ""
+
+#: include/category_text.php:200
+msgid "MSP430"
+msgstr ""
+
+#: include/category_text.php:201
+msgid "chipKIT"
+msgstr ""
+
+#: include/category_text.php:202
+msgid "Raspberry Pi"
+msgstr ""
+
+#: include/category_text.php:203
+msgid "BeagleBone"
+msgstr ""
+
+#: include/category_text.php:206
+msgid "Crystal"
+msgstr ""
+
+#: include/category_text.php:207
+msgid "Resonator"
+msgstr ""
+
+#: include/category_text.php:208
+msgid "TCXO"
+msgstr ""
+
+#: include/category_text.php:209
+msgid "Clock Module"
+msgstr "Klockmoduler"
+
+#: include/menu.php:9
 msgid "My components"
 msgstr "Mina komponenter"
 
-#: include/menu.php:18 add_based.php:55
+#: include/menu.php:13 add_based.php:55
 msgid "Add component"
 msgstr "Lägg till komponent"
 
-#: include/menu.php:22
+#: include/menu.php:17
 msgid "Shopping list"
 msgstr "Inköpslista"
 
-#: include/menu.php:26
+#: include/menu.php:21
 msgid "Projects"
 msgstr "Projekt"
 
-#: include/menu.php:30
+#: include/menu.php:25
 msgid "My settings"
 msgstr "Inställningar"
 
-#: include/menu.php:34
+#: include/menu.php:29
 msgid "Reference items"
 msgstr "Referensmaterial"
 
-#: include/menu.php:38 importexport.php:16 importexport.php:28
+#: include/menu.php:33 importexport.php:16 importexport.php:28
 msgid "Import / Export"
 msgstr "Importera / Exportera"
 
@@ -345,7 +1010,7 @@ msgstr "Redigera projekt"
 msgid "Project name"
 msgstr "Projektnamn"
 
-#: proj_edit.php:50 component_edit.php:284
+#: proj_edit.php:50 component_edit.php:285
 msgid "Delete"
 msgstr "Ta bort"
 
@@ -357,78 +1022,81 @@ msgstr "Exportera komponenter"
 msgid "File Import"
 msgstr "Importera komponenter"
 
-#: importexport.php:52
+#: importexport.php:37
+msgid "Upload"
+msgstr "Ladda upp"
+
+#: importexport.php:53
 msgid "Please upload a CSV file."
 msgstr "Välj en CSV-fil"
 
-#: importexport.php:77
+#: importexport.php:78
 msgid "Failed to open file:"
 msgstr "Kunde inte öppna filen:"
 
-#: importexport.php:354
+#: importexport.php:355
 #, php-format
 msgid "Update not needed for row %s"
 msgstr "Uppdatering för rad %s behövs ej"
 
-#: importexport.php:366
+#: importexport.php:367
 #, php-format
 msgid "Row %s - Deleted component with id %s"
 msgstr "Rad %s - raderade komponent med namnet %s"
 
-#: importexport.php:370
+#: importexport.php:371
 #, php-format
 msgid "Row %s - Component with id %s is not in the database"
 msgstr "Rad %s - komponent med id %s finns inte i databasen"
 
-#: importexport.php:376
+#: importexport.php:377
 #, php-format
 msgid "Row %s - id is not an integer"
 msgstr "Rad %s - id är inget heltal"
 
-#: importexport.php:384
+#: importexport.php:385
 #, php-format
 msgid ""
 "Row, %s - The number of header fields differs against the number of data "
 "fields"
-msgstr ""
-"Rad %s - fältantalet i headern matchar inte fältantalet för data"
+msgstr "Rad %s - fältantalet i headern matchar inte fältantalet för data"
 
-#: importexport.php:423
+#: importexport.php:424
 #, php-format
 msgid "Error on row %s - data in field %s needs to be less than %s characters"
 msgstr "Fel på rad %s - data för fältet %s får ej innehålle fler tecken än %s"
 
-#: importexport.php:429
+#: importexport.php:430
 #, php-format
 msgid "ERROR on row %s - id must be supplied for action edit"
 msgstr "Fel på rad %s - id måste anges vid regigering av data"
 
-#: importexport.php:435
+#: importexport.php:436
 #, php-format
 msgid "Component with name %s and category %s is already in the database"
 msgstr "Komponenten med namnet %s i kategorin %s finns redan i databasen"
 
-#: importexport.php:441
+#: importexport.php:442
 #, php-format
 msgid "ERROR on row %s - name must be supplied for action add in the csv file"
 msgstr "Fel på rad %s - name måste finnas vid addering av komponenter"
 
-#: importexport.php:447
+#: importexport.php:448
 #, php-format
 msgid "Error on row %s - field scrap need to be Yes or No"
 msgstr "Fel på rad %s - fältet scrap måste innehålla antingen Yes eller No"
 
-#: importexport.php:453
+#: importexport.php:454
 #, php-format
 msgid "ERROR on row %s - category must be supplied for action add or edit"
 msgstr "Fel på rad %s - kategori måste finnas vid add eller edit"
 
-#: importexport.php:463
+#: importexport.php:464
 #, php-format
 msgid "Row %s with name %s and category %s imported"
 msgstr "Rad %s med namn %s och kategori %s lades till"
 
-#: importexport.php:469
+#: importexport.php:470
 #, php-format
 msgid "Row %s with name %s imported"
 msgstr "Rad %s med namnet %s lades till"
@@ -449,19 +1117,19 @@ msgstr "Inloggningen misslyckades, försök igen"
 msgid "Edit component"
 msgstr "Redigera komponent"
 
-#: component_edit.php:235
+#: component_edit.php:236
 msgid "Add to project"
 msgstr "Lägg till projekt"
 
-#: component_edit.php:249
+#: component_edit.php:250
 msgid "Project"
 msgstr "Projekt"
 
-#: component_edit.php:282
+#: component_edit.php:283
 msgid "Update"
 msgstr "Uppdatera"
 
-#: component_edit.php:283
+#: component_edit.php:284
 msgid "New based on this"
 msgstr "Ny baserad på denna"
 
@@ -667,7 +1335,7 @@ msgstr "Hem"
 msgid "Shopping List"
 msgstr "Inköpslistor"
 
-#: shoplist.php:123
+#: shoplist.php:124
 msgid "Quantity to order"
 msgstr "Antal att beställa"
 
@@ -743,14 +1411,14 @@ msgstr "Svenska"
 msgid "English"
 msgstr "Engelska"
 
-#: my.php:85
+#: my.php:84
 msgid "French"
 msgstr "Franska"
 
-#: my.php:90
+#: my.php:88
 msgid "Italian"
 msgstr "Italienska"
 
-#: my.php:95
+#: my.php:92
 msgid "Spanish"
 msgstr "Spanska"
