@@ -1,56 +1,63 @@
 <?php
+// File: include/include_category_sub.php
+// Function: Handle category_sub
+// Revision date: 2026-09-011
+// Revised by: Mikael Karlsson
+// This file is distributed under the license:
+// Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+//
 class NameSub {
 
-	public function Sub() {
+    public function Sub() {
 
-		require_once('include/login/auth.php');
-		include('include/mysql_connect.php');
-		$owner = $_SESSION['SESS_MEMBER_ID'];
+        require_once('include/login/auth.php');
+        include('include/mysql_connect.php');
+        $owner = $_SESSION['SESS_MEMBER_ID'];
 
-		if(isset($_GET['cat'])) {
-			$cat = (int)$_GET['cat'];
-		}
-		if(isset($_GET['subcat'])) {
-			$subcat = (int)$_GET['subcat'];
+        if(isset($_GET['cat'])) {
+            $cat = (int)$_GET['cat'];
+        }
+        if(isset($_GET['subcat'])) {
+            $subcat = (int)$_GET['subcat'];
 
-			if ($subcat < 999) {
-				$cat = substr($subcat, -3, 1);
-			}
-			else {
-				$cat = substr($subcat, -4, 2);
-			}
-		}
+            if ($subcat < 999) {
+                $cat = substr($subcat, -3, 1);
+            }
+            else {
+                $cat = substr($subcat, -4, 2);
+            }
+        }
 
-		$subcatfrom = $cat*100;
-		$subcatto = $subcatfrom+99;
+        $subcatfrom = $cat*100;
+        $subcatto = $subcatfrom+99;
 
-		$SubCategoryName = "SELECT * FROM category_sub WHERE id BETWEEN ".$subcatfrom." AND ".$subcatto." ORDER by name ASC";
-		$sql_exec_subcatname = mysqli_Query($connection,$SubCategoryName);
+        $SubCategoryName = "SELECT * FROM category_sub WHERE id BETWEEN ".$subcatfrom." AND ".$subcatto." ORDER by name ASC";
+        $sql_exec_subcatname = mysqli_Query($connection,$SubCategoryName);
 
-		while ($ShowDetailsSubCatname = mysqli_fetch_array($sql_exec_subcatname)) {
-			echo '<li>';
-			echo '<a href="category.php?subcat=';
-			echo $ShowDetailsSubCatname['id'];
-			echo '" ';
-			if(isset($_GET['subcat'])) {
-				if ($ShowDetailsSubCatname['id'] == $subcat) {
-					echo 'class="selected"';
-				}
-			}
+        while ($ShowDetailsSubCatname = mysqli_fetch_array($sql_exec_subcatname)) {
+            echo '<li>';
+            echo '<a href="category.php?subcat=';
+            echo $ShowDetailsSubCatname['id'];
+            echo '" ';
+            if(isset($_GET['subcat'])) {
+                if ($ShowDetailsSubCatname['id'] == $subcat) {
+                    echo 'class="selected"';
+                }
+            }
 
-			// Shows if component exists in category
-			$sql_exec_component_catname = mysqli_query($connection,"SELECT category FROM data WHERE owner = $owner"); // Get the category ID from all components.
-			while($showDetailsComponentCatname = mysqli_fetch_array($sql_exec_component_catname)) {
-				if($showDetailsComponentCatname['category'] == $ShowDetailsSubCatname['id']){ // Compare current category ID with components category ID.
-					echo ' class="isComponents"'; // What should be echoed if components exists in category?
-					break; // We only need one component to be in this category for this to be true.
-				}
-			}
+            // Shows if component exists in category
+            $sql_exec_component_catname = mysqli_query($connection,"SELECT category FROM data WHERE owner = $owner"); // Get the category ID from all components.
+            while($showDetailsComponentCatname = mysqli_fetch_array($sql_exec_component_catname)) {
+                if($showDetailsComponentCatname['category'] == $ShowDetailsSubCatname['id']){ // Compare current category ID with components category ID.
+                    echo ' class="isComponents"'; // What should be echoed if components exists in category?
+                    break; // We only need one component to be in this category for this to be true.
+                }
+            }
 
-			echo '>';
-				echo $ShowDetailsSubCatname['name'];
-			echo '</a></li> ';
-		}
-	}
+            echo '>';
+                echo gettext($ShowDetailsSubCatname['name']);
+            echo '</a></li> ';
+        }
+    }
 }
 ?>

@@ -90,7 +90,7 @@ class NameHead {
             }
 
             echo '>';
-                echo $ShowDetailsCatname['name'];
+                echo gettext($ShowDetailsCatname['name']);
             echo '</a></li> ';
         }
     }
