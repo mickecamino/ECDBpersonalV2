@@ -33,8 +33,8 @@
 
     echo '<br><h1>' . _("File Import") . '</h1>';
     echo '<form action="importexport.php" method="post" enctype="multipart/form-data">';
-    echo '<input type="file" class = "bold" name="file" id="file"><br>';
-    echo '<input type="submit" value="Upload" name="submit">';
+    echo '<input type="file" class = "bold" name="file" id="file" accept=".csv"><br>';
+    echo '<input type="submit" value="' . _("Upload") .  '" name="submit">';
     echo '<input type="hidden" name="MAX_FILE_SIZE" value="5242880" />';
     echo '</form>';
 

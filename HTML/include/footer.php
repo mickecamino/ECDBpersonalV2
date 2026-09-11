@@ -1,13 +1,13 @@
 <?php
 // File: footer.php
 // Function: Show footer with copyright
-// Revision date: 2026-08-31
+// Revision date: 2026-09-11
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
 echo '<div id="copyText">';
 echo '<div class="leftBox">';
-echo '<div>© 2010 - ' . date('Y') . _(" ecDB - Created by Nils Fredriksson. ecDBpersonal created by Pete Willard, modified by Mikael Karlsson") . '</div>';
+echo '_(" ecDB personal V2");
 echo '</div></div>';
 ?>
