@@ -1,0 +1,16 @@
+action;name;manufacturer;package;pins;quantity;order_quantity;location;scrap;datasheet;comment;category;cimage;appnote;price
+add;0.1uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;0.22uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;0.33uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;0.47uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;1uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;2.2uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;4.7uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;6.8uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;10uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;22uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;47uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;100uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;220uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;470uF 50V;;Radial;0;0;0;;No;;;202;;;
+add;4700uF 50V;;Radial;0;0;0;;No;;;202;;;

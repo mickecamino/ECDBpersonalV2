@@ -1,0 +1,24 @@
+action;name;manufacturer;package;pins;quantity;order_quantity;location;scrap;datasheet;comment;category;cimage;appnote;price
+add;1nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;1.5nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;2.2nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;3.3nF 400V 5mm;;;0;0;0;;No;;;203;;;
+add;4.7nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;6.8nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;10nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;15nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;22nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;33nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;47nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;68nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;100nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;150nF 63V 5mm;;;0;0;0;;No;;;203;;;
+add;220nF 100V 5mm;;;0;0;0;;No;;;203;;;
+add;330nF 63V 5mm;;;0;0;0;;No;;;203;;;
+add;470nF 63V 5mm;;;0;0;0;;No;;;203;;;
+add;680nF 63V 5mm;;;0;0;0;;No;;;203;;;
+add;1uF 63V 5mm;;;0;0;0;;No;;;203;;;
+add;1.5uF 63V 5mm;;;0;0;0;;No;;;203;;;
+add;2.2uF 50V 5mm;;;0;0;0;;No;;;203;;;
+add;3.3uF 30V 5mm;;;0;0;0;;No;;;203;;;
+
