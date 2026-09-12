@@ -9,7 +9,16 @@
 // Custom Page Titles
     $pageTitle = _("Register");
     include "include/head.php";
-
+// Call the language translator
+    require_once "include/localize.php";
+    if(isset($_COOKIE["language"])) { // for localization
+    $language = $_COOKIE["language"];
+    }
+    else { // Not set, set to en_US.utf8
+        $language = "en_US.utf8";
+    }
+    SetLanguage($language);
+// END
     echo '<body><div id="wrapper">';
 // Header
     echo '<div><img src="img/logov2.png" alt="ECDB personalV2" style="width:175px;height:75px;"></div>';
@@ -33,7 +42,7 @@
     echo '</tr><tr><td>' . _("Password") . '</td>';
     echo '<td><input name="password" type="password" class="textfield" id="password" /></td>';
     echo '</tr><tr><td>&nbsp;</td>';
-    echo '<td><input type="submit" name="Submit" value= ' . _("Login") . ' /></td>';
+    echo '<td><input type="submit" name="Submit" value="' . _("Login") . '"></td>';
     echo '</tr></table></form></div>';
 // END
 // Text outside the main content
