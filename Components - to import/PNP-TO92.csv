@@ -1,0 +1,16 @@
+action;name;manufacturer;package;pins;quantity;order_quantity;location;scrap;datasheet;comment;category;cimage;appnote;price
+add;2N2907A;;TO-92;0;0;0;;;;60V 600mA;1205;;;
+add;2N3906;;TO-92;0;0;0;;;;40V 200mA;1205;;;
+add;2N4403;;TO-92;0;0;0;;;;40V 600mA;1205;;;
+add;BC212B;;TO-92;0;0;0;;;;50V 100mA;1205;;;
+add;BC214;;TO-92;0;0;0;;;;30V 500mA;1205;;;
+add;BC327;;TO-92;0;0;0;;;;45V 800mA;1205;;;
+add;BC556B;;TO-92;0;0;0;;;;65V 100mA;1205;;;
+add;BC557B;;TO-92;0;0;0;;;;45V 0.1A;1205;;;
+add;BC558B;;TO-92;0;0;0;;;;30V 0.1A;1205;;;
+add;BC559C;;TO-92;0;0;0;;;;30V 0.1A;1205;;;
+add;BC560C;;TO-92;0;0;0;;;;45V 100mA;1205;;;
+add;BC640;;TO-92;0;0;0;;;;80V 1A;1205;;;
+add;KTA1023;;TO-92;0;0;0;;;;120V 800mA;1205;;;
+add;MPSA56;;TO-92;0;0;0;;;;80V 500mA;1205;;;
+add;MPSA92;;TO-92;0;0;0;;;;300V 500mA;1205;;;

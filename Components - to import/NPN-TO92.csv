@@ -1,0 +1,17 @@
+action;name;manufacturer;package;pins;quantity;order_quantity;location;scrap;datasheet;comment;category;cimage;appnote;price
+add;2N2222A;;TO-92;0;0;0;;No;;40V 600mA;1204;;;
+add;2N3904;;TO-92;0;0;0;;No;;50V 100mA;1204;;;
+add;BC337;;TO-92;0;0;0;;No;;45V 800mA;1204;;;
+add;BC546B;;TO-92;0;0;0;;No;;80V 0.1A;1204;;;
+add;BC547B;;TO-92;0;0;0;;No;;45V 0.1A;1204;;;
+add;BC547C;;TO-92;0;0;0;;No;;45V 0.1A;1204;;;
+add;BC548B;;TO-92;0;0;0;;No;;30V 100mA;1204;;;
+add;BC548C;;TO-92;0;0;0;;No;;30V 0.1A;1204;;;
+add;BC549B;;TO-92;0;0;0;;No;;30V 100mA;1204;;;
+add;BC550C;;TO-92;0;0;0;;No;;45V 100mA;1204;;;
+add;BC639;;TO-92;0;0;0;;No;;80V 1A;1204;;;
+add;BF199;;TO-92;0;0;0;;No;;25V 0.1A;1204;;;
+add;KSC1845;;TO-92;0;0;0;;No;;120V 50mA;1204;;;
+add;MPSA05;;TO-92;0;0;0;;No;;60V 500mA;1204;;;
+add;MPSA06;;TO-92;0;0;0;;No;;80V 500mA;1204;;;
+add;MPSA42;;TO-92;0;0;0;;No;;300V 500mA;1204;;;
