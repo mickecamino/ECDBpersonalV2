@@ -1,6 +1,14 @@
 # Changelog
 This is a list of changes made to my version of ECDB personal V2.
 
+## [Unreleased]
+* Update ecDB.sql file from a mysqldump of MariDB
+* Add export for Shopping list  
+* Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
+
+## [2026-09-12]
+* Fixed a couple of bugs, removed the About tab, it was an remnant of the online version.
+* Added localization to register-success.
 
 ## [2026-09-10]
 # BREAKING CHANGES
@@ -26,6 +34,10 @@ ALTER TABLE projects_data MODIFY projects_data_owner_id smallint UNSIGNED;
 ALTER TABLE projects_data MODIFY projects_data_project_id smallint UNSIGNED;
 ALTER TABLE projects_data MODIFY projects_data_component_id smallint UNSIGNED;
 ALTER TABLE projects_data MODIFY projects_data_quantity smallint UNSIGNED;
+
+ALTER TABLE category_head MODIFY projects_data_quantity smallint UNSIGNED;
+ALTER TABLE category_sub MODIFY projects_data_quantity smallint UNSIGNED;
+
 ```
 * Updated importexport.php, fixed a bunch of bugs, added output for success and errors and a lot of checking before importing.
 
