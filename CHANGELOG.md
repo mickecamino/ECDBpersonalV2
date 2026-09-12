@@ -4,7 +4,7 @@ This is a list of changes made to my version of ECDB personal V2.
 
 ## [2026-09-10]
 # BREAKING CHANGES
-* I have switched from int to unsigned smallint on and from varchar to smallint. Run the script below to change the database. 
+* I have switched from int to unsigned smallint on all int-fields and from varchar to smallint on others. Run the script below to change the database.  
 It might break a few things, I have tested a lot, but there might be some quirks lingering around in the code.
 ```
 sudo mysql
@@ -28,8 +28,6 @@ ALTER TABLE projects_data MODIFY projects_data_component_id smallint UNSIGNED;
 ALTER TABLE projects_data MODIFY projects_data_quantity smallint UNSIGNED;
 ```
 * Updated importexport.php, fixed a bunch of bugs, added output for success and errors and a lot of checking before importing.
-
-
 
 ## [2026-09-03]
 
