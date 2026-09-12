@@ -1,7 +1,7 @@
 <?php
 // File: register.php
 // Function: Register a new user
-// Revision date: 2026-08-31
+// Revision date: 2026-09-12
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -23,13 +23,12 @@
 // END
     echo '<body><div id="wrapper">';
 // Header -->
-    echo '<div><img src="img/logov2.png" alt="ECDB personalV2" style="width:175px;height:75px;"></div>';
+    echo '<div><img src="img/logov2.png" alt="ECDB personal V2" style="width:175px;height:75px;"></div>';
 // END
 // Main menu
     echo '<div id="menu"><ul>';
     echo '<li><a href="."><span class="fa fa-key fa-lg"></span> ' . _("Login") . '</a></li>';
     echo '<li><a href="register.php"><span class="fa fa-user fa-lg"></span> ' . _("Register") . '</a></li>';
-    echo '<li><a href="about.php"><span class="fa fa-info-circle fa-lg"></span> ' . _("About") . '</a></li>';
     echo '</ul></div>';
 // END
 // Main content
@@ -44,10 +43,9 @@
         echo '</div>';
         unset($_SESSION['ERRMSG_ARR']);
     }
-    echo '<div class="loginWrapper"><div class="left"><div class="aboutECDB">';
-    echo _("Fill in this form to create your a user for the database.") . '<br><br>';
-    echo _("WARNING: Do NOT make this database public accessible on Internet");
-    echo '</div><form class="globalForms" name="loginForm" method="post" action="register-exec.php"><div class="textInput">';
+    echo '<div class="loginWrapper"><div class="left">';
+    echo _("Fill in this form to create your a user for the database.") . '<br>';
+    echo '<form class="globalForms" name="loginForm" method="post" action="register-exec.php"><div class="textInput">';
     echo '<label class="keyWord">' . _("First name") . '</label><div class="input"><input name="fname" type="text" class="medium" id="fname" /></div></div>';
     echo '<div class="textInput"><label class="keyWord">' . _("Last name") . '</label><div class="input"><input name="lname" type="text" class="medium" id="lname" /></div></div>';
     echo '<div class="textInput"><label class="keyWord">' . _("Username") . '</label><div class="input"><input name="login" type="text" class="medium" id="login" /></div></div>';

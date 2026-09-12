@@ -1,7 +1,7 @@
 <?php
 // File: login-failed.php
 // Function: Called when login fails
-// Revision date: 2026-08-31
+// Revision date: 2026-09-12
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -21,18 +21,17 @@ include "include/head.php";
 // END
     echo '<body><div id="wrapper">';
 // Header
-    echo '<div><img src="img/logov2.png" alt="ECDB personalV2" style="width:175px;height:75px;"></div>';
+    echo '<div><img src="img/logov2.png" alt="ECDB personal V2" style="width:175px;height:75px;"></div>';
 // END
 // Main menu
     echo '<div id="menu"><ul>';
     echo '<li><a href="."><span class="fa fa-key fa-lg"></span> ' . _("Login") . '</a></li>';
     echo '<li><a href="register.php"><span class="fa fa-user fa-lg"></span> ' . _("Register") . '</a></li>';
-    echo '<li><a href="about.php"><span class="fa fa-info-circle fa-lg"></span> ' . _("About") . '</a></li>';
     echo '</ul></div>';
 // END
 // Main content
     echo '<div id="content"><div class="message red">' . _("Login failed, please try again.") . '</div>';
-    echo '<div class="loginWrapper"><div class="left"><div class="aboutECDB"></div>';
+    echo '<div class="loginWrapper"><div class="left">';
     echo '<form class="globalForms" name="loginForm" method="post" action="login-exec.php"><div class="textInput"><label class="keyWord">' . _("Username") . '</label>';
     echo '<div class="input"><input name="login" class="medium" type="text" id="login"/></div></div>';
     echo '<div class="textInput"><label class="keyWord">' . _("Password") . '</label>';

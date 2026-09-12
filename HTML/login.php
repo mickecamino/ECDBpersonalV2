@@ -1,7 +1,7 @@
 <?php
 // File: login.php
 // Function: Login dialog
-// Revision date: 2026-08-31
+// Revision date: 2026-09-12
 // Revised by: Mikael Karlsson
 // This file is distributed under the license: 
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -35,13 +35,12 @@
 // END
     echo '<body><div id="wrapper">';
 // Header
-    echo '<div><img src="img/logov2.png" alt="ECDB personalV2" style="width:175px;height:75px;"></div>';
+    echo '<div><img src="img/logov2.png" alt="ECDB personal V2" style="width:175px;height:75px;"></div>';
 // END
 // Main menu
     echo '<div id="menu"><ul>';
         echo '<li><a href="."><span class="fa fa-key fa-lg"></span> ' . _("Login") . '</a></li> ';
         echo '<li><a href="register.php"><span class="fa fa-user fa-lg"></span> ' . _("Register") . '</a></li> ';
-        echo '<li><a href="about.php"><span class="fa fa-info-circle fa-lg"></span> ' . _("About") . '</a></li> ';
     echo '</ul></div>';
 // END
 // Main content
