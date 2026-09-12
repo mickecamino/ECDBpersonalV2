@@ -15,6 +15,10 @@ Resistors 0,6W 1% tolerance in the E12 series
 * Resistors E24-addon - 0,25W 5% and 1%.csv  
 Resistors 0,25W 5% and 1% - to get E24 series
 * Resistors E24-addon - 0,6W 1%.csv  
-Resistors 0,6W 1% - to get E24 series
+Resistors 0,6W 1% - to get E24 series  
+* NPN-TO92.csv  
+Popular TO92 NPN transistors  
+* PNP-TO92.csv  
+Popular TO92 PNP transistors  
 
 **More to come**

@@ -7,7 +7,7 @@ This is a list of changes made to my version of ECDB personal V2.
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
 
 ## [2026-09-12]
-* Fixed a couple of bugs, removed the About tab, it was an remnant of the online version.
+* Fixed a couple of bugs, removed the About tab, it was an remnant from the online version.
 * Added localization to register-success.
 
 ## [2026-09-10]
