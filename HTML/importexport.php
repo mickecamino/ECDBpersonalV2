@@ -122,7 +122,7 @@ function import_components($owner, $connection, $filename)
 
                 // If add, then compare with whats in the database to detect duplicates
                 if($data["action"] == "add"  || $data["action"] == "edit") {
-                    $find = $data["name"]; 
+                    $find = $data["name"];
                     $componentcategory = $data["category"]; // we must search with category as the same name can be in different categories
                     $SearchQuery = "SELECT name FROM category_sub WHERE id = " . $componentcategory; // get the category name
                     if($sql_exec = mysqli_query($connection,$SearchQuery) === false); // execute the search
@@ -136,7 +136,7 @@ function import_components($owner, $connection, $filename)
                     $sql_exec = mysqli_query($connection,$SearchQuery); // execute the search
                     $anymatches = mysqli_num_rows($sql_exec); // get number of matches
                     if ($anymatches > 0) { // we found a match
-                        report_error($row, $find, $categoryname["name"], 7); // report errer #3
+                        report_error($row, $find, $categoryname["name"], 3); // report errer #3
                         break; // Get next record
                     } else { // On add, if no match found, just add the component
                         $name = $data["name"]; // Everything is OK, save data and continue
@@ -367,7 +367,7 @@ function import_components($owner, $connection, $filename)
                 if (isset($data["id"]) && ctype_digit($data["id"])) { // Do we have a value? Is it an integer?
                     $sqlDeleteComponent = "DELETE FROM data WHERE id = ".$data["id"]." ";
                     $deleteresult = mysqli_query($connection,$sqlDeleteComponent);
-                    if (mysqli_affected_rows($connection) > 0) { // 
+                    if (mysqli_affected_rows($connection) > 0) { //
                         echo '<span style="color: green">';
                         echo sprintf(_("Row %s - Deleted component with id %s"), $row, $data["id"]) . "<br>";
                         echo "</span>";
@@ -444,7 +444,7 @@ function report_error($row, $field1, $field2, $errorlevel)
     }
     if ( $errorlevel == 4 ) {
         echo '<span style="color: red">';
-        echo sprintf(_("Error on row %s - name must be supplied for action add in the csv file"), $row); // name is required
+        echo sprintf(_("Error on row %s - name must be supplied for action add in the csv file"), $row . "<br>"); // name is required
         echo '</span>';
         return;
     }
@@ -456,13 +456,13 @@ function report_error($row, $field1, $field2, $errorlevel)
     }
     if ( $errorlevel == 6 ) {
         echo '<span style="color: red">';
-        echo sprintf(_("Error on row %s - category must be supplied for action add or edit"), $row); // id is required
+        echo sprintf(_("Error on row %s - category must be supplied for action add or edit"), $row . "<br>"); // id is required
         echo '</span>';
         return;
     }
     if ( $errorlevel == 7 ) {
         echo '<span style="color: red">';
-        echo sprintf(_("Error on row %s - category in CSV-file must exist in the database for action add or edit"), $row); // id is required
+        echo sprintf(_("Error on row %s - category in CSV-file must exist in the database for action add or edit"), $row . "<br>"); // id is required
         echo '</span>';
         return;
     }
