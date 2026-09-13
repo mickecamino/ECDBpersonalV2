@@ -456,7 +456,7 @@ function report_error($row, $field1, $field2, $field3, $errorlevel)
     }
     if ( $errorlevel == 3 ) {
         echo '<span style="color: red">';
-        echo sprintf(_("Error on row %s - Component with name %s, category %s and location %s is already in the database"), $row, $field1, $field2, $field3) . "<br>";
+        echo sprintf(_("Error on row %s - Component with name %s, category %s and location %s is already in the database"), $row, $field1, gettext($field2), $field3) . "<br>";
         echo '</span>';
         return;
     }
@@ -486,7 +486,7 @@ function report_error($row, $field1, $field2, $field3, $errorlevel)
     }
     if ( $errorlevel == 8 ) {
         echo '<span style="color: red">';
-        echo sprintf(_("Error on row %s - Component with name %s and category %s is already in the database"), $row, $field1, $field2) . "<br>";
+        echo sprintf(_("Error on row %s - Component with name %s and category %s is already in the database"), $row, $field1, gettext($field2)) . "<br>";
         echo '</span>';
         return;
     }
