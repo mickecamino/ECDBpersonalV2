@@ -96,7 +96,7 @@ function import_components($owner, $connection, $filename)
                         $indatabase       = mysqli_fetch_assoc($GetDataComponent);
                         $sqlquery = "UPDATE `data` SET "; // start of UPDATE query
                     } else {
-                        report_error($row, "", "", 2); // report errer #2
+                        report_error($row, "", "", "", 2); // report errer #2
                         break;
                     } // end else
                 }
@@ -105,7 +105,7 @@ function import_components($owner, $connection, $filename)
                 *****************************************************************/
                 if (isset($data["name"])) { // Do we have a value?
                     if (strlen($data["name"]) > 64) { // is it larger than whats accepted in the database?
-                        report_error($row, "name", "64", 1);
+                        report_error($row, "name", "64", "", 1);
                     break;
                     } else {  // data not larger than 64
                         if($data["action"] == "edit") { // If edit, then compare with whats in the database
@@ -116,39 +116,56 @@ function import_components($owner, $connection, $filename)
                         } // end if $data["action"] == "edit"
                     } // End else isset($data["name"])
                 } else { // name not defined on add, report it
-                    report_error($row, "", "", 4); // report error #4
+                    report_error($row, "", "", "", 4); // report error #4
                     break;
                 }
 
                 // If add, then compare with whats in the database to detect duplicates
+                // A duplicate is a component with the same name, same category and same location
+                // A component with same name and category can be stored in different locations
+                //
                 if($data["action"] == "add"  || $data["action"] == "edit") {
                     $find = $data["name"];
                     $componentcategory = $data["category"]; // we must search with category as the same name can be in different categories
+                    $location = $data["location"]; // we must also search with location as a component with the same name can be in different locations
+                    // First, search if the category in the CSV actually exists
                     $SearchQuery = "SELECT name FROM category_sub WHERE id = " . $componentcategory; // get the category name
                     $sql_exec = mysqli_query($connection,$SearchQuery); // execute the search
-                    if(mysqli_num_rows($sql_exec) > 0) {
+                    if(mysqli_num_rows($sql_exec) > 0) { // Category is OK
                         $categoryname = mysqli_fetch_assoc($sql_exec);
-                        $SearchQuery = "SELECT name FROM data WHERE name = '" . $find . "'  AND owner = '" . $owner . "' AND category = '" . $componentcategory . "'";
+                        $locationlength = strlen($location); // Get the length of the $location
+                        // Category is OK, then search for duplicates
+                        if($locationlength > 0 ) { // Do we have a location in the CSV? The continue with AND location
+                            $SearchQuery = "SELECT name FROM data WHERE name = '" . $find . "'  AND owner = '" . $owner . "' AND category = '" . $componentcategory . "' AND location = '" . $location . "'";
+                        } else { // No, no location in the CSV
+                            $SearchQuery = "SELECT name FROM data WHERE name = '" . $find . "'  AND owner = '" . $owner . "' AND category = '" . $componentcategory . "'";
+                        }
                         $sql_exec = mysqli_query($connection,$SearchQuery); // execute the search
                         $anymatches = mysqli_num_rows($sql_exec); // get number of matches
-                        if ($anymatches > 0) { // we found a match
-                            report_error($row, $find, $categoryname["name"], 3); // report errer #3
-                            break; // Get next record
-                        } else { // On add, if no match found, just add the component
+                        if ($anymatches == 0) { // No match, we can add the component
                             $name = $data["name"]; // Everything is OK, save data and continue
                             $sqlquery = " name = " . $data["name"] . ","; // add trailing comma
                             $sqlqueryIsGoodToGo = true;
-                        } // end else
+                        } // end if $anymatches == 0
+                        if ($anymatches > 0) { // we found a match, there is a duplicate
+                            if($locationlength != 0 ) { // Do we have location?
+                            report_error($row, $find, $categoryname["name"], $location, 3); // report errer #3
+                            break; // Get next record
+                        } else { // No, the location field is empty
+                            report_error($row, $find, $categoryname["name"], "", 8); // report errer #3
+                            break; // Get next record
+                        }
+                        } // End elseif anymatches > 0
                     } else {
                         // If the category in the csv is not in the database, report it.
-                        report_error($row, $find, $data["category"], 7); // report errer #7
+                        report_error($row, $find, $data["category"], "", 7); // report errer #7
                         break;
                     }
                 }
 
                 if ($data["manufacturer"] != "") { // Empty string provided?
                     if (strlen($data["manufacturer"]) > 64) {
-                        report_error($row, "manufacturer", "64", 1);
+                        report_error($row, "manufacturer", "64", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if (strcmp($data["manufacturer"], $indatabase["manufacturer"]) <> 0) { // data differs
@@ -163,7 +180,7 @@ function import_components($owner, $connection, $filename)
 
                 if ($data["package"] != "") { // Empty string provided?
                     if (strlen($data["package"]) > 64) {
-                        report_error($row, "package", "64", 1);
+                        report_error($row, "package", "64", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if (strcmp($data["package"], $indatabase["package"]) <> 0) { // data differs
@@ -178,7 +195,7 @@ function import_components($owner, $connection, $filename)
 
                 if ($data["pins"] != "") { // Empty string provided?
                     if ($data["pins"] > 65535) { // Yes, that is an unsigned smallint
-                        report_error($row, "pins", "65535", 1);
+                        report_error($row, "pins", "65535", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if ($data["pins"] <> $indatabase["pins"]) { // data differs
@@ -193,7 +210,7 @@ function import_components($owner, $connection, $filename)
 
                 if ($data["quantity"] != "") {
                     if ($data["quantity"] > 65535) { // Empty string provided?
-                        report_error($row, "quantity", "65535", 1);
+                        report_error($row, "quantity", "65535", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if ($data["quantity"] <> $indatabase["quantity"]) { // data differs
@@ -208,7 +225,7 @@ function import_components($owner, $connection, $filename)
 
                 if ($data["order_quantity"] != "") { // Empty string provided?
                     if ($data["order_quantity"] > 65535) {
-                        report_error($row, "order_quantity", "65535", 1);
+                        report_error($row, "order_quantity", "65535", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if ($data["order_quantity"] <> $indatabase["order_quantity"]) { // data differs
@@ -223,7 +240,7 @@ function import_components($owner, $connection, $filename)
 
                 if (isset($data["location"])) {
                     if (strlen($data["location"]) > 32) {
-                        report_error($row, "location", "32", 1);
+                        report_error($row, "location", "32", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if (strcmp($data["location"], $indatabase["location"]) <> 0) { // data differs
@@ -246,7 +263,7 @@ function import_components($owner, $connection, $filename)
                         } // end if edit
                         $scrap = $data["scrap"];
                     } else { // No Yes or No in the supplied field, report it
-                        report_error($row, "", "", 5);
+                        report_error($row, "", "", "", 5);
                         break;
                     }
                 } else {
@@ -255,7 +272,7 @@ function import_components($owner, $connection, $filename)
 
                 if (isset($data["datasheet"])) {
                     if (strlen($data["datasheet"]) > 256) {
-                        report_error($row, "datasheet", "256", 1);
+                        report_error($row, "datasheet", "256", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if (strcmp($data["datasheet"], $indatabase["datasheet"]) <> 0) { // data differs
@@ -270,7 +287,7 @@ function import_components($owner, $connection, $filename)
 
                 if (isset($data["comment"])) {
                     if (strlen($data["comment"]) > 256) {
-                        report_error($row, "comment", "256", 1);
+                        report_error($row, "comment", "256", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if (strcmp($data["comment"], $indatabase["comment"]) <> 0) { // data differs
@@ -286,7 +303,7 @@ function import_components($owner, $connection, $filename)
                 if (isset($data["category"])) {
 
                     if ($data["category"] > 65535) {
-                        report_error($row, "category", "65535", 1);
+                        report_error($row, "category", "65535", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if ($data["category"] <> $indatabase["category"]) { // data differs
@@ -296,13 +313,13 @@ function import_components($owner, $connection, $filename)
                     } // end if edit
                     $category = $data["category"];
                 } else {
-                    report_error($row, "", "", 6);
+                    report_error($row, "", "", "", 6);
                     break;
                 }
 
                 if (isset($data["cimage"])) {
                     if (strlen($data["cimage"]) > 256) {
-                        report_error($row, "cimage", "256", 1);
+                        report_error($row, "cimage", "256", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if (strcmp($data["cimage"], $indatabase["cimage"]) <> 0) { // data differs
@@ -317,7 +334,7 @@ function import_components($owner, $connection, $filename)
 
                 if (isset($data["appnote"])) {
                     if (strlen($data["appnote"]) > 256) {
-                        report_error($row, "appnote", "256", 1);
+                        report_error($row, "appnote", "256", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if (strcmp($data["appnote"], $indatabase["appnote"]) <> 0) { // data differs
@@ -332,7 +349,7 @@ function import_components($owner, $connection, $filename)
 
                 if (isset($data["price"])) {
                     if (strlen($data["price"]) > 11) {
-                        report_error($row, "price", "11", 1);
+                        report_error($row, "price", "11", "", 1);
                         break;
                     } elseif($data["action"] == "edit") { // If edit, then compare with whats in the database
                         if (strcmp($data["price"], $indatabase["price"]) <> 0) { // data differs
@@ -423,7 +440,7 @@ function export_components($array, $filename, $delimiter=";")
     exit();
 }
 
-function report_error($row, $field1, $field2, $errorlevel)
+function report_error($row, $field1, $field2, $field3, $errorlevel)
 {
     if( $errorlevel == 1 ) {
         echo '<span style="color: red">';
@@ -439,7 +456,7 @@ function report_error($row, $field1, $field2, $errorlevel)
     }
     if ( $errorlevel == 3 ) {
         echo '<span style="color: red">';
-        echo sprintf(_("Error on row %s - Component with name %s and category %s is already in the database"), $row, $field1, $field2) . "<br>";
+        echo sprintf(_("Error on row %s - Component with name %s, category %s and location %s is already in the database"), $row, $field1, $field2, $field3) . "<br>";
         echo '</span>';
         return;
     }
@@ -464,6 +481,12 @@ function report_error($row, $field1, $field2, $errorlevel)
     if ( $errorlevel == 7 ) {
         echo '<span style="color: red">';
         echo sprintf(_("Error on row %s - category %s in CSV-file must exist in the database for action add or edit"), $row, $field2) . "<br>"; // id is required
+        echo '</span>';
+        return;
+    }
+    if ( $errorlevel == 8 ) {
+        echo '<span style="color: red">';
+        echo sprintf(_("Error on row %s - Component with name %s and category %s is already in the database"), $row, $field1, $field2) . "<br>";
         echo '</span>';
         return;
     }
