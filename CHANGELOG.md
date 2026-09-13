@@ -6,6 +6,9 @@ This is a list of changes made to my version of ECDB personal V2.
 * Add export for Shopping list  
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
 
+## [2026-09-13]
+* Fixed duplicate check in import export, a duplicate is now when the name, category and location is the same in the csv as in the database. A component can exist in many different places.
+
 ## [2026-09-12]
 * Fixed a couple of bugs, removed the About tab, it was an remnant from the online version.
 * Added localization to register-success.
