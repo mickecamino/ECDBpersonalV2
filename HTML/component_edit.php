@@ -1,7 +1,7 @@
 <?php
 // File: component_edit.php
 // Function: Edit components
-// Revision date: 2026-09-02
+// Revision date: 2026-09-13
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -139,7 +139,7 @@
         echo '<option class="main_category" value="';
         echo $HeadCategory['id'];
         echo '" disabled>';
-        echo $HeadCategory['name'];
+        echo gettext($HeadCategory['name']);
         echo '</option>';
         $subcatfrom = $HeadCategory['id'] * 100;
         $subcatto = $subcatfrom + 99;
@@ -155,7 +155,7 @@
                 echo ' selected';
             }
             echo '>';
-            echo $SubCategory['name'];
+            echo gettext($SubCategory['name']);
             echo '</option>';
         } // second while
     } // first while
@@ -163,8 +163,8 @@
 // start and end fifth column
     echo '<td class="boldText">' . _("Quantity") . '</td>';
 // start and end sixth column
-    echo '<td><input name="quantity" type="text" class="small" value="' . $executesql['quantity'] . '" id="quantity">';
-    echo '<button class="button white small" name="quantity_increase" type="submit"><span class="fa  fa-plus-square fa-lg"></span></button>';
+    echo '<td><input name="quantity" type="text" class="small" value="' . $executesql['quantity'] . '" id="quantity"> ';
+    echo '<button class="button white small" name="quantity_increase" type="submit"><span class="fa  fa-plus-square fa-lg"></span></button> ';
     echo '<button class="button white small" name="quantity_decrease" type="submit"><span class="fa  fa-minus-square fa-lg"></span></button></td>';
 // end first row, start second row
     echo '</tr><tr>';
@@ -179,7 +179,8 @@
 // start and end fifth column
     echo'<td class="boldText">' . _("Pins") . '</td>';
 // start and end sixth column
-    echo '<td><input name="pins" type="text" class="small" value="' . $executesql['pins'] . '" ></td>';
+    if( $executesql['pins'] == 0) { $pins = ""; } else { $pins = $executesql['pins']; }
+    echo '<td><input name="pins" type="text" class="small" value="' . $pins . '" ></td>';
 // end second row, start third row
     echo '</tr><tr>';
 // start and end first column
@@ -193,8 +194,8 @@
 // start and end fifth column
     echo '<td class="boldText">' . _("To order") . '</td>';
 // start and end sixth column
-    echo '<td><input name="orderquant" type="text" class="small" value="' . $executesql['order_quantity'] . '" id="orderquant">';
-    echo '<button class="button white small" name="orderquant_increase" type="submit"><span class="fa  fa-plus-square fa-lg"></span></button>';
+    echo '<td><input name="orderquant" type="text" class="small" value="' . $executesql['order_quantity'] . '" id="orderquant"> ';
+    echo '<button class="button white small" name="orderquant_increase" type="submit"><span class="fa  fa-plus-square fa-lg"></span></button> ';
     echo '<button class="button white small" name="orderquant_decrease" type="submit"><span class="fa  fa-minus-square fa-lg"></span></button></td>';
 // end third row, start fourth row
     echo '</tr><tr>';
