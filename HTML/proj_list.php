@@ -26,7 +26,7 @@
     $AddProj->AddProj();
     $proj_query = mysqli_query($connection,"SELECT * FROM projects WHERE project_owner= $owner");
     if(mysqli_num_rows($proj_query) == 0){
-        echo '<div class="message orange">' . _("To create a BOM-list (Bill Of Material) you have to first create a project. You will then be able to add your components to your project and automaticly create a BOM-list.") . '</div>';
+        echo '<div class="message orange">' . _("Please create a Project.") . '</div>';
         }
 
     echo '<form class="globalForms" method="post" action="">';
