@@ -1,7 +1,7 @@
 <?php
 // File: component.php
 // Function: Show components
-// Revision date: 2026-09-10
+// Revision date: 2026-09-14
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -16,6 +16,13 @@
     $GetDataComponent = mysqli_query($connection,"SELECT * FROM data WHERE id = ".$id." AND owner = ".$owner."");
     $executesql = mysqli_fetch_assoc($GetDataComponent);
 
+// Search if the component has a project connected to it
+    $SqlQuery = "SELECT project_name, project_id, projects_data_quantity FROM projects_data, projects WHERE project_id = projects_data_project_id AND projects_data_component_id = ".$id." AND project_owner = ".$owner." GROUP BY projects_data_project_id";
+
+    $GetProjects = mysqli_query($connection,$SqlQuery); // Execute
+    $numrows = mysqli_num_rows($GetProjects); // Get number of rows, if any
+    
+// Get users currency
     $GetPersonal = mysqli_query($connection,"SELECT currency FROM members WHERE member_id = ".$owner."");
     $personal = mysqli_fetch_assoc($GetPersonal);
 
@@ -276,9 +283,28 @@ include "include/head.php";
                                         }
                                     ?>
                                 </td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+<?php // Show all projects where the component is added to, with hyperlink
+                                if( $numrows > 0 ) {
+                                    echo '<td class="boldText">' . _("Included in project") . '</td><td></td>';
+                                    while ($projectsql = mysqli_fetch_assoc($GetProjects)) {
+                                        echo '<tr>';
+                                        echo '<td></td><td></td><td></td><td></td>';
+                                        echo '<td>';
+                                        echo '<a href="proj_show.php?proj_id=';
+                                        echo $projectsql['project_id'];
+                                        echo '">';
+                                        echo $projectsql['project_name'];
+                                        echo '</a>';
+                                        echo '</td><td></td></tr>';
+                                    }
+                                } else {
+                                    echo '<td></td>';
+                                    echo '<td></td>';
+                                    echo '<td></td>';
+                                    echo '</tr>';
+                                }
+?>
+
                         </tbody>
                     </table>
                 </div>
