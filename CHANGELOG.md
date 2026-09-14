@@ -6,6 +6,11 @@ This is a list of changes made to my version of ECDB personal V2.
 * Add export for Shopping list  
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
 
+## [2026-09-14]
+* Added new view to component page:  
+* If a component is included in one or more projects, show all projects on the Component View page, with hyperlinks to the project.
+* Also, if there are no projects created, do not show the dropdown in component view.
+
 ## [2026-09-13]
 * Fixed duplicate check in import export, a duplicate is now when the name, category and location is the same in the csv as in the database. A component can exist in many different places.
 
