@@ -1,7 +1,7 @@
 <?php
 // File: include/include_proj_show.php
 // Function: Show projects
-// Revision date: 2026-09-02
+// Revision date: 2026-09-14
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -71,7 +71,7 @@ class ProjectShow {
             while($showDetailsCat = mysqli_fetch_array($sql_exec_catname)) {
                 $catname = $showDetailsCat['name'];
             }
-            echo $catname;
+            echo gettext($catname);
             echo "</td>";
 
             echo "<td>";
