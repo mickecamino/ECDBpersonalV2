@@ -1,7 +1,7 @@
 <?php
 // File: include/include_shoplist.php
 // Function: print out the shoppinglist
-// Revision date: 2026-09-10
+// Revision date: 2026-09-14
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -37,83 +37,87 @@ class Shoplist {
             $GetDataComponentsAll = "SELECT id, name, manufacturer, package, price, quantity, order_quantity, comment FROM data WHERE owner = ".$owner." AND order_quantity > 0 ORDER by name ASC";
         }
         $sql_exec = mysqli_Query($connection,$GetDataComponentsAll);
-        while($showDetails = mysqli_fetch_array($sql_exec)) {
-            echo "<tr>";
+        $numrows = mysqli_num_rows($sql_exec);
+        if ($numrows != 0) {
+            while($showDetails = mysqli_fetch_array($sql_exec)) {
+                echo "<tr>";
 
-            echo '<td class="edit"><a href="component_edit.php?edit=';
-            echo $showDetails['id'];
-            echo '"><span class="fa fa-pencil fa-lg"></span></a></td>';
+                echo '<td class="edit"><a href="component_edit.php?edit=';
+                echo $showDetails['id'];
+                echo '"><span class="fa fa-pencil fa-lg"></span></a></td>';
 
-            echo '<td><a href="component.php?view=';
-            echo $showDetails['id'];
-            echo '">';
+                echo '<td><a href="component.php?view=';
+                echo $showDetails['id'];
+                echo '">';
 
-            echo $showDetails['name'];
-            echo "</a></td>";
+                echo $showDetails['name'];
+                echo "</a></td>";
 
-            echo "<td>";
-            $manufacturer = $showDetails['manufacturer'];
-                if ($manufacturer == ""){
+                echo "<td>";
+                $manufacturer = $showDetails['manufacturer'];
+                    if ($manufacturer == ""){
+                        echo "-";
+                    }
+                    else{
+                        echo $manufacturer;
+                    }
+                echo "</td>";
+
+                echo "<td>";
+                $package = $showDetails['package'];
+                    if ($package == ""){
+                        echo "-";
+                    }
+                    else{
+                        echo $package;
+                    }
+                echo "</td>";
+
+                echo "<td>";
+                $price = $showDetails['price'];
+                    if ($price == ""){
+                        echo "-";
+                    }
+                    else{
+                        echo $price;
+                        if($personal['currency'] == "SEK") echo " kr";
+                    }
+                echo "</td>";
+
+                echo "<td>";
+                $quantity = $showDetails['quantity'];
+                    if ($quantity == 0){
+                        echo "-";
+                    }
+                    else{
+                        echo $quantity;
+                    }
+                echo "</td>";
+
+                echo "<td>";
+                $order_quantity = $showDetails['order_quantity'];
+                    if ($order_quantity == 0){
+                        echo "-";
+                    }
+                    else{
+                        echo $order_quantity;
+                    }
+                echo "</td>";
+
+                $comment = $showDetails['comment'];
+                if ($comment==""){
+                    echo '<td class="comment"><div>';
                     echo "-";
+                    echo '</div></td>';
                 }
                 else{
-                    echo $manufacturer;
+                    echo '<td class="comment"><div><span class="fa fa-comment fa-lg"></span><span class="comment">';
+                    echo $showDetails['comment'];
+                    echo '</span></div></td>';
                 }
-            echo "</td>";
-
-            echo "<td>";
-            $package = $showDetails['package'];
-                if ($package == ""){
-                    echo "-";
-                }
-                else{
-                    echo $package;
-                }
-            echo "</td>";
-
-            echo "<td>";
-            $price = $showDetails['price'];
-                if ($price == ""){
-                    echo "-";
-                }
-                else{
-                    echo $price;
-                    if($personal['currency'] == "SEK") echo " kr";
-                }
-            echo "</td>";
-
-            echo "<td>";
-            $quantity = $showDetails['quantity'];
-                if ($quantity == 0){
-                    echo "-";
-                }
-                else{
-                    echo $quantity;
-                }
-            echo "</td>";
-
-            echo "<td>";
-            $order_quantity = $showDetails['order_quantity'];
-                if ($order_quantity == 0){
-                    echo "-";
-                }
-                else{
-                    echo $order_quantity;
-                }
-            echo "</td>";
-
-            $comment = $showDetails['comment'];
-            if ($comment==""){
-                echo '<td class="comment"><div>';
-                echo "-";
-                echo '</div></td>';
-            }
-            else{
-                echo '<td class="comment"><div><span class="fa fa-comment fa-lg"></span><span class="comment">';
-                echo $showDetails['comment'];
-                echo '</span></div></td>';
-            }
-            echo "</tr>";
+            } // end while
+        } else {
+            echo _("No shopping list created") . "<br>";
         }
     }
 }

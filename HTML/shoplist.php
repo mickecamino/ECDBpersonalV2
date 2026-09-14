@@ -1,13 +1,15 @@
 <?php
 // File: shoplist.php
 // Function: Show the shopping list
-// Revision date: 2026-08-31
+// Revision date: 2026-09-14
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
     require_once "include/login/auth.php";
     require_once "include/debug.php";
+    include "include/mysql_connect.php";
+
  // Custom Page Titles
  $pageTitle = _("Shopping List");
  include "include/head.php";
@@ -20,6 +22,13 @@
     include "include/menu.php";
 // END
 // Main content
+
+
+    $GetShoppingList = "SELECT order_quantity FROM data WHERE owner = ".$owner." AND order_quantity > 0";
+    $sql_exec = mysqli_Query($connection,$GetShoppingList);
+    $numrows = mysqli_num_rows($sql_exec);
+
+    if( $numrows != 0 ) {
         echo '<div id="content">';
         echo '<table class="globalTables" cellpadding="0" cellspacing="0">';
         echo '<thead>';
@@ -133,6 +142,11 @@
         $ShoplistPriceSum = new ShoplistPrice;
         $ShoplistPriceSum->ShoplistPriceSum();
         echo "</div></div>";
+    } else {
+        echo '<div id="content">';
+        echo _("No shopping list created") . "<br>";
+        echo "</div>";
+    }
         // END
         // Text outside the main content
         include "include/footer.php";

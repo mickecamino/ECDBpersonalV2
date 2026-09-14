@@ -1,7 +1,7 @@
 <?php
 // File: proj_list.php
 // Function: List prejects
-// Revision date: 2026-08-31
+// Revision date: 2026-09-14
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
