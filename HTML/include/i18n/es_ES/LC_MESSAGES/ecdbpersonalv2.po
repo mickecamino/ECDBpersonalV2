@@ -1,0 +1,1368 @@
+# Spanish translation for ecDBpersonal.
+# This file is distributed under the same license as the ecDBpersonal.
+#
+# PLESE UPDATE Your Name, Yourlanguage and XX to proper values
+msgid ""
+msgstr ""
+"Project-Id-Version: ecdbpersonalv2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-14 19:28+0200\n"
+"PO-Revision-Date: 2026-09-14 19:20+0200\n"
+"Last-Translator: Your Name>\n"
+"Language-Team: Yourlanguage\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: add.php:17
+msgid "Add Component"
+msgstr ""
+
+#: add.php:28
+msgid "Add new component"
+msgstr ""
+
+#: add.php:33 search.php:143 category.php:87 component_edit.php:123
+#: add_based.php:73 shoplist.php:134
+msgid "Comment"
+msgstr ""
+
+#: add.php:40 search.php:48 category.php:47 component_edit.php:128
+#: add_based.php:76 proj_list.php:53 proj_show.php:57 shoplist.php:51
+msgid "Name"
+msgstr ""
+
+#: add.php:44 search.php:63 category.php:54 include/statistics.php:38
+#: component_edit.php:132 add_based.php:78 proj_show.php:73
+msgid "Category"
+msgstr ""
+
+#: add.php:51 add.php:117 search.php:141 category.php:85 component_edit.php:164
+#: component_edit.php:253 component_edit.php:256 component.php:181
+#: add_based.php:114 add_based.php:154 shoplist.php:116
+msgid "Quantity"
+msgstr ""
+
+#: add.php:56 search.php:78 component_edit.php:172 component.php:223
+#: add_based.php:116 proj_show.php:89 shoplist.php:68
+msgid "Manufacturer"
+msgstr ""
+
+#: add.php:60 search.php:93 category.php:61 component_edit.php:176
+#: component.php:232 add_based.php:118 proj_show.php:105 shoplist.php:84
+msgid "Package"
+msgstr ""
+
+#: add.php:64 search.php:108 category.php:68 component_edit.php:180
+#: component.php:241 add_based.php:120
+msgid "Pins"
+msgstr ""
+
+#: add.php:69 search.php:126 category.php:78 component_edit.php:187
+#: component.php:164 add_based.php:122 proj_show.php:120
+msgid "Location"
+msgstr ""
+
+#: add.php:73 component_edit.php:191 component.php:195 add_based.php:124
+#: proj_show.php:136 shoplist.php:100
+msgid "Price"
+msgstr ""
+
+#: add.php:77 component_edit.php:195 add_based.php:126
+msgid "To order"
+msgstr ""
+
+#: add.php:84 component_edit.php:203 component.php:251 add_based.php:128
+msgid "Recycled"
+msgstr ""
+
+#: add.php:87 add.php:91 component_edit.php:207 component_edit.php:211
+#: maintenance.php:56 add_based.php:132 add_based.php:137
+msgid "Yes"
+msgstr ""
+
+#: add.php:88 add.php:92 component_edit.php:208 component_edit.php:212
+#: maintenance.php:49 add_based.php:133 add_based.php:138
+msgid "No"
+msgstr ""
+
+#: add.php:99 search.php:112 category.php:71 component_edit.php:218
+#: component.php:263 add_based.php:144
+msgid "Datasheet"
+msgstr ""
+
+#: add.php:103 search.php:110 category.php:70 component_edit.php:222
+#: add_based.php:146
+msgid "Image"
+msgstr ""
+
+#: add.php:109 component_edit.php:228 component.php:274 add_based.php:149
+msgid "Application Note"
+msgstr ""
+
+#: add.php:116 add_based.php:153
+msgid "Add component to project"
+msgstr ""
+
+#: add.php:133 proj_edit.php:49 add_based.php:172 my.php:96
+msgid "Save"
+msgstr ""
+
+#: search.php:13 include/header.php:48
+msgid "Search"
+msgstr ""
+
+#: search.php:29
+msgid "Search results"
+msgstr ""
+
+#: category.php:12
+msgid "Categories"
+msgstr ""
+
+#: include/include_category_head.php:40
+msgid "Statistics"
+msgstr ""
+
+#: include/include.php:436
+msgid "You forgot to enter a search term."
+msgstr ""
+
+#: include/include.php:466
+msgid "Sorry, but we can not find an entry to match your query."
+msgstr ""
+
+#: include/include.php:645
+msgid "You have to specify a name!"
+msgstr ""
+
+#: include/include.php:650
+msgid "You have to choose a category!"
+msgstr ""
+
+#: include/include.php:655
+msgid "You have to choose a project!"
+msgstr ""
+
+#: include/include.php:660
+msgid ""
+"You have to specify a quantity for this component to add to the project!"
+msgstr ""
+
+#: include/include.php:665
+msgid "Max 255 characters in the comment!"
+msgstr ""
+
+#: include/include.php:670
+msgid "The quantity must only be a number!"
+msgstr ""
+
+#: include/include.php:675
+msgid "The pin-count must only be a number!"
+msgstr ""
+
+#: include/include.php:680
+msgid "The price must only be a number!"
+msgstr ""
+
+#: include/include.php:685
+msgid "The order quantity must only be a number!"
+msgstr ""
+
+#: include/include.php:701
+msgid "Component added!"
+msgstr ""
+
+#: include/include.php:703 component.php:103
+msgid "View component"
+msgstr ""
+
+#: include/statistics.php:14
+msgid "You have"
+msgstr ""
+
+#: include/statistics.php:16
+msgid "component and"
+msgstr ""
+
+#: include/statistics.php:18
+msgid "components and"
+msgstr ""
+
+#: include/statistics.php:25
+msgid "project"
+msgstr ""
+
+#: include/statistics.php:27
+msgid "projects"
+msgstr ""
+
+#: include/statistics.php:30
+msgid "in the database"
+msgstr ""
+
+#: include/statistics.php:34
+msgid "You have the following component count in each category"
+msgstr ""
+
+#: include/statistics.php:38
+msgid "Component count"
+msgstr ""
+
+#: include/include_component_add_project.php:22
+#: include/include_component_edit_project_add.php:19
+msgid " - Project - "
+msgstr ""
+
+#: include/category_text.php:21
+msgid "Cable"
+msgstr ""
+
+#: include/category_text.php:22
+msgid "Capacitor"
+msgstr ""
+
+#: include/category_text.php:23
+msgid "Connector"
+msgstr ""
+
+#: include/category_text.php:24
+msgid "Diode"
+msgstr ""
+
+#: include/category_text.php:25
+msgid "IC"
+msgstr ""
+
+#: include/category_text.php:26 include/category_text.php:110
+msgid "Inductor"
+msgstr ""
+
+#: include/category_text.php:27
+msgid "Mechanic"
+msgstr ""
+
+#: include/category_text.php:28
+msgid "Optical"
+msgstr ""
+
+#: include/category_text.php:29
+msgid "Vaccum tubes"
+msgstr ""
+
+#: include/category_text.php:30
+msgid "Switch"
+msgstr ""
+
+#: include/category_text.php:31
+msgid "Power"
+msgstr ""
+
+#: include/category_text.php:32
+msgid "Resistor"
+msgstr ""
+
+#: include/category_text.php:33
+msgid "Transistor"
+msgstr ""
+
+#: include/category_text.php:34
+msgid "Display"
+msgstr ""
+
+#: include/category_text.php:35
+msgid "Sensor"
+msgstr ""
+
+#: include/category_text.php:36
+msgid "Module"
+msgstr ""
+
+#: include/category_text.php:37
+msgid "Miscellaneous"
+msgstr ""
+
+#: include/category_text.php:38
+msgid "Oscillator"
+msgstr ""
+
+#: include/category_text.php:40
+msgid "Ribbon"
+msgstr ""
+
+#: include/category_text.php:41 include/category_text.php:54
+msgid "Coax"
+msgstr ""
+
+#: include/category_text.php:42
+msgid "Standard"
+msgstr ""
+
+#: include/category_text.php:43 include/category_text.php:59
+msgid "Mains"
+msgstr ""
+
+#: include/category_text.php:44
+msgid "Signal/Data"
+msgstr ""
+
+#: include/category_text.php:45
+msgid "Fiber optic"
+msgstr ""
+
+#: include/category_text.php:46 include/category_text.php:52
+#: include/category_text.php:61 include/category_text.php:72
+#: include/category_text.php:107 include/category_text.php:112
+#: include/category_text.php:122 include/category_text.php:131
+#: include/category_text.php:137 include/category_text.php:145
+#: include/category_text.php:149 include/category_text.php:160
+#: include/category_text.php:176 include/category_text.php:182
+#: include/category_text.php:192 include/category_text.php:204
+#: include/category_text.php:205 include/category_text.php:210
+msgid "Misc"
+msgstr ""
+
+#: include/category_text.php:47
+msgid "Ceramic"
+msgstr ""
+
+#: include/category_text.php:48
+msgid "Electrolytic"
+msgstr ""
+
+#: include/category_text.php:49
+msgid "Polyester"
+msgstr ""
+
+#: include/category_text.php:50
+msgid "Tantalum"
+msgstr ""
+
+#: include/category_text.php:51
+msgid "Variable"
+msgstr ""
+
+#: include/category_text.php:53
+msgid "Audio"
+msgstr ""
+
+#: include/category_text.php:55
+msgid "DC"
+msgstr ""
+
+#: include/category_text.php:56
+msgid "D-Sub"
+msgstr ""
+
+#: include/category_text.php:57
+msgid "HF"
+msgstr ""
+
+#: include/category_text.php:58
+msgid "PCB"
+msgstr ""
+
+#: include/category_text.php:60
+msgid "Data"
+msgstr ""
+
+#: include/category_text.php:62
+msgid "Rectifier"
+msgstr ""
+
+#: include/category_text.php:63
+msgid "Schottky"
+msgstr ""
+
+#: include/category_text.php:64
+msgid "Small Signal"
+msgstr ""
+
+#: include/category_text.php:65
+msgid "Zener"
+msgstr ""
+
+#: include/category_text.php:66
+msgid "Bridge"
+msgstr ""
+
+#: include/category_text.php:67
+msgid "Triac"
+msgstr ""
+
+#: include/category_text.php:68
+msgid "Diac"
+msgstr ""
+
+#: include/category_text.php:69
+msgid "Sidac"
+msgstr ""
+
+#: include/category_text.php:70 include/category_text.php:169
+msgid "Photo"
+msgstr ""
+
+#: include/category_text.php:71
+msgid "SCR"
+msgstr ""
+
+#: include/category_text.php:73
+msgid "4xxx"
+msgstr ""
+
+#: include/category_text.php:74
+msgid "74xx"
+msgstr ""
+
+#: include/category_text.php:75
+msgid "74HC4xxx"
+msgstr ""
+
+#: include/category_text.php:76
+msgid "Comparator"
+msgstr ""
+
+#: include/category_text.php:77
+msgid "Op. Amp."
+msgstr ""
+
+#: include/category_text.php:78 include/category_text.php:171
+#: include/category_text.php:184
+msgid "Temperature"
+msgstr ""
+
+#: include/category_text.php:79
+msgid "Timer & Osc."
+msgstr ""
+
+#: include/category_text.php:80
+msgid "Voltage Ref."
+msgstr ""
+
+#: include/category_text.php:81
+msgid "Voltage Reg."
+msgstr ""
+
+#: include/category_text.php:82
+msgid "A/D-D/A"
+msgstr ""
+
+#: include/category_text.php:83
+msgid "Switching"
+msgstr ""
+
+#: include/category_text.php:84
+msgid "Driver"
+msgstr ""
+
+#: include/category_text.php:85
+msgid "DataComm"
+msgstr ""
+
+#: include/category_text.php:86
+msgid "DC/DC Converter"
+msgstr ""
+
+#: include/category_text.php:87
+msgid "Audio/Video"
+msgstr ""
+
+#: include/category_text.php:88
+msgid "Memory"
+msgstr ""
+
+#: include/category_text.php:89
+msgid "Logic"
+msgstr ""
+
+#: include/category_text.php:90
+msgid "Microcontroller"
+msgstr ""
+
+#: include/category_text.php:91
+msgid "Microprocessor"
+msgstr ""
+
+#: include/category_text.php:92
+msgid "I2C"
+msgstr ""
+
+#: include/category_text.php:93
+msgid "1-wire"
+msgstr ""
+
+#: include/category_text.php:94
+msgid "Isolator"
+msgstr ""
+
+#: include/category_text.php:95
+msgid "Endode/Decode"
+msgstr ""
+
+#: include/category_text.php:96
+msgid "Converter"
+msgstr ""
+
+#: include/category_text.php:97
+msgid "EPROM"
+msgstr ""
+
+#: include/category_text.php:98
+msgid "RAM"
+msgstr ""
+
+#: include/category_text.php:99
+msgid "Counter/Timer"
+msgstr ""
+
+#: include/category_text.php:100
+msgid "PIO"
+msgstr ""
+
+#: include/category_text.php:101
+msgid "VIA"
+msgstr ""
+
+#: include/category_text.php:102
+msgid "PTM"
+msgstr ""
+
+#: include/category_text.php:103
+msgid "CTC"
+msgstr ""
+
+#: include/category_text.php:104
+msgid "ACIA"
+msgstr ""
+
+#: include/category_text.php:105
+msgid "PIA"
+msgstr ""
+
+#: include/category_text.php:106
+msgid "Real Time Clock"
+msgstr ""
+
+#: include/category_text.php:108
+msgid "Ferrite"
+msgstr ""
+
+#: include/category_text.php:109
+msgid "Filter"
+msgstr ""
+
+#: include/category_text.php:111 include/category_text.php:147
+msgid "Transformer"
+msgstr ""
+
+#: include/category_text.php:113
+msgid "Box"
+msgstr ""
+
+#: include/category_text.php:114
+msgid "Distance"
+msgstr ""
+
+#: include/category_text.php:115
+msgid "Fuse"
+msgstr ""
+
+#: include/category_text.php:116
+msgid "Motor"
+msgstr ""
+
+#: include/category_text.php:117
+msgid "Screw"
+msgstr ""
+
+#: include/category_text.php:118
+msgid "IC Socket"
+msgstr ""
+
+#: include/category_text.php:119
+msgid "Heat Sink"
+msgstr ""
+
+#: include/category_text.php:120
+msgid "Knob"
+msgstr ""
+
+#: include/category_text.php:121
+msgid "Meter"
+msgstr ""
+
+#: include/category_text.php:123
+msgid "SSR[Relay]"
+msgstr ""
+
+#: include/category_text.php:124
+msgid "Laser"
+msgstr ""
+
+#: include/category_text.php:125 include/category_text.php:180
+msgid "LED"
+msgstr ""
+
+#: include/category_text.php:126
+msgid "LED 3mm"
+msgstr ""
+
+#: include/category_text.php:127
+msgid "LED 5mm"
+msgstr ""
+
+#: include/category_text.php:128
+msgid "Optocoupler"
+msgstr ""
+
+#: include/category_text.php:129
+msgid "IR LED"
+msgstr ""
+
+#: include/category_text.php:130
+msgid "7-segment LED"
+msgstr ""
+
+#: include/category_text.php:132
+msgid "Octal"
+msgstr ""
+
+#: include/category_text.php:133
+msgid "Loctal B8G"
+msgstr ""
+
+#: include/category_text.php:134
+msgid "Heptal B7G"
+msgstr ""
+
+#: include/category_text.php:135
+msgid "Noval B9A"
+msgstr ""
+
+#: include/category_text.php:136
+msgid "Nixie"
+msgstr ""
+
+#: include/category_text.php:138
+msgid "Keypad"
+msgstr ""
+
+#: include/category_text.php:139
+msgid "Momentary"
+msgstr ""
+
+#: include/category_text.php:140
+msgid "PCB Mounted"
+msgstr ""
+
+#: include/category_text.php:141
+msgid "Rotary Encoder"
+msgstr ""
+
+#: include/category_text.php:142
+msgid "Toggle Switch"
+msgstr ""
+
+#: include/category_text.php:143
+msgid "Relay"
+msgstr ""
+
+#: include/category_text.php:144
+msgid "DIP"
+msgstr ""
+
+#: include/category_text.php:146
+msgid "Power Supply"
+msgstr ""
+
+#: include/category_text.php:148
+msgid "Wall Adapter"
+msgstr ""
+
+#: include/category_text.php:150
+msgid "IGBT"
+msgstr ""
+
+#: include/category_text.php:151
+msgid "MOSFET N"
+msgstr ""
+
+#: include/category_text.php:152
+msgid "MOSFET P"
+msgstr ""
+
+#: include/category_text.php:153
+msgid "NPN"
+msgstr ""
+
+#: include/category_text.php:154
+msgid "PNP"
+msgstr ""
+
+#: include/category_text.php:155
+msgid "UJT"
+msgstr ""
+
+#: include/category_text.php:156
+msgid "PUT"
+msgstr ""
+
+#: include/category_text.php:157
+msgid "JFET N"
+msgstr ""
+
+#: include/category_text.php:158
+msgid "JFET P"
+msgstr ""
+
+#: include/category_text.php:159
+msgid "SIPMOS"
+msgstr ""
+
+#: include/category_text.php:161
+msgid "0,25W Carbon 5%"
+msgstr ""
+
+#: include/category_text.php:162
+msgid "0,25W Metal 1%"
+msgstr ""
+
+#: include/category_text.php:163
+msgid "0,6W Metal 1%"
+msgstr ""
+
+#: include/category_text.php:164
+msgid "1W Carbon 5%"
+msgstr ""
+
+#: include/category_text.php:165
+msgid "0,1W SMD 0603"
+msgstr ""
+
+#: include/category_text.php:166
+msgid "0,125W SMD 0805"
+msgstr ""
+
+#: include/category_text.php:167
+msgid "0,25W SMD 1206"
+msgstr ""
+
+#: include/category_text.php:168
+msgid "Effect"
+msgstr ""
+
+#: include/category_text.php:170
+msgid "Network"
+msgstr ""
+
+#: include/category_text.php:172
+msgid "Potentiometer"
+msgstr ""
+
+#: include/category_text.php:173
+msgid "Trimpots"
+msgstr ""
+
+#: include/category_text.php:174
+msgid "Trimpots multiturn"
+msgstr ""
+
+#: include/category_text.php:175
+msgid "Precision"
+msgstr ""
+
+#: include/category_text.php:177
+msgid "LCD"
+msgstr ""
+
+#: include/category_text.php:178
+msgid "VFD"
+msgstr ""
+
+#: include/category_text.php:179
+msgid "TFT"
+msgstr ""
+
+#: include/category_text.php:181
+msgid "Nixie tubes"
+msgstr ""
+
+#: include/category_text.php:183
+msgid "Moisture"
+msgstr ""
+
+#: include/category_text.php:185
+msgid "Pressure"
+msgstr ""
+
+#: include/category_text.php:186
+msgid "Magnetic"
+msgstr ""
+
+#: include/category_text.php:187
+msgid "Hall Effect"
+msgstr ""
+
+#: include/category_text.php:188
+msgid "Gas"
+msgstr ""
+
+#: include/category_text.php:189
+msgid "Accelerometer"
+msgstr ""
+
+#: include/category_text.php:190
+msgid "Light"
+msgstr ""
+
+#: include/category_text.php:191
+msgid "Proximity"
+msgstr ""
+
+#: include/category_text.php:193
+msgid "GSM"
+msgstr ""
+
+#: include/category_text.php:194
+msgid "GPS"
+msgstr ""
+
+#: include/category_text.php:195
+msgid "Bluetooth"
+msgstr ""
+
+#: include/category_text.php:196
+msgid "WiFi"
+msgstr ""
+
+#: include/category_text.php:197
+msgid "ZigBee"
+msgstr ""
+
+#: include/category_text.php:198
+msgid "RFID"
+msgstr ""
+
+#: include/category_text.php:199
+msgid "Arduino"
+msgstr ""
+
+#: include/category_text.php:200
+msgid "MSP430"
+msgstr ""
+
+#: include/category_text.php:201
+msgid "chipKIT"
+msgstr ""
+
+#: include/category_text.php:202
+msgid "Raspberry Pi"
+msgstr ""
+
+#: include/category_text.php:203
+msgid "BeagleBone"
+msgstr ""
+
+#: include/category_text.php:206
+msgid "Crystal"
+msgstr ""
+
+#: include/category_text.php:207
+msgid "Resonator"
+msgstr ""
+
+#: include/category_text.php:208
+msgid "TCXO"
+msgstr ""
+
+#: include/category_text.php:209
+msgid "Clock Module"
+msgstr ""
+
+#: include/menu.php:9
+msgid "My components"
+msgstr ""
+
+#: include/menu.php:13 add_based.php:55
+msgid "Add component"
+msgstr ""
+
+#: include/menu.php:17
+msgid "Shopping list"
+msgstr ""
+
+#: include/menu.php:21
+msgid "Projects"
+msgstr ""
+
+#: include/menu.php:25
+msgid "My settings"
+msgstr ""
+
+#: include/menu.php:29
+msgid "Reference items"
+msgstr ""
+
+#: include/menu.php:33 importexport.php:16 importexport.php:28
+msgid "Import / Export"
+msgstr ""
+
+#: include/include_shoplist.php:122 shoplist.php:147
+msgid "No shopping list created"
+msgstr ""
+
+#: include/include_my_settings.php:21 register-exec.php:43
+msgid "First name missing"
+msgstr ""
+
+#: include/include_my_settings.php:26 register-exec.php:47
+msgid "Minimum of 2 chars in first name."
+msgstr ""
+
+#: include/include_my_settings.php:31 register-exec.php:51
+msgid "Last name missing"
+msgstr ""
+
+#: include/include_my_settings.php:36 register-exec.php:55
+msgid "Minimum of 2 chars in last name."
+msgstr ""
+
+#: include/include_my_settings.php:41
+msgid "CHANGE PASSWORD FOR THE DEMO ACCOUNT NOT POSSIBLE!!!!"
+msgstr ""
+
+#: include/include_my_settings.php:46 register-exec.php:67 login-exec.php:33
+msgid "Password missing"
+msgstr ""
+
+#: include/include_my_settings.php:51 register-exec.php:71
+msgid "Confirm password missing"
+msgstr ""
+
+#: include/include_my_settings.php:56 register-exec.php:75
+msgid "Minimum of 5 chars in password."
+msgstr ""
+
+#: include/include_my_settings.php:61
+msgid "The password is invalid "
+msgstr ""
+
+#: include/include_my_settings.php:76
+msgid "Settings updated!"
+msgstr ""
+
+#: include/header.php:25
+msgid "Logged in as"
+msgstr ""
+
+#: include/header.php:36
+msgid "Sign out"
+msgstr ""
+
+#: include/include_component_add_category_menu.php:19
+msgid " - Category - "
+msgstr ""
+
+#: register-success.php:10 register-success.php:29 login.php:43
+#: login-failed.php:29 logout.php:36 register.php:12 register.php:31
+#: register.php:54
+msgid "Register"
+msgstr ""
+
+#: register-success.php:28 register-success.php:39 login.php:24 login.php:42
+#: login.php:67 login-failed.php:10 login-failed.php:28 login-failed.php:39
+#: logout.php:35 logout.php:48 register.php:30
+msgid "Login"
+msgstr ""
+
+#: register-success.php:34
+msgid "Registration success"
+msgstr ""
+
+#: register-success.php:35
+msgid "Please login"
+msgstr ""
+
+#: register-success.php:41 login.php:64 login-failed.php:37 logout.php:45
+#: register.php:52 my.php:49
+msgid "Password"
+msgstr ""
+
+#: register-success.php:44
+msgid "Logga in "
+msgstr ""
+
+#: proj_edit.php:29 proj_list.php:12
+msgid "Your Projects"
+msgstr ""
+
+#: proj_edit.php:40
+msgid "Edit Project"
+msgstr ""
+
+#: proj_edit.php:46 proj_list.php:34
+msgid "Project name"
+msgstr ""
+
+#: proj_edit.php:50 component_edit.php:295
+msgid "Delete"
+msgstr ""
+
+#: importexport.php:31
+msgid " Export components"
+msgstr ""
+
+#: importexport.php:34
+msgid "File Import"
+msgstr ""
+
+#: importexport.php:37 maintenance.php:34
+msgid "Upload"
+msgstr ""
+
+#: importexport.php:53
+msgid "Please upload a CSV file."
+msgstr ""
+
+#: importexport.php:78
+msgid "Failed to open file:"
+msgstr ""
+
+#: importexport.php:379
+#, php-format
+msgid "Update not needed for row %s"
+msgstr ""
+
+#: importexport.php:391
+#, php-format
+msgid "Row %s - Deleted component with id %s"
+msgstr ""
+
+#: importexport.php:395
+#, php-format
+msgid "Row %s - Component with id %s is not in the database"
+msgstr ""
+
+#: importexport.php:401
+#, php-format
+msgid "Row %s - id is not an integer"
+msgstr ""
+
+#: importexport.php:409
+#, php-format
+msgid ""
+"Row, %s - The number of header fields differs against the number of data "
+"fields"
+msgstr ""
+
+#: importexport.php:448
+#, php-format
+msgid "Error on row %s - data in field %s needs to be less than %s characters"
+msgstr ""
+
+#: importexport.php:454
+#, php-format
+msgid "Error on row %s - id must be supplied for action edit"
+msgstr ""
+
+#: importexport.php:460
+#, php-format
+msgid ""
+"Error on row %s - Component with name %s, category %s and location %s is "
+"already in the database"
+msgstr ""
+
+#: importexport.php:466
+#, php-format
+msgid "Error on row %s - name must be supplied for action add in the csv file"
+msgstr ""
+
+#: importexport.php:472
+#, php-format
+msgid "Error on row %s - field scrap need to be Yes or No"
+msgstr ""
+
+#: importexport.php:478
+#, php-format
+msgid "Error on row %s - category must be supplied for action add or edit"
+msgstr ""
+
+#: importexport.php:484
+#, php-format
+msgid ""
+"Error on row %s - category %s in CSV-file must exist in the database for "
+"action add or edit"
+msgstr ""
+
+#: importexport.php:490
+#, php-format
+msgid ""
+"Error on row %s - Component with name %s and category %s is already in the "
+"database"
+msgstr ""
+
+#: importexport.php:501
+#, php-format
+msgid "Row %s with name %s and category %s imported"
+msgstr ""
+
+#: importexport.php:507
+#, php-format
+msgid "Row %s with name %s imported"
+msgstr ""
+
+#: login.php:61 login-failed.php:35 logout.php:43 register.php:51
+msgid "Username"
+msgstr ""
+
+#: login.php:62
+msgid "Enter your username and password"
+msgstr ""
+
+#: login-failed.php:33
+msgid "Login failed, please try again."
+msgstr ""
+
+#: component_edit.php:95
+msgid "Edit component"
+msgstr ""
+
+#: component_edit.php:252
+msgid "Add to project"
+msgstr ""
+
+#: component_edit.php:255
+msgid "Project"
+msgstr ""
+
+#: component_edit.php:293
+msgid "Update"
+msgstr ""
+
+#: component_edit.php:294
+msgid "New based on this"
+msgstr ""
+
+#: test5.php:22
+msgid "There are "
+msgstr ""
+
+#: register-exec.php:59
+msgid "Username missing"
+msgstr ""
+
+#: register-exec.php:63
+msgid "Minimum of 2 chars in username."
+msgstr ""
+
+#: register-exec.php:79
+msgid "Passwords do not match"
+msgstr ""
+
+#: register-exec.php:89
+msgid "Username already in use"
+msgstr ""
+
+#: maintenance.php:12
+msgid "Maintenance"
+msgstr ""
+
+#: maintenance.php:26
+msgid "Reference Materials"
+msgstr ""
+
+#: maintenance.php:27
+msgid ""
+"Images and PDF files are uploaded to the server to be used as references for "
+"components."
+msgstr ""
+
+#: maintenance.php:29
+msgid ""
+"PDF files are uploaded as Datasheets unless specified as Application Notes."
+msgstr ""
+
+#: maintenance.php:30
+msgid "File Upload"
+msgstr ""
+
+#: maintenance.php:32
+msgid "Upload as an Application Note?"
+msgstr ""
+
+#: maintenance.php:67
+msgid "    PDFfile    "
+msgstr ""
+
+#: maintenance.php:91
+msgid " already exists."
+msgstr ""
+
+#: maintenance.php:95
+msgid " - File Uploaded"
+msgstr ""
+
+#: component.php:142
+msgid "No Image"
+msgstr ""
+
+#: component.php:207
+msgid "Order quantity"
+msgstr ""
+
+#: component.php:288
+msgid "Included in project"
+msgstr ""
+
+#: component.php:316
+msgid " Edit Component"
+msgstr ""
+
+#: component.php:317
+msgid " New based on this"
+msgstr ""
+
+#: component.php:318
+msgid " Delete component"
+msgstr ""
+
+#: logout.php:17
+msgid "Logout"
+msgstr ""
+
+#: logout.php:40
+msgid "You have successfully signed out of your account."
+msgstr ""
+
+#: add_based.php:66
+msgid "Add new component based on "
+msgstr ""
+
+#: proj_list.php:29
+msgid "Please create a Project."
+msgstr ""
+
+#: proj_list.php:37
+msgid " Add project"
+msgstr ""
+
+#: proj_list.php:54
+msgid "Number of components"
+msgstr ""
+
+#: proj_list.php:55
+msgid "Total cost"
+msgstr ""
+
+#: proj_show.php:16
+msgid "Show project"
+msgstr ""
+
+#: proj_show.php:27
+msgid "Viewing project"
+msgstr ""
+
+#: proj_show.php:152
+msgid "Quantity in stock"
+msgstr ""
+
+#: proj_show.php:168
+msgid "Quantity in project"
+msgstr ""
+
+#: login-exec.php:29
+msgid "Login ID missing"
+msgstr ""
+
+#: index.php:12
+msgid "Home"
+msgstr ""
+
+#: shoplist.php:14
+msgid "Shopping List"
+msgstr ""
+
+#: shoplist.php:132
+msgid "Quantity to order"
+msgstr ""
+
+#: error.php:13
+msgid "Error"
+msgstr ""
+
+#: error.php:27
+msgid "You don't have permission to view this component."
+msgstr ""
+
+#: error.php:30
+msgid "You don't have permission to edit this component."
+msgstr ""
+
+#: error.php:33
+msgid "Oh crap! Something broke..."
+msgstr ""
+
+#: register.php:47
+msgid "Fill in this form to create your a user for the database."
+msgstr ""
+
+#: register.php:49
+msgid "First name"
+msgstr ""
+
+#: register.php:50
+msgid "Last name"
+msgstr ""
+
+#: register.php:53
+msgid "Repeat password"
+msgstr ""
+
+#: my.php:21
+msgid "Profile"
+msgstr ""
+
+#: my.php:32
+msgid "Settings"
+msgstr ""
+
+#: my.php:39
+msgid "First Name"
+msgstr ""
+
+#: my.php:43
+msgid "Last Name"
+msgstr ""
+
+#: my.php:51
+msgid "New password"
+msgstr ""
+
+#: my.php:54
+msgid "Currency"
+msgstr ""
+
+#: my.php:72
+msgid "Language"
+msgstr ""
+
+#: my.php:76
+msgid "Swedish"
+msgstr ""
+
+#: my.php:80
+msgid "English"
+msgstr ""
+
+#: my.php:84
+msgid "French"
+msgstr ""
+
+#: my.php:88
+msgid "Italian"
+msgstr ""
+
+#: my.php:92
+msgid "Spanish"
+msgstr ""

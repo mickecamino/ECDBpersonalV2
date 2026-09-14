@@ -29,12 +29,12 @@ function SetLanguage(string $lang)
     // NOTE: the language code and LC_MESSAGES are added automagically
     // For Swedish this will be:
     // /include/i18n/se_SV/LC_MESSAGES
-    bindtextdomain("ecdb", './include/i18n');
+    bindtextdomain("ecdbpersonalv2", './include/i18n');
 
     // Bind our textdomain to UTF-8
-    bind_textdomain_codeset("ecdb", 'UTF-8');
+    bind_textdomain_codeset("ecdbpersonalv2", 'UTF-8');
 
     // And set it in the textdomain
-    textdomain("ecdb");
+    textdomain("ecdbpersonalv2");
 }
 ?>
