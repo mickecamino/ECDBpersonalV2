@@ -3,7 +3,7 @@
 // Function: Allow Image files and PDF files to be uploaded
 // Author: Pete Willard
 // Date: August 2017
-// Revision date: 2026-09-03
+// Revision date: 2026-09-14
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -31,7 +31,7 @@ include ("include/head.php");
     echo '<form action="maintenance.php" method="post" enctype="multipart/form-data">';
     echo '<input type="checkbox" name="appnote" value="Yes" /> ' . _("Upload as an Application Note?") . '<br>';
     echo '<input type="file" class = "bold" name="file" id="file"><br>';
-    echo '<input type="submit" value="Upload" name="submit">';
+    echo '<button class="button green" name="submit" type="submit"><span class="fa fa-upload"></span> ' . _("Upload") . '</button> ';
     echo '<input type="hidden" name="MAX_FILE_SIZE" value="5242880" />';
     echo '</form>';
 
