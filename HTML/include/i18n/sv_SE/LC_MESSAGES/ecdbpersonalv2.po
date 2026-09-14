@@ -553,7 +553,7 @@ msgstr "Filter"
 
 #: include/category_text.php:111 include/category_text.php:147
 msgid "Transformer"
-msgstr "Transförmatorer"
+msgstr "Transformatorer"
 
 #: include/category_text.php:113
 msgid "Box"
@@ -565,7 +565,7 @@ msgstr "Distanser"
 
 #: include/category_text.php:115
 msgid "Fuse"
-msgstr "Säkrningar"
+msgstr "Säkringar"
 
 #: include/category_text.php:116
 msgid "Motor"
@@ -613,7 +613,7 @@ msgstr "LED 5mm"
 
 #: include/category_text.php:128
 msgid "Optocoupler"
-msgstr "Optokipplare"
+msgstr "Optokopplare"
 
 #: include/category_text.php:129
 msgid "IR LED"
@@ -621,7 +621,7 @@ msgstr "IR LED"
 
 #: include/category_text.php:130
 msgid "7-segment LED"
-msgstr "/-segmens LED"
+msgstr "7-segmens LED"
 
 #: include/category_text.php:132
 msgid "Octal"
@@ -933,7 +933,7 @@ msgstr "DU KAN INTE BTA LÖSENORDET FÖR ANVÄNDARE DEMO!!!!"
 
 #: include/include_my_settings.php:46 register-exec.php:67 login-exec.php:33
 msgid "Password missing"
-msgstr "Lösenordet kan inte vata tomt"
+msgstr "Lösenordet kan inte vara tomt"
 
 #: include/include_my_settings.php:51 register-exec.php:71
 msgid "Confirm password missing"
@@ -1058,12 +1058,12 @@ msgstr "Rad %s - fältantalet i headern matchar inte fältantalet för data"
 #: importexport.php:448
 #, php-format
 msgid "Error on row %s - data in field %s needs to be less than %s characters"
-msgstr "Fel på rad %s - data för fältet %s får ej innehålle fler tecken än %s"
+msgstr "Fel på rad %s - data för fältet %s får ej innehålla fler tecken än %s"
 
 #: importexport.php:454
 #, php-format
 msgid "Error on row %s - id must be supplied for action edit"
-msgstr "Fel på rad %s - id måste anges vid regigering av data"
+msgstr "Fel på rad %s - id måste anges vid redigering av data"
 
 #: importexport.php:460
 #, php-format
@@ -1240,7 +1240,7 @@ msgstr "Logga ut"
 
 #: logout.php:40
 msgid "You have successfully signed out of your account."
-msgstr "Du har loggats ut från ecdb"
+msgstr "Du har loggat ut"
 
 #: add_based.php:66
 msgid "Add new component based on "
