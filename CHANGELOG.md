@@ -10,13 +10,13 @@ This is a list of changes made to my version of ECDB personal V2.
 * Added images of resistors for E12 and E24 series.
 * Updated all import files for resistors to link the image.  
 If you are testing this out you can do a quick delete of all resistors in the database by running this commands:
-´´´
+```
 sudo mysql
 use ecdb
 DELETE FROM data WHERE category = '1301';
 DELETE FROM data WHERE category = '1302';
 DELETE FROM data WHERE category = '1303';
-´´´
+```
 Then import all resistor files.
 
 ## [2026-09-14]
