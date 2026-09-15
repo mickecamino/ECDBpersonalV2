@@ -1,4 +1,4 @@
-# French translation for ecDBpersonal.
+# German translation for ecDBpersonal.
 # This file is distributed under the same license as the ecDBpersonal.
 #
 # PLESE UPDATE Your Name, Yourlanguage and XX to proper values
@@ -10,7 +10,7 @@ msgstr ""
 "PO-Revision-Date: 2026-09-14 19:20+0200\n"
 "Last-Translator: Your Name>\n"
 "Language-Team: Yourlanguage\n"
-"Language: fr\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

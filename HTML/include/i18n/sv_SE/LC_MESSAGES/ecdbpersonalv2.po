@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ecdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-14 19:28+0200\n"
+"POT-Creation-Date: 2026-09-15 10:51+0200\n"
 "PO-Revision-Date: 2026-09-14 19:20+0200\n"
 "Last-Translator: Mikael Karlsson>\n"
 "Language-Team: Svenska\n"
@@ -104,7 +104,7 @@ msgstr "Applikationsnot"
 msgid "Add component to project"
 msgstr "Addera komponent till projekt"
 
-#: add.php:133 proj_edit.php:49 add_based.php:172 my.php:96
+#: add.php:133 proj_edit.php:49 add_based.php:172 my.php:100
 msgid "Save"
 msgstr "Spara"
 
@@ -1020,52 +1020,52 @@ msgstr "Importera komponenter"
 msgid "Upload"
 msgstr "Ladda upp"
 
-#: importexport.php:53
+#: importexport.php:52
 msgid "Please upload a CSV file."
 msgstr "Välj en CSV-fil"
 
-#: importexport.php:78
+#: importexport.php:77
 msgid "Failed to open file:"
 msgstr "Kunde inte öppna filen:"
 
-#: importexport.php:379
+#: importexport.php:377
 #, php-format
 msgid "Update not needed for row %s"
 msgstr "Uppdatering för rad %s behövs ej"
 
-#: importexport.php:391
+#: importexport.php:389
 #, php-format
 msgid "Row %s - Deleted component with id %s"
 msgstr "Rad %s - raderade komponent med namnet %s"
 
-#: importexport.php:395
+#: importexport.php:393
 #, php-format
 msgid "Row %s - Component with id %s is not in the database"
 msgstr "Rad %s - komponent med id %s finns inte i databasen"
 
-#: importexport.php:401
+#: importexport.php:399
 #, php-format
 msgid "Row %s - id is not an integer"
 msgstr "Rad %s - id är inget heltal"
 
-#: importexport.php:409
+#: importexport.php:407
 #, php-format
 msgid ""
 "Row, %s - The number of header fields differs against the number of data "
 "fields"
 msgstr "Rad %s - fältantalet i headern matchar inte fältantalet för data"
 
-#: importexport.php:448
+#: importexport.php:446
 #, php-format
 msgid "Error on row %s - data in field %s needs to be less than %s characters"
 msgstr "Fel på rad %s - data för fältet %s får ej innehålla fler tecken än %s"
 
-#: importexport.php:454
+#: importexport.php:452
 #, php-format
 msgid "Error on row %s - id must be supplied for action edit"
 msgstr "Fel på rad %s - id måste anges vid redigering av data"
 
-#: importexport.php:460
+#: importexport.php:458
 #, php-format
 msgid ""
 "Error on row %s - Component with name %s, category %s and location %s is "
@@ -1074,29 +1074,29 @@ msgstr ""
 "Fel på rad %s - komponenten med namnet %s, kategorin %s och platsen %s finns "
 "redan i daabasen"
 
-#: importexport.php:466
+#: importexport.php:464
 #, php-format
 msgid "Error on row %s - name must be supplied for action add in the csv file"
 msgstr "Fel på rad %s - name måste finnas i CSV-filen för action add"
 
-#: importexport.php:472
+#: importexport.php:470
 #, php-format
 msgid "Error on row %s - field scrap need to be Yes or No"
 msgstr "Fel på rad %s - fältet scrap måste innehålla antingen Yes eller No"
 
-#: importexport.php:478
+#: importexport.php:476
 #, php-format
 msgid "Error on row %s - category must be supplied for action add or edit"
 msgstr "Fel på rad %s - kategori måste finnas vid addering av komponenter"
 
-#: importexport.php:484
+#: importexport.php:482
 #, php-format
 msgid ""
 "Error on row %s - category %s in CSV-file must exist in the database for "
 "action add or edit"
 msgstr "Fel på rad %s - kategori %s i CSV-filen måste finnas i databasen"
 
-#: importexport.php:490
+#: importexport.php:488
 #, php-format
 msgid ""
 "Error on row %s - Component with name %s and category %s is already in the "
@@ -1105,12 +1105,12 @@ msgstr ""
 "Fel på rad %s - komponent med namnet %s och kategori %s finns redan i "
 "databasen"
 
-#: importexport.php:501
+#: importexport.php:499
 #, php-format
 msgid "Row %s with name %s and category %s imported"
 msgstr "Rad %s med namn %s och kategori %s lades till"
 
-#: importexport.php:507
+#: importexport.php:505
 #, php-format
 msgid "Row %s with name %s imported"
 msgstr "Rad %s med namnet %s lades till"
@@ -1373,3 +1373,7 @@ msgstr "Italienska"
 #: my.php:92
 msgid "Spanish"
 msgstr "Spanska"
+
+#: my.php:96
+msgid "German"
+msgstr "Tyska"

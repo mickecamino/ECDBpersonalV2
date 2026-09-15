@@ -1,7 +1,7 @@
 <?php
 // File: my.php
 // Function: Personal setting for a user
-// Revision date: 2026-09-10
+// Revision date: 2026-09-15
 // Revised by: Mikael Karlsson
 // This file is distributed under the license: 
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -90,6 +90,10 @@
                 if(!isset($_POST['submit']) && $executesql['language'] == 'es_ES.utf8') { echo 'selected';}
                 if(isset($_POST['submit']) && $_POST['language'] == 'es_ES.utf8') { echo 'selected';}
                 echo '>' . _("Spanish") . '</option>';
+                echo '<option value="de_DE.utf8"';
+                if(!isset($_POST['submit']) && $executesql['language'] == 'de_DE.utf8') { echo 'selected';}
+                if(isset($_POST['submit']) && $_POST['language'] == 'de_DE.utf8') { echo 'selected';}
+                echo '>' . _("German") . '</option>';
                 echo '</select></td>'; // end fourth column
                 echo '</tr></tbody></table>';
             echo '<div class="buttons"><div class="input">';

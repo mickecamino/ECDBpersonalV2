@@ -1366,3 +1366,7 @@ msgstr ""
 #: my.php:92
 msgid "Spanish"
 msgstr ""
+
+#: my.php:96
+msgid "German"
+msgstr "Tyska"
