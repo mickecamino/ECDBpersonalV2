@@ -8,6 +8,6 @@
 //
 echo '<div id="copyText">';
 echo '<div class="leftBox">';
-echo '_(" ecDB personal V2");
+echo _(" ecDB personal V2");
 echo '</div></div>';
 ?>
