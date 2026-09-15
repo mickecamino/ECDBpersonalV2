@@ -6,6 +6,19 @@ This is a list of changes made to my version of ECDB personal V2.
 * Add export for Shopping list  
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
 
+## [2026-09-15]
+* Added images of resistors for E12 and E24 series.
+* Updated all import files for resistors to link the image.  
+If you are testing this out you can do a quick delete of all resistors in the database by running this commands:
+´´´
+sudo mysql
+use ecdb
+DELETE FROM data WHERE category = '1301';
+DELETE FROM data WHERE category = '1302';
+DELETE FROM data WHERE category = '1303';
+´´´
+Then import all resistor files.
+
 ## [2026-09-14]
 * Added new view to component page:  
 * If a component is included in one or more projects, show all projects on the Component View page, with hyperlinks to the project.
