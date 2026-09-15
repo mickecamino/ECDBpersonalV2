@@ -1,7 +1,7 @@
 # ecDB personal V2
-
 NOTE: This is a forked standalone version of ecDBpersonal from Pete Willard.  
 I have made so many changes to it and decided to create it as ecDB personal V2 instead
+
 ## UNSUPPORTED
 However, it is still unsupported, I have made all the changes to suit my need. YMMV.
 
@@ -10,12 +10,10 @@ It is a web-based program that keeps track of your components such as resistors,
 It can be installed on a Raspberry PI or in a virtual server on Hyper-V or VirtualBox
 
 ## Documentation
-Currently there is no detailed documentation available.  
-However, I will publish a guide on how to set up ecDBpersonalV2 om Debian Trixie in a VirtualBox virtual machine .
+Currently there is no detailed documentation available on how to use ecDB personal V2.  
 
 ## Installation
-
-New installation document will be uploaded within a week.
+Installation document is now available here in the file **Install ecDB personal V2.pdf**
 
 ### Requirements
 
