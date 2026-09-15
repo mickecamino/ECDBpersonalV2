@@ -209,7 +209,7 @@ class ShowComponents {
                 while($showDetailsCat = mysqli_fetch_array($sql_exec_catname)) {
                     $catname = $showDetailsCat['name'];
                 }
-                echo "<a href='category.php?subcat=$subcatid'>". gettext($catname) . "</a>";
+                echo gettext($catname);
                 echo "</td>";
 
                 echo "<td>";
