@@ -1,7 +1,7 @@
-# ECDB personal V2
+# ecDB personal V2
 
-NOTE: This is a forked standalone version of ECDBpersonal from Pete Willard.  
-I have made so many changes to it and decided to create it as ECDB personal V2 instead
+NOTE: This is a forked standalone version of ecDBpersonal from Pete Willard.  
+I have made so many changes to it and decided to create it as ecDB personal V2 instead
 ## UNSUPPORTED
 However, it is still unsupported, I have made all the changes to suit my need. YMMV.
 
@@ -11,61 +11,23 @@ It can be installed on a Raspberry PI or in a virtual server on Hyper-V or Virtu
 
 ## Documentation
 Currently there is no detailed documentation available.  
-However, I will publish a guide on how to set up ecDBpersonalV2 om Debian Trixie and on a Raspberry PI.
+However, I will publish a guide on how to set up ecDBpersonalV2 om Debian Trixie in a VirtualBox virtual machine .
 
 ## Installation
 
-- Download this git.
-- Create a MySQL database.
-- Import `ecdb.sql` database structure to your MySQL-database.
-- You will need to create a database user ECDB with a PASSWORD and grant all privileges.
-* NOTE: If you are a user in a different country than Sweden, you might change the character set and collation.
-
-```
-mysql -u root -p
-CREATE DATABASE `ecdb` DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_swedish_ci;
-CREATE USER 'ecdb'@'localhost' IDENTIFIED BY 'user_password';
-GRANT ALL PRIVILEGES ON ecdb.* TO 'ecdb'@'localhost';
-FLUSH PRIVILEGES;
-exit
-```
-
-- Insert your MySQL credential data in the configuration file, `include/login/config.php`.
-- **You are now set to go!** The default username is `demo` and password `demo`.
-- Use the interface to create your own username and password, as needed.
+New installation document will be uploaded within a week.
 
 ### Requirements
 
 - I use it with:
-- Debian Trixie
-- Apache/2.4.68 (Debian)
+- Debian Trixie 13.7
+- Apache/2.4.68-1 (Debian)
 - PHP Version 8.4.24
 - MariaDB 11.8.6
 
-Also, verify permissions and ownership on the /var/www/html directories.
-
-Currently, `www-data` is the default apache user on Debian flavors (like Raspberry Pi OS)  so this should be the owner your web files/directory to work properly.
-
-If you need to, you sould `chown` the whole web root as `www-data` for both user and group.
-
-So if your document root is `/var/www/html`, `cd` or change directory to `/var/www` and run this to change ownership on all files and directories.
-
-`chown -R www-data:www-data html/`
-
-while still in the /var/www directory add write permissions to the group for files and directories by running this command.
-
-`find html -type f -exec chmod 664 {} + -o -type d -exec chmod 775 {} +`
-
-Finally add your local user account to the www-data group.  
-
-`usermod -a -G www-data $USER`
-
-You can also add an FTP user the same way replacing `$USER` with an actual account name.
-
-
 ## License
 
-* This software is released under Attribution-NonCommercial-ShareAlike 3.0 Unported License
+Note that the original author released as Creative Commons but placed restrictions on public use. **This is a release intended for non-public use.**
 
 ## Original License
 
