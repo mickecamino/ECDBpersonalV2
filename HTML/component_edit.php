@@ -1,7 +1,7 @@
 <?php
 // File: component_edit.php
 // Function: Edit components
-// Revision date: 2026-09-13
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -230,29 +230,40 @@
     echo '<td><div class="ui-widget"><input id="appnote" name="appnote" type="text" value="' . $executesql['appnote'] . '" ></div></td>';
 // start and end third to sixth columns. end sixth row
     echo '<td></td><td></td><td></td><td></td></tr>';
-// start seventh row, start and first column
+// start seventh row, start and end first column
     echo '<tr><td></td>';
-// start and end second column
-    echo '<td class="boldText">' . _("Add to project") . '</td>';
-// start and end third column
-    echo '<td class="boldText">' . _("Quantity") . '</td>';
 
-    $Echo = "SELECT projects_data_component_id FROM projects_data WHERE projects_data_component_id = ".(int)$_GET['edit']." ";
-    $sql_echo = mysqli_query($connection,$Echo);
-// If there are no projects, start and end fourth to sixth columns
-    if (mysqli_num_rows($sql_echo) == 0) {
+// Don't display Add to project if there are no project(s)
+    $projects_qry = "SELECT project_id FROM projects WHERE project_owner = $owner";
+    $projects_res = mysqli_query($connection,$projects_qry);
+    $numrows = mysqli_num_rows($projects_res);
+// Is this component in a project?
+    $projects_data_qry = "SELECT projects_data_id FROM projects_data WHERE projects_data_component_id = $id AND projects_data_owner_id = $owner";
+    $projects_data_res = mysqli_query($connection,$projects_data_qry);
+    $projects_data_rows = mysqli_num_rows($projects_data_res);
+// If there are no projects, start and end second to sixth columns
+    if ($numrows  == 0) {
         echo '<td></td>';
         echo '<td></td>';
         echo '<td></td>';
-    }
+        echo '<td></td>';
+        echo '<td></td>';
+    } elseif ($numrows > 0) {
 // There are projects
-    else {
-        echo '<td class="boldText">' . _("Project") . '</td>';
-        echo '<td class="boldText">' . _("Quantity") . '</td>';
-        echo '<td></td>';
-    }
+        echo '<td class="boldText">' . _("Add to project") . '</td>';  // second column
+        echo '<td class="boldText">' . _("Quantity") . '</td>'; // third column
+        if ($projects_data_rows  == 0) { // This component is NOT in a project
+            echo '<td></td><td></td>';
+        } else { // this component IS in a project
+            echo '<td class="boldText">' . _("Project") . '</td>'; // fourth column
+            echo '<td class="boldText">' . _("Quantity") . '</td>'; // fifth column
+        }
+        echo '<td></td>'; // sixth columns
 // end seventh row
     echo '</tr>';
+    }
+
+    if( $numrows != 0) { // There are projects
 // start eigth row, start and end first column
     echo '<tr><td></td>';
 // start second column
@@ -273,11 +284,15 @@
     include "include/include_component_edit_project_edit.php";
     $MenuProj = new EditProj;
     $MenuProj->MenuProj();
+    echo '<tr><td></td>';
+}
 // NOTE!!!! In the include above there are <tr> and </tr> as well as <td> and </td>
 // so this should not be added here! Took me a while to detect this
 //start and end fifth to sixth columns. end eight row
 //  echo '<td></td><td></td></tr>';
+if( $numrows == 0) { echo "</tr>"; }
 // end tbody and table
+
     echo '</tbody></table>';
 
     echo '<div class="buttons"><div class="input"><button class="button green" name="update" type="submit"><span class="fa  fa-save fa-lg"></span> ' . _("Update") . '</button> ';
