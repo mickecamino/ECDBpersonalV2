@@ -1,7 +1,7 @@
 <?php
 // File: register.php
 // Function: Register a new user
-// Revision date: 2026-09-12
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -23,11 +23,11 @@
 // END
     echo '<body><div id="wrapper">';
 // Header -->
-    echo '<div><img src="img/logov2.png" alt="ECDB personal V2" style="width:175px;height:75px;"></div>';
+    echo '<div><img src="img/logov2.png" alt="ecDB personalV2" style="width:175px;height:75px;"></div>';
 // END
 // Main menu
     echo '<div id="menu"><ul>';
-    echo '<li><a href="."><span class="fa fa-key fa-lg"></span> ' . _("Login") . '</a></li>';
+    echo '<li><a href="."><span class="fa fa-key fa-lg"></span> ' . _("Login") . '</a></li> ';
     echo '<li><a href="register.php"><span class="fa fa-user fa-lg"></span> ' . _("Register") . '</a></li>';
     echo '</ul></div>';
 // END
@@ -37,7 +37,7 @@
         echo '<div class="message red">';
         echo '<ul class="error">';
             foreach($_SESSION['ERRMSG_ARR'] as $msg) {
-                echo '<li>',$msg,'</li>'; 
+                echo '<li>',$msg,'</li>';
             }
         echo '</ul>';
         echo '</div>';
@@ -51,7 +51,7 @@
     echo '<div class="textInput"><label class="keyWord">' . _("Username") . '</label><div class="input"><input name="login" type="text" class="medium" id="login" /></div></div>';
     echo '<div class="textInput"><label class="keyWord">' . _("Password") . '</label><div class="input"><input name="password" type="password" class="medium" id="password" /></div></div>';
     echo '<div class="textInput"><label class="keyWord">' . _("Repeat password") . '</label><div class="input"><input name="cpassword" type="password" class="medium" id="cpassword" onpaste="return false;" /></div></div>';
-    echo '<div class="buttons"><div class="input"><button class="button green" name="Submit" type="submit">' . _("Register") . '</button></div></div></form></div>';
+    echo '<div class="buttons"><div class="input"><button class="button green" name="Submit" type="submit"><span class="fa fa-user fa-lg"></span>' . _("Register") . '</button></div></div></form></div>';
     echo '<div class="right"></div></div></div>';
 // END
 // Text outside the main content
