@@ -1,7 +1,7 @@
 <?php
 // File: add.php
 // Function: sadd component
-// Revision date: 2026-09-11
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license: 
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -92,7 +92,7 @@
         echo '<input type="radio" name="scrap" value="No" checked="checked" > ' . _("No");
         }
     echo '</td>'; // end second column
-    echo '<td></td><td></td><td></td><td></td><td></td></tr>'; // end third, fourth, fifth, sixth columns, end fifth row
+    echo '<td></td><td></td><td></td><td></td></tr>'; // end third, fourth, fifth, sixth columns, end fifth row
 // Sixth  row, six columns
     echo '<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
 // Seventh row
@@ -111,14 +111,19 @@
     if(isset($_POST['submit'])) { echo $_POST['appnote']; }
     echo '"></div></td>'; // end second column
     echo '<td></td><td></td><td></td><td></td></tr>'; // third, fourth, fifth and sixth column, end eight row
+
+// Don't display Add to project if there are no project(s)
+    $projects_qry = "SELECT project_id FROM projects WHERE project_owner = $owner";
+    $projects_res = mysqli_query($connection,$projects_qry);
+    $numrows = mysqli_num_rows($projects_res);
+// If there are no projects, skip sektion for project display
+    if ($numrows > 0) {
 // Ninth row
     echo '<tr><td></td>'; // start ninth row, first column
     echo '<td  class="boldText">' . _("Add component to project") . '</td>'; // second column
     echo '<td  class="boldText">' . _("Quantity") . '</td>'; // third column
     echo '<td></td><td></td><td></td></tr>'; // fourth, fifth and sixth column, end ninth row
 // Tenth row
-    echo '<tr class="bordered"></tr>';
-// Eleventh row
     echo '<tr><td></td>'; // start eleventh row, first column
     echo '<td><select name="project">'; // second column, start select
     include "include/include_component_add_project.php";
@@ -129,6 +134,8 @@
     if(isset($_POST['submit'])) { echo $_POST['projquant']; }
     echo '"></td>'; // end value, end third column
     echo '<td></td><td></td><td></td></tr>'; // fourth, fifth and sixth column, end eleventh row
+    } // end if numrows
+
     echo '</tbody></table>'; // end table
     echo '<div class="buttons"><div class="input"><button class="button green" name="submit" type="submit"><span class="fa fa-save fa-lg"></span> ' . _("Save") . '</button>';
     echo '</div></div></form></div>'; // end divs and form
