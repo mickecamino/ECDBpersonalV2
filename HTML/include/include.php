@@ -716,13 +716,6 @@ class ShowComponents {
                         $proj_add="INSERT into projects_data (projects_data_owner_id, projects_data_project_id, projects_data_component_id, projects_data_quantity) VALUES ('$owner', '$project', '$id', '$project_quantity')";
 
                         $sql_exec = mysqli_query($connection,$proj_add) or die(mysqli_error());
-                        echo $project;
-                        echo ' Owner ';
-                        echo $owner;
-                        echo ' id ';
-                        echo $id;
-                        echo ' projquant ';
-                        echo $project_quantity;
                     } // end if (!empty($project)
 
                     if (isset($_POST['projquantedit'])) {
