@@ -1,7 +1,7 @@
 <?php
 // File: component_edit.php
 // Function: Edit components
-// Revision date: 2026-09-16
+// Revision date: 2026-09-17
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -190,7 +190,7 @@
 // start and end third column
     echo '<td class="boldText">' . _("Price") . '</td>';
 // start and end fourth column
-    echo '<td><input name="price" type="text" class="small" value="' . $executesql['price'] . '" id="price" > ' . $personal['currency'] . '</td>';
+    echo '<td><input name="price" type="text" class="small" value="' . $executesql['price'] . '" id="price" ></td>';
 // start and end fifth column
     echo '<td class="boldText">' . _("To order") . '</td>';
 // start and end sixth column
