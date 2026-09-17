@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
         <meta name="keywords" content="electronics, components, database, project, inventory">
         <link rel="shortcut icon" href="favicon.ico" >
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/all.css">
         <!-- Primarily for Autocomplete -->
         <link href = "css/jquery-ui-1.9.2.custom.css" rel = "stylesheet">
         <script src = "js/jquery-1.8.3.js"></script>

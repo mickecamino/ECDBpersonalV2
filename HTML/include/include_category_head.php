@@ -84,7 +84,7 @@ class NameHead {
                 }
 
                 if($ShowDetailsCatname['id'] == $comp_cat){ // Compare current category ID with components category ID.
-                    echo 'class="isComponents"'; // What should be echoed if components exists in category?
+                    echo ' class="isComponents"'; // What should be echoed if components exists in category?
                     break; // We only need one component to be in this category for this to be true.
                 }
             }

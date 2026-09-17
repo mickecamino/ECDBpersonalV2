@@ -1,10 +1,10 @@
 /*
     Created: 2011-09-03
-    Last edit: 2026-09-01 by Mikael Karlsson
+    Last edit: 2026-09-06 by Mikael Karlsson
 */
 @font-face {
   font-family: 'Abel';
-  src:  url('../fonts/abel-regular-webfont.woff') format('woff');
+  src:  url('../webfonts/abel-regular-webfont.woff') format('woff');
 }
 
 @media print {
@@ -247,7 +247,7 @@ button.button {
 /* Sizes ---------- */
 
 .small.button {
-    padding: 1.5px 3px;
+    padding: 1px 1px 0px 1px;
     font-size: 15px;
 }
 

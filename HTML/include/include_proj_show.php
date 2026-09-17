@@ -1,12 +1,12 @@
 <?php
 // File: include/include_proj_show.php
 // Function: Show projects
-// Revision date: 2026-09-14
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
-class ProjectShow { 
+class ProjectShow {
     public function ProjectShowComponents() {
 
         require_once "login/auth.php";
@@ -46,7 +46,7 @@ class ProjectShow {
 
             echo '<td class="edit"><a href="component_edit.php?edit=';
             echo $showDetails['id'];
-            echo '"><span class="fa fa-pencil fa-lg"></span></a></td>';
+            echo '"><span class="fas fa-pencil-alt fa-lg"></span></a></td>';
 
             echo '<td><a href="component.php?view=';
             echo $showDetails['id'];
@@ -123,7 +123,7 @@ class ProjectShow {
                     echo $quantity;
                 }
             echo "</td>";
-            
+
             echo "<td>";
 
             $comp_id = $showDetails['id'];

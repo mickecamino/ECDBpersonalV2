@@ -1,7 +1,7 @@
 <?php
 // File: include/include_shoplist.php
 // Function: print out the shoppinglist
-// Revision date: 2026-09-14
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -44,7 +44,7 @@ class Shoplist {
 
                 echo '<td class="edit"><a href="component_edit.php?edit=';
                 echo $showDetails['id'];
-                echo '"><span class="fa fa-pencil fa-lg"></span></a></td>';
+                echo '"><span class="fas fa-pencil-alt fa-lg"></span></a></td>';
 
                 echo '<td><a href="component.php?view=';
                 echo $showDetails['id'];
@@ -111,7 +111,7 @@ class Shoplist {
                     echo '</div></td>';
                 }
                 else{
-                    echo '<td class="comment"><div><span class="fa fa-comment fa-lg"></span><span class="comment">';
+                    echo '<td class="comment"><div><span class="far fa-comment-dots fa-lg"></span><span class="comment">';
                     echo $showDetails['comment'];
                     echo '</span></div></td>';
                 }

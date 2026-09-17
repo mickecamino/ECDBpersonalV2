@@ -1,13 +1,13 @@
 <?php
 // File: login.php
 // Function: Login dialog
-// Revision date: 2026-09-12
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
-// This file is distributed under the license: 
+// This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
-// 
-//Start session
-    session_start();
+//
+// Start session
+    session_start(['cookie_lifetime' => 86400,]);
 
     //Unset the variables stored in session
     unset($_SESSION['SESS_MEMBER_ID']);
@@ -25,17 +25,11 @@
     include "include/head.php";
 // Call the language translator
     require_once "include/localize.php";
-    if(isset($_COOKIE["language"])) { // for localization
-    $language = $_COOKIE["language"];
-    }
-    else { // Not set, set to en_US.utf8
-        $language = "en_US.utf8";
-    }
-    SetLanguage($language);
+     SetLanguage($language);
 // END
     echo '<body><div id="wrapper">';
 // Header
-    echo '<div><img src="img/logov2.png" alt="ecDB personal V2" style="width:175px;height:75px;"></div>';
+    echo '<div><img src="img/logov2.png" alt="ECDB personal V2" style="width:175px;height:75px;"></div>';
 // END
 // Main menu
     echo '<div id="menu"><ul>';

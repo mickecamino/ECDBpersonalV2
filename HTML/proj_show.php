@@ -1,14 +1,14 @@
 <?php
 // File: proj_show.php
 // Function: Show projects
-// Revision date: 2026-09-01
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
     require_once "include/login/auth.php";
     require_once "include/debug.php";
-    
+
     if (!isset($_GET["proj_id"])) {
         header("Location: error.php?id=3");
     }
@@ -24,7 +24,7 @@
     include "include/menu.php";
 // END
 // Main content
-    echo '<div id="content"><h1>' . _("Viewing project" . ' ');
+    echo '<div id="content"><h1>' . _("Viewing project") . ' ';
 // Show project name
     include "include/mysql_connect.php";
     $project_id = mysqli_real_escape_string($connection,$_GET["proj_id"]);
@@ -105,7 +105,7 @@
     echo '">' . _("Package") . '</a>';
 // end gifth column, start sixth column
     echo '</th><th>';
-    echo '<a href="?proj_id=' . $project_id . '&by=location&order='; 
+    echo '<a href="?proj_id=' . $project_id . '&by=location&order=';
     if(isset($_GET['order'])){
         if ($order == 'asc'){
             echo 'desc';

@@ -6,6 +6,8 @@
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
+// Set default time zone. TODO: Move to Settings page and make it selectable
+    date_default_timezone_set('Europe/Stockholm');
 //  Localize
     require_once "include/localize.php";
     if(isset($_COOKIE["language"])) { // for localization
@@ -18,7 +20,7 @@
 // END
     echo '<div id="header">';
 // Draw Logo
-    echo '<div><a href="index.php"><img src="img/logov2.png" alt="ECDB personalV2" style="width:200px;height:75px;"></a></div>';
+    echo '<div><a href="index.php"><img src="img/logov2.png" alt="ecDB personal V2" style="width:200px;height:75px;"></a></div>';
     // Current User logged in/ log out
     echo '<span class="userInfo">' . _("Logged in as") . ' <a href="my.php">';
     require_once "include/login/auth.php";

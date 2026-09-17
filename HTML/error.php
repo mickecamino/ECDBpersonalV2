@@ -1,7 +1,7 @@
 <?php
 // File: error.php
 // Function: Show errors based on $id
-// Revision date: 2026-08-31
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -9,18 +9,16 @@
     require_once "include/login/auth.php";
     require_once "include/debug.php";
 
-// Start localizer
-    if(isset($_COOKIE["language"])) { // for localization
-    $language = $_COOKIE["language"];
-    }
-    else { // Not set, set to en_US.utf8
-        $language = "en_US.utf8";
-    }
-
-    require_once "include/localize.php";
-    SetLanguage($language, "ecdb");
+    // Custom Page Titles
+    $pageTitle = _("Error");
+    include "include/head.php";
+    echo '<body><div id="wrapper">';
+// Header
+    include "include/header.php";
 // END
-
+// Main menu
+    include "include/menu.php";
+// END
 
     if(isset($_GET['id'])) {
         $id = (int)$_GET['id'];
@@ -41,16 +39,7 @@
     if (empty($_GET['id'])) {
         $message = 'Error!';
     }
-    // Custom Page Titles
-    $pageTitle = _("Error");
-    include "include/head.php";
-    echo '<body><div id="wrapper">';
-// Header
-    include "include/header.php";
-// END
-// Main menu
-    include "include/menu.php";
-// END
+
 // Main content
     echo '<div id="content"><div class="message red">' . $message . '</div></div>';
 // END

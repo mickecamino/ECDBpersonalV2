@@ -3,9 +3,9 @@
 // Function: sadd component
 // Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
-// This file is distributed under the license: 
+// This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
-// 
+//
     require_once "include/login/auth.php";
     include "include/mysql_connect.php";
 
@@ -71,7 +71,7 @@
     if(isset($_POST['submit'])) { echo $_POST['location']; }
     echo '"></div></td>'; // end value, end second column
     echo '<td class="boldText">' . _("Price") . '</td>'; // third column
-    echo '<td><input name="price" type="text" class="small" value="'; // start fourth column 
+    echo '<td><input name="price" type="text" class="small" value="'; // start fourth column
     if(isset($_POST['submit'])) { echo $_POST['price']; }
     echo '">' . $personal['currency'] . '</td>'; // end value, end fourth column
     echo '<td class="boldText">' . _("To order") . '</td>'; // start sixth column

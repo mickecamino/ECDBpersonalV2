@@ -1,7 +1,7 @@
 <?php
 // File: importexport.php
 // Function: Export, import, add or delete components from the database
-// Revision date: 2026-09-14
+// Revision date: 2026-09-16
 // Created by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -28,13 +28,13 @@
     echo '<div id="content"><h3>' . _("Import / Export") . '</h3><p>';
     echo '<form class="globalForms noPadding" method="post" action="">';
         echo '<div class="buttons"><div class="input">';
-        echo '<button class="button green" name="exportdata" type="submit"><span class="fa fa-floppy-o"></span> ' . _(" Export components") . '</button> ';
+        echo '<button class="button green" name="exportdata" type="submit"><span class="fas fa-file-export"></span> ' . _(" Export components") . '</button> ';
     echo '</div></div></form>';
 
     echo '<br><h1>' . _("File Import") . '</h1>';
     echo '<form action="importexport.php" method="post" enctype="multipart/form-data">';
     echo '<input type="file" class = "bold" name="file" id="file" accept=".csv"><br>';
-    echo '<button class="button green" name="submit" type="submit"><span class="fa fa-upload"></span> ' . _("Upload") . '</button> ';
+    echo '<button class="button green" name="submit" type="submit"><span class="fas fa-upload"></span> ' . _("Upload") . '</button> ';
     echo '<input type="hidden" name="MAX_FILE_SIZE" value="5242880" />';
     echo '</form>';
 

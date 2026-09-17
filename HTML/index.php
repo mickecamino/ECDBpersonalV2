@@ -1,29 +1,18 @@
 <?php
 // File: index.php
 // Function: Default page when accessing ecDB
-// Revision date: 2026-08-31
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
     require_once "include/login/auth.php";
     require_once "include/debug.php";
-// Localize
-    require_once "include/localize.php";
-    if(isset($_COOKIE["language"])) { // for localization
-    $language = $_COOKIE["language"];
-    }
-    else { // Not set, set to en_US.utf8
-        $language = "en_US.utf8";
-    }
-    SetLanguage($language);
-// END
 // Custom Page Titles
     $pageTitle = _("Home");
-// Hidden Search title for search dialogue
-// pageTitle did not work when localized, see header.php
+    // Hidden Search title for search dialogue
+    // pageTitle did not work when localized, see header.php
     $searchTitle = "Home";
-
     include "include/head.php";
 
     echo '<body><div id="wrapper">';

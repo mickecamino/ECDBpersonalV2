@@ -1,7 +1,7 @@
 <?php
 // File: proj_edit.php
 // Function: Edit projecs
-// Revision date: 2026-09-01
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -46,12 +46,12 @@
     echo '<label class="keyWord">' . _("Project name") . '</label>';
     echo '<div class="input"><input name="name" type="text" class="medium" value="' . $executesql['project_name'] . '" /></div>';
     echo '</div><div class="buttons"><div class="input">';
-    echo '<button class="button green" name="submit" type="submit"><span class=" fa fa-save fa-lg"></span> ' . _("Save") . '</button>' ;
-    echo '<button class="button red" name="delete" type="submit"><span class="fa fa-trash fa-lg"></span> ' . _("Delete") . '</button>';
+    echo '<button class="button green" name="submit" type="submit"><span class=" far fa-save fa-lg"></span> ' . _("Save") . '</button> ';
+    echo '<button class="button red" name="delete" type="submit"><span class="far fa-trash-alt fa-lg"></span> ' . _("Delete") . ' </button>';
     echo '</div></div></form></div>';
 // END
 // Text outside the main content
     include "include/footer.php";
 // END
-    echo "</div></body></html>";
+    echo '</div></body></html>';
 ?>

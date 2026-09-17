@@ -1,7 +1,7 @@
 <?php
 // File: localize.php
 // Function: Translate all text for the chosen language
-// Revision date: 2026-08-31
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license: 
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -11,7 +11,7 @@
 // the language code, for Swedish it is sv_SE.utf8, this is set with
 // a cookie in my.php and used on all pages needed it
 // 
-// The textdomain is fixed, i.e. "ecdb"
+// The textdomain is fixed, i.e. "ecdbpersonalv2"
 // You also need to translate all the strings in the ecdb.po file
 // and compile it with msgfmt
 // Read more at https://www.php.net/manual/en/function.gettext.php

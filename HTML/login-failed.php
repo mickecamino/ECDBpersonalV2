@@ -1,7 +1,7 @@
 <?php
 // File: login-failed.php
 // Function: Called when login fails
-// Revision date: 2026-09-12
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -21,7 +21,7 @@ include "include/head.php";
 // END
     echo '<body><div id="wrapper">';
 // Header
-    echo '<div><img src="img/logov2.png" alt="ECDB personal V2" style="width:175px;height:75px;"></div>';
+    echo '<div><img src="img/logov2.png" alt="ecDB personalV2" style="width:175px;height:75px;"></div>';
 // END
 // Main menu
     echo '<div id="menu"><ul>';

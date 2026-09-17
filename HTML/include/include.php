@@ -1,7 +1,7 @@
 <?php
 // File: include/include.php
 // Function: Add functions: Index, Category, Seacrh and Add
-// Revision date: 2026-09-12
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -45,7 +45,7 @@ class ShowComponents {
 // first column
             echo '<td class="edit"><a href="component_edit.php?edit=';
             echo $showDetails['id'];
-            echo '"><span class="fa fa-pencil fa-lg"></span></a></td>';
+            echo '"><span class="fas fa-pencil fa-lg"></span></a></td>';
 // second column
             echo '<td><a href="component.php?view=';
             echo $showDetails['id'];
@@ -99,7 +99,7 @@ class ShowComponents {
             else{
                 echo '<a class="thumbnail" href="img/parts/';
                 echo $image;
-                echo '"><span class="fa fa-file-image-o fa-lg"></span><span class="imgB"><img src="img/parts/';
+                echo '"><span class="fas fa-file-image fa-lg"></span><span class="imgB"><img src="img/parts/';
                 echo $image;
                 echo '" /></span></a></td>';
             }
@@ -112,7 +112,7 @@ class ShowComponents {
             else{
                 echo '<a href="sheets/';
                 echo $datasheet;
-                echo '"  target="_blank"><span class="fa fa-file-pdf-o fa-lg"></span></a></td>';
+                echo '"  target="_blank"><span class="fas fa-file-pdf fa-lg"></span></a></td>';
             }
 // eigth column
             echo "<td>";
@@ -142,7 +142,7 @@ class ShowComponents {
                 echo '</div></td>';
             }
             else{
-                echo '<td class="comment"><div><span class="fa fa-comment fa-lg"></span><span class="comment">';
+                echo '<td class="comment"><div><span class="far fa-comment-dots fa-lg"></span><span class="comment">';
                 echo nl2br($showDetails['comment']);
                 echo '</span></div></td>';
             }
@@ -194,7 +194,7 @@ class ShowComponents {
                 echo "<tr>";
                 echo '<td class="edit"><a href="component_edit.php?edit=';
                 echo $showDetails['id'];
-                echo '"><span class="fa fa-pencil fa-lg"></span></a></td>';
+                echo '"><span class="fas fa-pencil fa-lg"></span></a></td>';
 
                 echo '<td><a href="component.php?view=';
                 echo $showDetails['id'];
@@ -240,7 +240,7 @@ class ShowComponents {
                 else{
                     echo '<a class="thumbnail" href="img/parts/';
                     echo $image;
-                    echo '"><span class="fa fa-file-image-o fa-lg"></span><span class="imgB"><img src="img/parts/';
+                    echo '"><span class="fas fa-file-image fa-lg"></span><span class="imgB"><img src="img/parts/';
                     echo $image;
                     echo '" /></span></a>';
                 }
@@ -254,7 +254,7 @@ class ShowComponents {
                 else{
                     echo '<a href="sheets/';
                     echo $datasheet;
-                    echo '" target="_blank"><span class="fa fa-file-pdf-o fa-lg"> </span></a>';
+                    echo '" target="_blank"><span class="fas fa-file-pdf fa-lg"> </span></a>';
                 }
                 echo "</td>";
 
@@ -285,7 +285,7 @@ class ShowComponents {
                     echo '</div></td>';
                 }
                 else{
-                    echo '<td class="comment"><div><span class="fa fa-comment fa-lg"></span><span class="comment">';
+                    echo '<td class="comment"><div><span class="far fa-comment-dots fa-lg"></span><span class="comment">';
                     echo $showDetails['comment'];
                     echo '</span></div></td>';
                     }
@@ -324,7 +324,7 @@ class ShowComponents {
                 echo "<tr>";
                 echo '<td class="edit"><a href="component_edit.php?edit=';
                 echo $showDetails['id'];
-                echo '"><span class="fa fa-pencil fa-lg"> </span></a></td>';
+                echo '"><span class="fas fa-pencil fa-lg"> </span></a></td>';
 
                 echo '<td><a href="component.php?view=';
                 echo $showDetails['id'];
@@ -380,7 +380,7 @@ class ShowComponents {
                 else{
                     echo '<a href="sheets/';
                     echo $datasheet;
-                    echo '" target="_blank"><span class="fa fa-file-pdf-o fa-lg"> </span></a></td>';
+                    echo '" target="_blank"><span class="fas fa-file-pdf fa-lg"> </span></a></td>';
                 }
 
                 echo "<td>";
@@ -410,7 +410,7 @@ class ShowComponents {
                     echo '</div></td>';
                 }
                 else{
-                    echo '<td class="comment"><div><span class="fa fa-comment fa-lg"></span><span class="comment">';
+                    echo '<td class="comment"><div><span class="far fa-comment-dots fa-lg"></span><span class="comment">';
                     echo $showDetails['comment'];
                     echo '</span></div></td>';
                 }
@@ -470,7 +470,7 @@ class ShowComponents {
                     echo "<tr>";
                     echo '<td class="edit"><a href="component_edit.php?edit=';
                     echo $showDetails['id'];
-                    echo '"><span class="fa fa-pencil fa-lg"> </span></a></td>';
+                    echo '"><span class="fas fa-pencil fa-lg"> </span></a></td>';
 
                     echo '<td><a href="component.php?view=';
                     echo $showDetails['id'];
@@ -533,7 +533,7 @@ class ShowComponents {
                     else{
                         echo '<a class="thumbnail" href="img/parts/';
                         echo $image;
-                        echo '"><span class="fa fa-file-image-o fa-lg"></span><span class="imgB"><img src="img/parts/';
+                        echo '"><span class="fas fa-file-image fa-lg"></span><span class="imgB"><img src="img/parts/';
                         echo $image;
                         echo '" /></span></a></td>';
                     }
@@ -546,7 +546,7 @@ class ShowComponents {
                     else{
                         echo '<a href="sheets/';
                         echo $datasheet;
-                        echo '" target="_blank"><span class="fa fa-file-pdf-o fa-lg"> </span></a></td>';
+                        echo '" target="_blank"><span class="fas fa-file-pdf fa-lg"> </span></a></td>';
                     }
 
                     echo "<td>";
@@ -570,7 +570,7 @@ class ShowComponents {
                         echo '</div></td>';
                     }
                     else{
-                        echo '<td class="comment"><div><span class="fa fa-comment fa-lg"></span><span class="comment">';
+                        echo '<td class="comment"><div><span class="far fa-comment-dots fa-lg"></span><span class="comment">';
                         echo $showDetails['comment'];
                         echo '</span></div></td>';
                     }

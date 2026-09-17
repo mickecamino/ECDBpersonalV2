@@ -1,7 +1,7 @@
 <?php
 // File: component.php
 // Function: Show components
-// Revision date: 2026-09-14
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -21,7 +21,7 @@
 
     $GetProjects = mysqli_query($connection,$SqlQuery); // Execute
     $numrows = mysqli_num_rows($GetProjects); // Get number of rows, if any
-    
+
 // Get users currency
     $GetPersonal = mysqli_query($connection,"SELECT currency FROM members WHERE member_id = ".$owner."");
     $personal = mysqli_fetch_assoc($GetPersonal);
@@ -188,8 +188,8 @@ include "include/head.php";
                                         }
                                     ?>
                                     <form class="globalForms inLine" method="post" action="">
-                                        <button class="button white small" name="quantity_increase" type="submit"><span class="fa fa-plus-square fa-lg"></span></button>
-                                        <button class="button white small" name="quantity_decrease" type="submit"><span class="fa fa-minus-square fa-lg"></span></button>
+                                        <button class="button green small" name="quantity_increase" type="submit"><span class="far fa-plus-square fa-lg"></span></button>
+                                        <button class="button red small" name="quantity_decrease" type="submit"><span class="far fa-minus-square fa-lg"></span></button>
                                     </form>
                                 </td>
                                 <?php echo '<td class="boldText">' . _("Price") . '</td>';
@@ -214,8 +214,8 @@ include "include/head.php";
                                         }
                                     ?>
                                     <form class="globalForms inLine" method="post" action="">
-                                        <button class="button white small" name="orderquant_increase" type="submit"><span class="fa fa-plus-square fa-lg"></span></button>
-                                        <button class="button white small" name="orderquant_decrease" type="submit"><span class="fa fa-minus-square fa-lg"></span></button>
+                                        <button class="button green small" name="orderquant_increase" type="submit"><span class="far fa-plus-square fa-lg"></span></button>
+                                        <button class="button red small" name="orderquant_decrease" type="submit"><span class="far fa-minus-square fa-lg"></span></button>
                                     </form>
                                 </td>
                             </tr>
@@ -251,24 +251,24 @@ include "include/head.php";
                                 echo '<td class="boldText">' . _("Recycled") . '</td>';
                                 echo '<td>';
                                         if ($executesql['scrap'] == "Yes") {
-                                            echo '<span class="fa fa-check-square-o fa-lg"></span>';
+                                            echo '<span class="far fa-check-square fa-lg"></span>';
                                         }
                                         else {
-                                            echo '<span class="fa fa-square-o fa-lg"></span>';
+                                            echo '<span class="far fa-square fa-lg"></span>';
                                         }
                                 echo '</td>';
 //                              4 Empty blocks
                                 echo '<td></td><td></td><td></td><td></td>';
                                 echo '</tr><tr>';
                                 echo '<td class="boldText">' . _("Datasheet") . '</td>';
-                                echo '<td>'; 
+                                echo '<td>';
                                         if ($executesql['datasheet'] == "") {
                                             echo "-";
                                         }
                                         else {
                                             echo '<a href="sheets/';
                                             echo $executesql['datasheet'];
-                                            echo '" target="_blank"><span class="fa fa-file-pdf-o fa-lg"></a>'; 
+                                            echo '" target="_blank"><span class="far fa-file-pdf fa-lg"></a>';
                                         }
                                 echo '</td>';
                                 echo '<td class="boldText">' . _("Application Note") . '</td>';
@@ -279,7 +279,7 @@ include "include/head.php";
                                         else {
                                             echo '<a href="appnotes/';
                                             echo $executesql['appnote'];
-                                            echo '" target="_blank"><span class="fa fa-file-pdf-o fa-lg"></a>';
+                                            echo '" target="_blank"><span class="far fa-file-pdf fa-lg"></a>';
                                         }
                                     ?>
                                 </td>
@@ -313,9 +313,9 @@ include "include/head.php";
                     <div class="buttons">
                         <div class="input">
                             <?php
-                            echo '<button class="button" name="edit" type="submit"><span class=" fa fa-pencil fa-lg"></span> ' . _(" Edit Component") . '</button> ';
-                            echo '<button class="button" name="based" type="submit"><span class="fa fa-plus-square fa-lg"></span> ' . _(" New based on this") . '</button> ';
-                            echo '<button class="button red" name="delete" type="submit"><span class="fa fa-trash fa-lg"></span> ' . _(" Delete component") . '</button> ';
+                            echo '<button class="button" name="edit" type="submit"><span class=" fas fa-pencil-alt fa-lg"></span> ' . _(" Edit Component") . '</button> ';
+                            echo '<button class="button" name="based" type="submit"><span class="fas fa-plus-square fa-lg"></span> ' . _(" New based on this") . '</button> ';
+                            echo '<button class="button red" name="delete" type="submit"><span class="fas fa-trash fa-lg"></span> ' . _(" Delete component") . '</button> ';
                             ?>
                         </div>
                     </div>

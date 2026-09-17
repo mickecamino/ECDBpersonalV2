@@ -1,18 +1,19 @@
 <?php
 // File: add.php
 // Function: Add component
-// Revision date: 2026-09-01
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
+
 class AddMenuProj {
     public function MenuProj() {
 
         require_once "include/login/auth.php";
         include "include/mysql_connect.php";
 
-        $owner  =   $_SESSION['SESS_MEMBER_ID'];
+        $owner = $_SESSION['SESS_MEMBER_ID'];
 
         $ProjectNameQuery = "SELECT * FROM projects WHERE project_owner = ".$owner." ORDER by project_name ASC";
         $sql_exec_projname = mysqli_Query($connection,$ProjectNameQuery);
@@ -32,10 +33,9 @@ class AddMenuProj {
                     }
                 }
             }
-            echo '>';
-            echo $Project['project_name'];
-            echo '</option>';
+        echo '>';
+        echo $Project['project_name'];
+        echo '</option>';
         }
     }
 }
-?>

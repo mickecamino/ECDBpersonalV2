@@ -1,7 +1,7 @@
 <?php
 // File: include_shoplist_sum.php
 // Function: Sums the cost for a shopping lists
-// Revision date: 2026-09-10
+// Revision date: 2026-09-16
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -29,14 +29,23 @@ class ShoplistPrice {
 
         }
         if (isset($sum)) {
-            echo array_sum($sum);
-            echo ' ';
-            echo $personal['currency'];
+            if($personal['currency'] == "£" || $personal['currency'] == "$") {
+                echo $personal['currency'];
+            }
+            echo number_format(array_sum($sum), 2, ',', ' ');
+            if($personal['currency'] == "kr" || $personal['currency'] == "€") {
+                echo ' ';
+                echo $personal['currency'];
+            }
         }
         else {
-            echo '0';
-            echo ' ';
-            echo $personal['currency'];
+            if($personal['currency'] == "£" || $personal['currency'] == "$") {
+                echo '0';
+            }
+            if($personal['currency'] == "kr" || $personal['currency'] == "€") {
+                echo '0 ';
+                echo $personal['currency'];
+            }
         }
     }
 }

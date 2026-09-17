@@ -164,8 +164,8 @@
     echo '<td class="boldText">' . _("Quantity") . '</td>';
 // start and end sixth column
     echo '<td><input name="quantity" type="text" class="small" value="' . $executesql['quantity'] . '" id="quantity"> ';
-    echo '<button class="button white small" name="quantity_increase" type="submit"><span class="fa  fa-plus-square fa-lg"></span></button> ';
-    echo '<button class="button white small" name="quantity_decrease" type="submit"><span class="fa  fa-minus-square fa-lg"></span></button></td>';
+    echo '<button class="button green small" name="quantity_increase" type="submit"><span class="far fa-plus-square fa-lg"></span></button> ';
+    echo '<button class="button red small" name="quantity_decrease" type="submit"><span class="far fa-minus-square fa-lg"></span></button></td>';
 // end first row, start second row
     echo '</tr><tr>';
 // start and end first column
@@ -195,8 +195,8 @@
     echo '<td class="boldText">' . _("To order") . '</td>';
 // start and end sixth column
     echo '<td><input name="orderquant" type="text" class="small" value="' . $executesql['order_quantity'] . '" id="orderquant"> ';
-    echo '<button class="button white small" name="orderquant_increase" type="submit"><span class="fa  fa-plus-square fa-lg"></span></button> ';
-    echo '<button class="button white small" name="orderquant_decrease" type="submit"><span class="fa  fa-minus-square fa-lg"></span></button></td>';
+    echo '<button class="button green small" name="orderquant_increase" type="submit"><span class="far fa-plus-square fa-lg"></span></button> ';
+    echo '<button class="button red small" name="orderquant_decrease" type="submit"><span class="far fa-minus-square fa-lg"></span></button></td>';
 // end third row, start fourth row
     echo '</tr><tr>';
 // start and end first column
@@ -275,8 +275,8 @@
     echo '</select></td>';
 // start and end third column
     echo '<td><input name="projquant" type="text" class="small" value="';
-    if(isset($_POST['submit'])) { 
-        echo $_POST['projquant']; 
+    if(isset($_POST['submit'])) {
+        echo $_POST['projquant'];
     }
     echo '" ></td>';
 // start and end fourth column
@@ -295,9 +295,9 @@ if( $numrows == 0) { echo "</tr>"; }
 
     echo '</tbody></table>';
 
-    echo '<div class="buttons"><div class="input"><button class="button green" name="update" type="submit"><span class="fa  fa-save fa-lg"></span> ' . _("Update") . '</button> ';
-    echo '<button class="button" name="based" type="submit"><span class="fa  fa-plus-square fa-lg"></span> ' . _("New based on this") . '</button> ';
-    echo '<button class="button red" name="delete" type="submit"><span class="fa  fa-trash fa-lg"></span> ' . _("Delete") . '</button>';
+    echo '<div class="buttons"><div class="input"><button class="button green" name="update" type="submit"><span class="fas fa-save fa-lg"></span> ' . _("Update") . '</button> ';
+    echo '<button class="button" name="based" type="submit"><span class="fas fa-plus-square fa-lg"></span> ' . _("New based on this") . '</button> ';
+    echo '<button class="button red" name="delete" type="submit"><span class="fas fa-trash fa-lg"></span> ' . _("Delete") . '</button>';
     echo '</div></div></form></div>';
 // END
 // Text outside the main content

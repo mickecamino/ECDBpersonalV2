@@ -46,7 +46,7 @@ class Proj {
             echo "<tr>";
             echo '<td class="edit"><a href="proj_edit.php?proj_id=';
             echo $showDetails['project_id'];
-            echo '"><span class="fa fa-pencil fa-lg"></span></a></td>';
+            echo '"><span class="fas fa-pencil-alt fa-lg"></span></a></td>';
 
             echo "<td>";
             echo '<a href="proj_show.php?proj_id=';
@@ -76,7 +76,7 @@ class Proj {
                     echo "-";
                 }
                 else{
-                    echo $showPrice['SUM(total)']; 
+                    echo sprintf("%.2f", $showPrice['SUM(total)']);
                     echo ' ';
                     echo $personal['currency'];
                     }
