@@ -1,7 +1,7 @@
 <?php
 // File: component.php
 // Function: Show components
-// Revision date: 2026-09-16
+// Revision date: 2026-09-17
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -194,15 +194,22 @@ include "include/head.php";
                                 </td>
                                 <?php echo '<td class="boldText">' . _("Price") . '</td>';
                                 echo '<td>';
-                                        if ($executesql['price'] == "") {
-                                            echo "-";
+                                    if ($executesql['price'] == "" or $executesql['price'] == "0") { // empty or 0
+                                        if($personal['currency'] == "£" || $personal['currency'] == "$") { // print before price if £ or $
+                                            echo $personal['currency'] . "0";
+                                        } else {
+                                                echo "0 " .$personal['currency']; // print after
                                         }
-                                        else {
-                                            echo $executesql['price'];
-                                            echo ' ';
+                                    } else { // There is a price in the database
+                                        if($personal['currency'] == "£" || $personal['currency'] == "$") {
                                             echo $personal['currency'];
+                                            echo sprintf("%.2f",$executesql['price']);
+                                        } else {
+                                            echo sprintf("%.2f",$executesql['price']);
+                                            echo " " . $personal['currency'];
                                         }
-                                    ?>
+                                    }
+                                ?>
                                 </td>
                                 <?php echo '<td class="boldText">' . _("Order quantity") . '</td>';
                                 echo '<td>';
