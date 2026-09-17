@@ -1,13 +1,11 @@
 <?php
 // File: include/menu.php
 // Function: Display the menu tabs
-// Revision date: 2026-09-16
+// Revision date: 2026-09-17
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
-
-<!-- menu.php -->
 <?php
 echo '<div id="menu"><ul><li><a href="." class="';
     if ($_SERVER["REQUEST_URI"] == '/' or
