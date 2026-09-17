@@ -1,7 +1,7 @@
 <?php
 // File: include/include_proj_list_project.php
 // Function: List all projects, used in proj_list.php
-// Revision date: 2026-08-30
+// Revision date: 2026-09-17
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -72,17 +72,27 @@ class Proj {
             $sql_exec_price = mysqli_Query($connection,$GetDataPrice) or die(mysql_error());
 
             while($showPrice = mysqli_fetch_array($sql_exec_price)) {
-                if ($showPrice['SUM(total)'] == 0){
-                    echo "-";
-                }
-                else{
-                    echo sprintf("%.2f", $showPrice['SUM(total)']);
+                if ($showPrice['SUM(total)'] == 0) {
+                    if($personal['currency'] == "£" || $personal['currency'] == "$") {
+                        echo $personal['currency'];
+                        echo "0 ";    
+                    } elseif($personal['currency'] == "kr" || $personal['currency'] == "€") {
                     echo ' ';
-                    echo $personal['currency'];
+                    echo "0";
                     }
-                }
-            echo "</td>";
-        echo "</tr>";
+                } // end if sum == 0
+                else {
+                    if($personal['currency'] == "£" || $personal['currency'] == "$") {
+                        echo $personal['currency'];
+                        echo sprintf("%.2f",$showPrice['SUM(total)']);
+                    } elseif ($personal['currency'] == "kr" || $personal['currency'] == "€") {
+                        echo sprintf("%.2f",$showPrice['SUM(total)']);
+                        echo ' ';
+                        echo $personal['currency'];
+                    }
+                } // end if sum > 0
+            } // end while
+            echo "</td></tr>";
         }
     }
 }

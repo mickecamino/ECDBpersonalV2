@@ -2,9 +2,12 @@
 This is a list of changes made to my version of ECDB personal V2.
 
 ## [Unreleased]
-* Update ecDB.sql file from a mysqldump of MariDB
+* Update ecDB.sql file from a mysqldump of MariaDB
 * Add export for Shopping list  
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
+
+## [2026-09-17]
+* Fixed currency format for shoppinglist and projectlist
 
 ## [2026-09-16]
 * Switched from Fontawesome v4 to v5.
