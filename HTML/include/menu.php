@@ -6,7 +6,6 @@
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
-<?php
 echo '<div id="menu"><ul><li><a href="." class="';
     if ($_SERVER["REQUEST_URI"] == '/' or
         $_SERVER["REQUEST_URI"] == '/index.php'or isset($_GET['view']) or
