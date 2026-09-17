@@ -6,6 +6,12 @@ This is a list of changes made to my version of ECDB personal V2.
 * Add export for Shopping list  
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
 
+## [2026-09-16]
+* Switched from Fontawesome v4 to v5.
+* Replaced a couple of images
+* Fixed formatting in sum för projects and shoppinglist
+* Removed a bunch of directories and files that was not used in the code
+
 ## [2026-09-15]
 * Added images of resistors for E12 and E24 series.
 * Updated all import files for resistors to link the image.  
@@ -17,7 +23,7 @@ DELETE FROM data WHERE category = '1301';
 DELETE FROM data WHERE category = '1302';
 DELETE FROM data WHERE category = '1303';
 ```
-Then import all resistor files.
+Then import all resistor CSV-files.
 
 ## [2026-09-14]
 * Added new view to component page:  
