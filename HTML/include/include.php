@@ -45,7 +45,7 @@ class ShowComponents {
 // first column
             echo '<td class="edit"><a href="component_edit.php?edit=';
             echo $showDetails['id'];
-            echo '"><span class="fas fa-pencil fa-lg"></span></a></td>';
+            echo '"><span class="fas fa-pencil-alt-alt fa-lg"></span></a></td>';
 // second column
             echo '<td><a href="component.php?view=';
             echo $showDetails['id'];
@@ -194,7 +194,7 @@ class ShowComponents {
                 echo "<tr>";
                 echo '<td class="edit"><a href="component_edit.php?edit=';
                 echo $showDetails['id'];
-                echo '"><span class="fas fa-pencil fa-lg"></span></a></td>';
+                echo '"><span class="fas fa-pencil-alt fa-lg"></span></a></td>';
 
                 echo '<td><a href="component.php?view=';
                 echo $showDetails['id'];
@@ -324,7 +324,7 @@ class ShowComponents {
                 echo "<tr>";
                 echo '<td class="edit"><a href="component_edit.php?edit=';
                 echo $showDetails['id'];
-                echo '"><span class="fas fa-pencil fa-lg"> </span></a></td>';
+                echo '"><span class="fas fa-pencil-alt fa-lg"> </span></a></td>';
 
                 echo '<td><a href="component.php?view=';
                 echo $showDetails['id'];
@@ -367,7 +367,7 @@ class ShowComponents {
                 else{
                     echo '<a class="thumbnail" href="img/parts/';
                     echo $image;
-                    echo '"><img src="img/picture.png" /><span class="imgB"><img src="img/parts/';
+                    echo '"><span class="fas fa-file-image fa-lg"></span><span class="imgB"><img src="img/parts/';
                     echo $image;
                     echo '" /></span></a></td>';
                 }
@@ -470,7 +470,7 @@ class ShowComponents {
                     echo "<tr>";
                     echo '<td class="edit"><a href="component_edit.php?edit=';
                     echo $showDetails['id'];
-                    echo '"><span class="fas fa-pencil fa-lg"> </span></a></td>';
+                    echo '"><span class="fas fa-pencil-alt fa-lg"> </span></a></td>';
 
                     echo '<td><a href="component.php?view=';
                     echo $showDetails['id'];
