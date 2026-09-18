@@ -8,6 +8,7 @@
 //
     require_once "include/login/auth.php";
     include "include/mysql_connect.php";
+    include "include_format_currency.php"; // Currency formatter
 
     // Determine who is logged in and which parts belong to them
     $owner  =   $_SESSION['SESS_MEMBER_ID'];
@@ -23,7 +24,7 @@
     $numrows = mysqli_num_rows($GetProjects); // Get number of rows, if any
 
 // Get users currency
-    $GetPersonal = mysqli_query($connection,"SELECT currency FROM members WHERE member_id = ".$owner."");
+    $GetPersonal = mysqli_query($connection,"SELECT currency, language FROM members WHERE member_id = ".$owner."");
     $personal = mysqli_fetch_assoc($GetPersonal);
 
     if ($executesql['owner'] !== $owner) {
@@ -194,21 +195,12 @@ include "include/head.php";
                                 </td>
                                 <?php echo '<td class="boldText">' . _("Price") . '</td>';
                                 echo '<td>';
-                                    if ($executesql['price'] == "" or $executesql['price'] == "0") { // empty or 0
-                                        if($personal['currency'] == "£" || $personal['currency'] == "$") { // print before price if £ or $
-                                            echo $personal['currency'] . "0";
-                                        } else {
-                                                echo "0 " .$personal['currency']; // print after
-                                        }
-                                    } else { // There is a price in the database
-                                        if($personal['currency'] == "£" || $personal['currency'] == "$") {
-                                            echo $personal['currency'];
-                                            echo sprintf("%.2f",$executesql['price']);
-                                        } else {
-                                            echo sprintf("%.2f",$executesql['price']);
-                                            echo " " . $personal['currency'];
-                                        }
-                                    }
+                                if ($executesql['price'] == "" || $executesql['price'] == "0") { 
+                                    $price = 0; 
+                                } else {
+                                    $price = $executesql['price'];
+                                }
+                                echo format_currency($personal['language'],$personal['currency'], $price);
                                 ?>
                                 </td>
                                 <?php echo '<td class="boldText">' . _("Order quantity") . '</td>';

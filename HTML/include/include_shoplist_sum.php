@@ -1,7 +1,7 @@
 <?php
 // File: include_shoplist_sum.php
 // Function: Sums the cost for a shopping lists
-// Revision date: 2026-09-16
+// Revision date: 2026-09-18
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -14,7 +14,7 @@ class ShoplistPrice {
     include "mysql_connect.php";
 
     $owner = $_SESSION['SESS_MEMBER_ID'];
-    $GetPersonal = mysqli_query($connection,"SELECT currency FROM members WHERE member_id = ".$owner."");
+    $GetPersonal = mysqli_query($connection,"SELECT currency, language FROM members WHERE member_id = ".$owner."");
     $personal = mysqli_fetch_assoc($GetPersonal);
 
     $GetDataComponentsAll = "SELECT price,order_quantity FROM data WHERE owner = ".$owner." AND order_quantity > 0 ORDER by name ASC";
@@ -28,25 +28,13 @@ class ShoplistPrice {
             $sum[] = $product;
 
         }
-        if (isset($sum)) {
-            if($personal['currency'] == "£" || $personal['currency'] == "$") {
-                echo $personal['currency'];
-            }
-            echo number_format(array_sum($sum), 2, ',', ' ');
-            if($personal['currency'] == "kr" || $personal['currency'] == "€") {
-                echo ' ';
-                echo $personal['currency'];
-            }
+        $total = array_sum($sum); // Get the total
+        if( $total == "" || $total == "0") {
+            $price = "0";
+        } else {
+            $price = $total;
         }
-        else {
-            if($personal['currency'] == "£" || $personal['currency'] == "$") {
-                echo '0';
-            }
-            if($personal['currency'] == "kr" || $personal['currency'] == "€") {
-                echo '0 ';
-                echo $personal['currency'];
-            }
-        }
+        echo format_currency($personal['language'],$personal['currency'], $price) ;
     }
 }
 ?>

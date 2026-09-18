@@ -11,9 +11,10 @@ class Shoplist {
 
         require_once "login/auth.php";
         include "mysql_connect.php";
+        include "include/include_format_currency.php";
 
         $owner = $_SESSION['SESS_MEMBER_ID'];
-        $GetPersonal = mysqli_query($connection,"SELECT currency FROM members WHERE member_id = ".$owner."");
+        $GetPersonal = mysqli_query($connection,"SELECT currency, language FROM members WHERE member_id = ".$owner."");
         $personal = mysqli_fetch_assoc($GetPersonal);
 
         if(isset($_GET['by'])) {
@@ -74,14 +75,12 @@ class Shoplist {
                 echo "</td>";
 
                 echo "<td>";
-                $price = $showDetails['price'];
-                    if ($price == ""){
-                        echo "-";
-                    }
-                    else{
-                        echo $price;
-                        if($personal['currency'] == "SEK") echo " kr";
-                    }
+                if ($showDetails['price'] == "" || $showDetails['price'] == "0") {
+                    $price = "0";
+                } else {
+                    $price = $showDetails['price'];
+                }
+                echo format_currency($personal['language'],$personal['currency'], $price) ;
                 echo "</td>";
 
                 echo "<td>";

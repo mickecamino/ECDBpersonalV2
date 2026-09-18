@@ -1,7 +1,7 @@
 <?php
 // File: add_based.php
 // Function: Add component based on existing component
-// Revision date: 2026-09-16
+// Revision date: 2026-09-18
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -16,10 +16,6 @@ $id    = (int) $_GET['based'];
 // Get data from the old component to inherit.
 $GetDataComponent = mysqli_query($connection, "SELECT * FROM data WHERE id = " . $id . " AND owner = " . $owner . "");
 $executesql       = mysqli_fetch_assoc($GetDataComponent);
-
-// Get some personal data. ID, currency
-$GetPersonal = mysqli_query($connection, "SELECT currency FROM members WHERE member_id = " . $owner . "");
-$personal    = mysqli_fetch_assoc($GetPersonal);
 
 // If the owner of component !== $owner. Show error.
 if ($executesql['owner'] !== $owner)
@@ -122,7 +118,7 @@ include "include/head.php";
     echo '<tr><td class="boldText">' . _("Location") . '</td>'; // third row, first column
     echo '<td><div class="ui-widget"><input id="location" name="location" type="text"  value="' . $executesql['location'] . '" /></div></td>'; // second column
     echo '<td class="boldText">' . _("Price") . '</td>'; // third column
-    echo '<td><input name="price" type="text" class="small" value="' . $executesql['price'] . '" id="price" /> ' . $personal['currency'] . '</td>'; // fourth column
+    echo '<td><input name="price" type="text" class="small" value="' . $executesql['price'] . '" id="price" /></td>'; // fourth column
     echo '<td class="boldText">' . _("To order") . '</td>'; // fifth column
     echo '<td><input name="orderquant" type="text" class="small" value="' . $executesql['order_quantity'] . '" id="orderquant" /></td></tr>'; // sixth column, end third row
     echo '<tr><td class="boldText">' . _("Recycled") . '</td>'; // start fourth row, first column
@@ -184,3 +180,4 @@ include "include/head.php";
 // END
     echo "</div></body></html>";
 ?>
+

@@ -1,7 +1,7 @@
 <?php
 // File: component_edit.php
 // Function: Edit components
-// Revision date: 2026-09-17
+// Revision date: 2026-09-18
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -14,9 +14,6 @@
     // Select all details for id
     $GetDataComponent = mysqli_query($connection,"SELECT * FROM data WHERE id = ".$id." AND owner = ".$owner."");
     $executesql = mysqli_fetch_assoc($GetDataComponent);
-
-    $GetPersonal = mysqli_query($connection,"SELECT currency FROM members WHERE member_id = ".$owner."");
-    $personal = mysqli_fetch_assoc($GetPersonal);
 
     if ($executesql['owner'] !== $owner) {
         header("Location: error.php?id=2");
@@ -31,7 +28,6 @@
 
     $GetHeadCatName = mysqli_query($connection,"SELECT * FROM category_head WHERE id = ".$head_cat_id."");
     $executesql_head_catname = mysqli_fetch_assoc($GetHeadCatName);
-
 
     $sub_cat_id = $executesql['category'];
 
