@@ -1,11 +1,21 @@
 # Changelog
-This is a list of changes made to my version of ECDB personal V2.
+This is a list of changes made to my version of ecDB personal V2.
 
 ## [Unreleased]
 * Update ecDB.sql file from a mysqldump of MariaDB
 * Add export for Shopping list  
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
 
+## [2026-09-18]
+* Rewrote currency display to use php Intl, functions numfmt_create and numfmt_format_currency.  
+Now all prices that are displayed use correct formatting depending on language and currency setting in my.php
+* Added English UK in language
+
+* ** NOTE ** You need to run this command in a shell on the server:
+```
+sudo apt install php-intl
+sudo systemctl restart apache2
+```
 ## [2026-09-17]
 * Fixed currency format for shoppinglist and projectlist
 
