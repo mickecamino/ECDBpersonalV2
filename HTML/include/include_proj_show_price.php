@@ -10,7 +10,7 @@ class ProjectShowPrice {
     public function ProjectSumTotal() {
 
         include "mysql_connect.php";
-        include "include_format_currency.php"; // Currency formatter"
+        include "include/include_format_currency.php"; // Currency formatter"
 
         $project_id = (int)$_GET["proj_id"];
         $owner = $_SESSION['SESS_MEMBER_ID'];

@@ -8,7 +8,7 @@
 //
     require_once "include/login/auth.php";
     include "include/mysql_connect.php";
-    include "include_format_currency.php"; // Currency formatter
+    include "include/include_format_currency.php"; // Currency formatter
 
     // Determine who is logged in and which parts belong to them
     $owner  =   $_SESSION['SESS_MEMBER_ID'];

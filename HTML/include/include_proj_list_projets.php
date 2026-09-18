@@ -12,7 +12,7 @@ class Proj {
         // Funktion för att visa alla projekt, används i proj_list.php
         require_once "login/auth.php";
         include "mysql_connect.php";
-        include "include_format_currency.php"; // Currency formatter"
+        include "include/include_format_currency.php"; // Currency formatter"
 
         $owner = $_SESSION['SESS_MEMBER_ID'];
 
