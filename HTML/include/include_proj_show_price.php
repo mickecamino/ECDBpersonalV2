@@ -29,6 +29,7 @@ class ProjectShowPrice {
             else{
                 $price = $sum;
             }
+        echo _("Total cost: ");
         echo format_currency($personal['language'],$personal['currency'], $price) ;
     }
 }
