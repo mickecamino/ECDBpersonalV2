@@ -314,7 +314,7 @@ include "include/head.php";
                             <?php
                             echo '<button class="button" name="edit" type="submit"><span class=" fas fa-pencil-alt fa-lg"></span> ' . _(" Edit Component") . '</button> ';
                             echo '<button class="button" name="based" type="submit"><span class="fas fa-plus-square fa-lg"></span> ' . _(" New based on this") . '</button> ';
-                            echo '<button class="button red" name="delete" type="submit"><span class="fas fa-trash fa-lg"></span> ' . _(" Delete component") . '</button> ';
+                            echo '<button class="button red" name="delete" type="submit"><span class="far fa-trash-alt fa-lg"></span> ' . _(" Delete component") . '</button> ';
                             ?>
                         </div>
                     </div>

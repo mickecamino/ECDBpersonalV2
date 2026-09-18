@@ -293,7 +293,7 @@ if( $numrows == 0) { echo "</tr>"; }
 
     echo '<div class="buttons"><div class="input"><button class="button green" name="update" type="submit"><span class="fas fa-save fa-lg"></span> ' . _("Update") . '</button> ';
     echo '<button class="button" name="based" type="submit"><span class="fas fa-plus-square fa-lg"></span> ' . _("New based on this") . '</button> ';
-    echo '<button class="button red" name="delete" type="submit"><span class="fas fa-trash fa-lg"></span> ' . _("Delete") . '</button>';
+    echo '<button class="button red" name="delete" type="submit"><span class="far fa-trash-alt fa-lg"></span> ' . _("Delete") . '</button>';
     echo '</div></div></form></div>';
 // END
 // Text outside the main content
