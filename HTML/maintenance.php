@@ -31,7 +31,7 @@ include ("include/head.php");
     echo '<form action="maintenance.php" method="post" enctype="multipart/form-data">';
     echo '<input type="checkbox" name="appnote" value="Yes" /> ' . _("Upload as an Application Note?") . '<br>';
     echo '<input type="file" class = "bold" name="file" id="file"><br>';
-    echo '<button class="button green" name="submit" type="submit"><span class="fa fa-upload"></span> ' . _("Upload") . '</button> ';
+    echo '<button class="button green" name="submit" type="submit"><span class="fas fa-upload"></span> ' . _("Upload") . '</button> ';
     echo '<input type="hidden" name="MAX_FILE_SIZE" value="5242880" />';
     echo '</form>';
 

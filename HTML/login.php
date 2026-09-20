@@ -58,7 +58,7 @@
         echo '<div class="textInput"><label class="keyWord">' . _("Password") . '</label>';
         echo '<div class="input"><input name="password" class="medium" type="password" id="password"/></div>';
         echo '</div><div class="buttons"><div class="input">';
-            echo '<button class="button green" name="Submit" type="submit"><span class="fa fa-key fa-lg"></span> ' . _("Login") . '</button>';
+            echo '<button class="button green" name="Submit" type="submit"><span class="fas fa-key fa-lg"></span> ' . _("Login") . '</button>';
         echo '</div></div>';
         echo '</form></div><div class="right"></div></div></div>';
 // END

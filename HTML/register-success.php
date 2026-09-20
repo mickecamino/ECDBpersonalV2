@@ -25,8 +25,8 @@
 // END
 // Main menu
     echo '<div id="menu"><ul>';
-    echo '<li><a href="."><span class="fa fa-key fa-lg"></span> ' . _("Login") . '</a></li>';
-    echo '<li><a href="register.php"><span class="fa user fa-lg"></span> ' . _("Register") . '</a></li>';
+    echo '<li><a href="."><span class="fas fa-key fa-lg"></span> ' . _("Login") . '</a></li>';
+    echo '<li><a href="register.php"><span class="fas user fa-lg"></span> ' . _("Register") . '</a></li>';
     echo '</ul></div>';
 // END
 // Main content

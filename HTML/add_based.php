@@ -172,7 +172,7 @@ include "include/head.php";
     echo '<td></td><td></td><td></td></tr>'; // fourth to sixth column, end tenth row
     } // end if numrows
     echo '</tbody></table>'; // end table
-    echo '<div class="buttons"><div class="input"><button class="button green" name="submit" type="submit"><span class="fa fa-save fa-lg"></span> ' . _("Save") . '</button>';
+    echo '<div class="buttons"><div class="input"><button class="button green" name="submit" type="submit"><span class="far fa-save fa-lg"></span> ' . _("Save") . '</button>';
     echo '</div></div></form></div>'; // end divs and form
 // END
 // Text outside the main content

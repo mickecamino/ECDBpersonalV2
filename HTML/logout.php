@@ -32,8 +32,8 @@
 // END
 // Main menu
     echo '<div id="menu"><ul>';
-    echo '<li><a href="."><span class="fa fa-key fa-lg"></span> ' . _("Login") . '</a></li>';
-    echo '<li><a href="register.php"><span class="fa fa-user fa-lg"></span> ' . _("Register") . '</a></li>';
+    echo '<li><a href="."><span class="fas fa-key fa-lg"></span> ' . _("Login") . '</a></li>';
+    echo '<li><a href="register.php"><span class="fas fa-user fa-lg"></span> ' . _("Register") . '</a></li>';
     echo '</ul></div>';
 // END
 // Main content
@@ -45,7 +45,7 @@
     echo '<div class="textInput"><label class="keyWord">' . _("Password") . '</label>';
     echo '<div class="input"><input name="password" class="medium" type="password" id="password"/></div></div>';
     echo '<div class="buttons"><div class="input">';
-    echo '<button class="button green" name="Submit" type="submit"><span class="fa fa-key fa-lg"></span> ' . _("Login") . '</button></div></div></form></div>';
+    echo '<button class="button green" name="Submit" type="submit"><span class="fas fa-key fa-lg"></span> ' . _("Login") . '</button></div></div></form></div>';
     echo '<div class="right"></div></div></div>';
 // END
 // Text outside the main content
