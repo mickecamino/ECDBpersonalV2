@@ -1,7 +1,7 @@
 <?php
 // File: include_component_edit_project_add.php
 // Function: Used in Edit component to add the component to a project
-// Revision date: 2026-09-03
+// Revision date: 2026-09-20
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -19,7 +19,7 @@ class AddMenuProj {
         echo _(" - Project - ");
         echo "</option>";
 
-        $GetDataProject = "SELECT * FROM projects WHERE project_owner = '$owner'";
+        $GetDataProject = "SELECT * FROM projects WHERE project_owner = '$owner' ORDER by project_name ASC";
         $sql = mysqli_query($connection,$GetDataProject);
 
         while($row1 = mysqli_fetch_array($sql)){
