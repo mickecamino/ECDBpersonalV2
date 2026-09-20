@@ -6,6 +6,12 @@ This is a list of changes made to my version of ecDB personal V2.
 * Add export for Shopping list  
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
 
+## [2026-09-20]
+* Added total cost for all projects list.
+* Fixed a lot of internals and cleaned up a couple of SQL-commands.
+
+* Followed the instructions to test that the code is working when cloning the repository. It did, had to fix a couple of translations.
+
 ## [2026-09-18]
 * Rewrote currency display to use php Intl, functions numfmt_create and numfmt_format_currency.  
 Now all prices that are displayed use correct formatting depending on language and currency setting in my.php
