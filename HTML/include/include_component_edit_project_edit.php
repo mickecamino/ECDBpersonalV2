@@ -15,11 +15,11 @@ class EditProj {
         $id = (int)$_GET['edit'];
 
         // Get all project (if any)
-        $query = "SELECT projects_data.projects_data_project_id, projects_data.projects_data_quantity, projects_data.projects_data_component_id, projects.project_id, projects.project_name FROM projects_data, projects WHERE projects_data.projects_data_project_id = projects.project_id AND projects_data.projects_data_component_id = '$id'";
+        $query = "SELECT projects_data.projects_data_project_id, projects_data.projects_data_quantity, projects_data.projects_data_component_id, projects.project_id, projects.project_name FROM projects_data, projects WHERE projects_data.projects_data_project_id = projects.project_id AND projects_data.projects_data_component_id = '$id' ORDER BY projects.project_name";
         $result = mysqli_query($connection,$query) or die(mysql_error());
         if (mysqli_num_rows($result) != 0) { // If there are any projects with this component, show them
             while($row = mysqli_fetch_array($result)) {
-                // When thsi module is called we are on fourth column and eight row
+                // When this module is called we are on fourth column and eight row
                 echo $row['project_name']; // display the project name
                 echo '</td>';  // end fourth column
                 echo '<td><input name="projquantedit[';  // start fifth column
