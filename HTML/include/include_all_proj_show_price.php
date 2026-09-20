@@ -34,7 +34,7 @@ class AllProjectShowPrice {
             else{
                 $price = $total;
             }
-        echo _("Total cost: ");
+        echo _("Total cost:") . " ";
         echo format_currency($personal['language'],$personal['currency'], $price) ;
     }
 }
