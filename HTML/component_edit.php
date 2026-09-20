@@ -249,7 +249,7 @@
         echo '<td class="boldText">' . _("Add to project") . '</td>';  // second column
         echo '<td class="boldText">' . _("Quantity") . '</td>'; // third column
         if ($projects_data_rows  == 0) { // This component is NOT in a project
-            echo '<td></td><td></td>';
+            echo '<td></td><td></td>';   // then add fourth and fifth columns
         } else { // this component IS in a project
             echo '<td class="boldText">' . _("Project") . '</td>'; // fourth column
             echo '<td class="boldText">' . _("Quantity") . '</td>'; // fifth column
@@ -275,17 +275,16 @@
         echo $_POST['projquant'];
     }
     echo '" ></td>';
-// start and end fourth column
-    echo '<td>';
+// start fourth column
+    echo '<td>'; // rest is in this include
     include "include/include_component_edit_project_edit.php";
     $MenuProj = new EditProj;
     $MenuProj->MenuProj();
-    echo '<tr><td></td>';
 }
 // NOTE!!!! In the include above there are <tr> and </tr> as well as <td> and </td>
 // so this should not be added here! Took me a while to detect this
 //start and end fifth to sixth columns. end eight row
-//  echo '<td></td><td></td></tr>';
+
 if( $numrows == 0) { echo "</tr>"; }
 // end tbody and table
 
