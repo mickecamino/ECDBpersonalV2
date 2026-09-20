@@ -1,4 +1,5 @@
 To translate to a new language go to your language folder, currently these are:
+de_DE - German
 es_ES - Spanish
 fr_FR - French
 it_IT - Italian

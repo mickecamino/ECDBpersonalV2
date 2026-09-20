@@ -45,7 +45,7 @@
             $searchTitle == "Search")
         {
             echo '<div class="searchContent">';
-            echo _("Search") . ' <span class="fa fa-search"></span>';
+            echo _("Search") . ' <span class="fas fa-search"></span>';
             echo '<form class="search" action="search.php" method="get">';
             echo '  <input type="text" name="q" autofocus/>';
             echo '</form>';
