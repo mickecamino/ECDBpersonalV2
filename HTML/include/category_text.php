@@ -1,14 +1,14 @@
 <?php
 /******************************************************************************
-* File: importexport.php
-* Function: Hold text för all categories, head and sub
+* File: category_text.php
+* Function: Hold text for all categories, head and sub
 * Revision date: 2026-09-11
 * Created by: Mikael Karlsson
 * This file is distributed under the license:
 * Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 *
 * This is a dummy file that does nothing but keep a list of names for the
-* categries so that they can be picked up by this command:
+* categories so that they can be picked up by this command:
 * sudo find . -name "*.php" -print0"), sudo xargs -0 xgettext --join-existing
 *
 * This is quite a clever way to localize the categories
