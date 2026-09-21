@@ -1,7 +1,7 @@
 <?php
 // File: header.php
 // Function: show the generic shared header
-// Revision date: 2026-09-01
+// Revision date: 2026-09-21
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -37,7 +37,7 @@
     echo "</span>";
 // Search Function
 // We don't need a search form on anything but what is defined below
-// They cant be localized, thats why we need a hidden variable $searchTitle to get this to work
+// They cant be localized, that's why we need a hidden variable $searchTitle to get this to work
     if(isset($searchTitle)) {
         if ($searchTitle == "Home" ||
             $searchTitle == "Categories" ||

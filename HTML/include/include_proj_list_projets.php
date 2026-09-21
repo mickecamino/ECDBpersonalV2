@@ -1,7 +1,7 @@
 <?php
 // File: include/include_proj_list_project.php
 // Function: List all projects, used in proj_list.php
-// Revision date: 2026-09-18
+// Revision date: 2026-09-21
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -9,7 +9,6 @@
 class Proj {
     public function ProjList() {
 
-        // Funktion för att visa alla projekt, används i proj_list.php
         require_once "login/auth.php";
         include "mysql_connect.php";
         include "include/include_format_currency.php"; // Currency formatter"

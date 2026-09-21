@@ -1,7 +1,7 @@
 <?php
 // File: include/include.php
 // Function: Add functions: Index, Category, Seacrh and Add
-// Revision date: 2026-09-16
+// Revision date: 2026-09-21
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -606,7 +606,6 @@ class ShowComponents {
                 $quantity = 0;
             }
             else{
-//                $quantity = str_replace(',', '.', strip_tags(mysqli_real_escape_string($connection,$_POST['quantity'])));
             $quantity = (int)$_POST['quantity'];
             }
 
@@ -614,7 +613,6 @@ class ShowComponents {
                 $category = '';
             }
             else{
-//                $category = strip_tags(mysqli_real_escape_string($connection,$_POST['category']));
                 $category = (int)$_POST['category'];
             }
 
@@ -623,7 +621,6 @@ class ShowComponents {
             }
             else{
                 $project = (int)$_POST['project'];
-//                $project = strip_tags(mysqli_real_escape_string($connection,$_POST['project']));
             }
 
             $comment          = strip_tags(mysqli_real_escape_string($connection,$_POST['comment']));

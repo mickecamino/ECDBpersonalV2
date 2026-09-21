@@ -1,13 +1,13 @@
 <?php
 // File: login.php
 // Function: Login dialog
-// Revision date: 2026-09-16
+// Revision date: 2026-09-21
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
 // Start session
-    session_start(['cookie_lifetime' => 86400,]);
+    session_start();
 
     //Unset the variables stored in session
     unset($_SESSION['SESS_MEMBER_ID']);

@@ -1,7 +1,7 @@
 <?php
 // File: importexport.php
 // Function: Export, import, add or delete components from the database
-// Revision date: 2026-09-16
+// Revision date: 2026-09-21
 // Created by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -40,7 +40,7 @@
 
 // END
     if(isset($_POST['exportdata'])) {
-        $fname = "ecDBpersonal_components_" .  (string) date("Y-m-d_Hi") . ".csv";  // Note to myself, must use date_default_timezone_set for this towork
+        $fname = "ecDBpersonal_components_" .  (string) date("Y-m-d_Hi") . ".csv";  // Note to myself, must use date_default_timezone_set for this to work
         $AllComponents = mysqli_fetch_all(mysqli_Query($connection,"SELECT * FROM `data` WHERE `owner` = " . $owner . " ORDER BY `id`"), MYSQLI_ASSOC);
         export_components( $AllComponents, $fname);
     }
@@ -83,7 +83,7 @@ function import_components($owner, $connection, $filename)
 
     while (($csvdata = fgetcsv($handle, 1400, ";")) !== FALSE) // Loop through all records
     {
-        if( count($headers) == count($csvdata)) { // If the header and the data contains the same number of ojects, then continue
+        if( count($headers) == count($csvdata)) { // If the header and the data contains the same number of objects, then continue
             $data = array_combine($headers, $csvdata); // combine header with the data
             // Check the action
             switch ($data["action"]) { // What shall we do? add, edit?
@@ -96,7 +96,7 @@ function import_components($owner, $connection, $filename)
                         $indatabase       = mysqli_fetch_assoc($GetDataComponent);
                         $sqlquery = "UPDATE `data` SET "; // start of UPDATE query
                     } else {
-                        report_error($row, "", "", "", 2); // report errer #2
+                        report_error($row, "", "", "", 2); // report error #2
                         break;
                     } // end else
                 }
@@ -149,16 +149,16 @@ function import_components($owner, $connection, $filename)
                         } // end if $anymatches == 0
                         if ($anymatches > 0) { // we found a match, there is a duplicate
                             if($locationlength != 0 ) { // Do we have location?
-                            report_error($row, $find, $categoryname["name"], $location, 3); // report errer #3
+                            report_error($row, $find, $categoryname["name"], $location, 3); // report error #3
                             break; // Get next record
                         } else { // No, the location field is empty
-                            report_error($row, $find, $categoryname["name"], "", 8); // report errer #3
+                            report_error($row, $find, $categoryname["name"], "", 8); // report error #3
                             break; // Get next record
                         }
                         } // End elseif anymatches > 0
                     } else {
                         // If the category in the csv is not in the database, report it.
-                        report_error($row, $find, $data["category"], "", 7); // report errer #7
+                        report_error($row, $find, $data["category"], "", 7); // report error #7
                         break;
                     }
                 }

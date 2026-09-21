@@ -1,7 +1,7 @@
 <?php
 // File: add_based.php
 // Function: Add component based on existing component
-// Revision date: 2026-09-18
+// Revision date: 2026-09-21
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -21,13 +21,13 @@ $executesql       = mysqli_fetch_assoc($GetDataComponent);
 if ($executesql['owner'] !== $owner)
     {
     header("Location: error.php?id=2");
-    } //$executesql['owner'] !== $owner
+    }
 
 // Get the head category ID, based of the sub category, ($executesql['category']).
 if ($executesql['category'] < 999)
     {
     $head_cat_id = substr($executesql['category'], -3, 1);
-    } //$executesql['category'] < 999
+    }
 else
     {
     $head_cat_id = substr($executesql['category'], -4, 2);
@@ -99,7 +99,7 @@ include "include/head.php";
             if ($executesql_sub_catname['id'] == $SubCategory['id'])
                 {
                 echo ' selected';
-                } // end if - $executesql_sub_catname['id'] == $SubCategory['id']
+                }
             echo '>';
             echo $SubCategory['name'];
             echo '</option>';
@@ -155,7 +155,7 @@ include "include/head.php";
     echo '<td class="boldText">' . _("Add component to project") . '</td>'; // second column
     echo '<td class="boldText">' . _("Quantity") . '</td>'; // third column
     echo '<td></td><td></td><td></td></tr>'; // fourth to sixth column, end row nine
-    echo '<tr><td></td>'; // start tenth row, first colum
+    echo '<tr><td></td>'; // start tenth row, first column
     echo '<td><select name="project">'; // start second column
 
     include "include/include_component_add_project.php";
@@ -163,7 +163,7 @@ include "include/head.php";
     $MenuProj->MenuProj();
 
     echo '</select></td>'; // end second column
-    echo '<td><input name="projquant" type="text" class="small" value="'; // start third colum
+    echo '<td><input name="projquant" type="text" class="small" value="'; // start third column
     if (isset($_POST['submit']))
         {
         echo $_POST['projquant'];

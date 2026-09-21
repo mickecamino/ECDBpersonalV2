@@ -1,7 +1,7 @@
 <?php
 // File: category.php
 // Function: Show and sort categories
-// Revision date: 2026-08-31
+// Revision date: 2026-09-21
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -83,7 +83,7 @@
     if(isset($_GET['subcat'])){ echo $_GET['subcat'];} echo "&by=quantity&order=";
     if(isset($_GET['order'])) { $order = $_GET['order']; if ($order == 'asc') { echo 'desc'; } else { echo 'asc'; } } else { echo 'desc'; }
     echo '">' . _("Quantity") . "</a></th>";
-// end ninth column, start and end tenth column, end rown one
+// end ninth column, start and end tenth column, end row one
     echo "<th>" . _("Comment") . "</th></tr>";
 // end thead, start tbody
     echo "</thead><tbody>";

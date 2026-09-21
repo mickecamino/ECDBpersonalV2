@@ -1,7 +1,7 @@
 <?php
 // File: add.php
 // Function: sadd component
-// Revision date: 2026-09-16
+// Revision date: 2026-09-21
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -51,7 +51,7 @@
     echo '<td class="boldText">' . _("Quantity") . '</td>'; // fifth column
     echo '<td><input name="quantity" type="text" class="small" value="'; // start sixth column
     if(isset($_POST['submit'])) { echo $_POST['quantity']; }
-    echo '"></td></tr>'; // end input name, end sixth columnt, end first row
+    echo '"></td></tr>'; // end input name, end sixth column, end first row
 // Second row
     echo '<tr><td class="boldText">' . _("Manufacturer") . '</td>'; // first column
     echo '<td><div class="ui-widget"><input name="manufacturer" id="manufacturer" type="text"  value="'; // start second column
@@ -116,7 +116,7 @@
     $projects_qry = "SELECT project_id FROM projects WHERE project_owner = $owner";
     $projects_res = mysqli_query($connection,$projects_qry);
     $numrows = mysqli_num_rows($projects_res);
-// If there are no projects, skip sektion for project display
+// If there are no projects, skip section for project display
     if ($numrows > 0) {
 // Ninth row
     echo '<tr><td></td>'; // start ninth row, first column

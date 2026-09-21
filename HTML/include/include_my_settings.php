@@ -1,4 +1,11 @@
 <?php
+// File: include/include_my_settings.php
+// Function: Checker for my.php
+// Revision date: 2026-09-21
+// Revised by: Mikael Karlsson
+// This file is distributed under the license:
+// Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+//
 class My {
     public function Settings() {
 
@@ -69,8 +76,6 @@ class My {
             else {
                 $sql="UPDATE members SET firstname = '$firstname', lastname = '$lastname', currency = '$currency', language = '$language' WHERE member_id = '$owner'";
                 $sql_exec = mysqli_query($connection,$sql);
-// Update the language cookie
-                    setcookie("language", $language, time() + (86400 * 30), "/"); // 86400 * 30 = 30 days
             }
             echo '<div class="message green center">';
             echo _("Settings updated!");

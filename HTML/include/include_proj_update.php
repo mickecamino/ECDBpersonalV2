@@ -1,7 +1,7 @@
 <?php
 // File: include/include_proj_update.php
 // Function: Renames a project
-// Revision date: 2026-09-16
+// Revision date: 2026-09-21
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -23,7 +23,7 @@ class ProjAdd {
             else {
                 $sql = "UPDATE projects SET project_name = '".$name."' WHERE project_id = ".$id." ";
                 $sql_exec = mysqli_query($connection,$sql);
-                // Go bak to project list
+                // Go back to project list
                 header("location: /proj_list.php");
             }
         }

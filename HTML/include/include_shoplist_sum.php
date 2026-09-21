@@ -1,7 +1,7 @@
 <?php
 // File: include_shoplist_sum.php
 // Function: Sums the cost for a shopping lists
-// Revision date: 2026-09-18
+// Revision date: 2026-09-21
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -24,7 +24,7 @@ class ShoplistPrice {
             $price = $showDetails['price'];
             (int)$quantity = $showDetails['order_quantity']; // quantity is now an integer
 
-            $product =  (float)$price * $quantity; // so we have to casr $price as a float
+            $product =  (float)$price * $quantity; // so we have to cast $price as a float
             $sum[] = $product;
 
         }
