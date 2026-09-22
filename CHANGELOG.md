@@ -6,6 +6,17 @@ This is a list of changes made to my version of ecDB personal V2.
 * Add export for Shopping list  
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
 
+## [2026-09-22]
+* Added function to disable the register tab. Edit include/include_disable_register.php and change false to true.  
+Change from
+```
+$disable_register = false; // Set to true to disable the Register functions
+```
+to:
+```
+$disable_register = true; // Set to true to disable the Register functions
+```
+to disable the Register tab.
 ## [2026-09-20]
 * Added total cost for all projects list.
 * Fixed a lot of internals and cleaned up a couple of SQL-commands.
