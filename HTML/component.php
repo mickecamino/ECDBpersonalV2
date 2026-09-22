@@ -1,7 +1,7 @@
 <?php
 // File: component.php
 // Function: Show components
-// Revision date: 2026-09-17
+// Revision date: 2026-09-22
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -284,7 +284,7 @@ include "include/head.php";
                                 </td>
 <?php // Show all projects where the component is added to, with hyperlink
                                 if( $numrows > 0 ) {
-                                    echo '<td class="boldText">' . _("Included in project") . '</td><td></td>';
+                                    echo '<td class="boldText">' . _("Included in project") . '</td><td class="boldText">' ._("Quantity") . '</td>';
                                     while ($projectsql = mysqli_fetch_assoc($GetProjects)) {
                                         echo '<tr>';
                                         echo '<td></td><td></td><td></td><td></td>';
@@ -294,10 +294,11 @@ include "include/head.php";
                                         echo '">';
                                         echo $projectsql['project_name'];
                                         echo '</a>';
-                                        echo '</td><td></td></tr>';
+                                        echo '</td><td>';
+                                        echo $projectsql['projects_data_quantity'];
+                                        echo '</td></tr>';
                                     }
                                 } else {
-                                    echo '<td></td>';
                                     echo '<td></td>';
                                     echo '<td></td>';
                                     echo '</tr>';
