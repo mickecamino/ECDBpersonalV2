@@ -8,5 +8,5 @@
 //
 
 // Set to true if you want to disable the Register tab
-$disable_register = false; // 1 = debug
+$disable_register = false; // Set to true to disable the Register functions
 ?>
