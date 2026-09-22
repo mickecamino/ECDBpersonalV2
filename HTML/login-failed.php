@@ -9,6 +9,10 @@
 // Custom Page Titles
 $pageTitle = _("Login");
 include "include/head.php";
+
+// Enable or disable Register tab
+include "include/include_disable_register.php";
+
 // Call the language translator
     require_once "include/localize.php";
     if(isset($_COOKIE["language"])) { // for localization
@@ -26,7 +30,9 @@ include "include/head.php";
 // Main menu
     echo '<div id="menu"><ul>';
     echo '<li><a href="."><span class="fas fa-key fa-lg"></span> ' . _("Login") . '</a></li>';
-    echo '<li><a href="register.php"><span class="fas fa-user fa-lg"></span> ' . _("Register") . '</a></li>';
+    if( $disable_register == false ) {
+        echo '<li><a href="register.php"><span class="fas fa-user fa-lg"></span> ' . _("Register") . '</a></li>';
+    }
     echo '</ul></div>';
 // END
 // Main content
