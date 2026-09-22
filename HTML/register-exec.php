@@ -2,11 +2,16 @@
 // File: register-exec.php
 // Function: Add new user, called after register.php
 // Calls register-success.php on successful completion
-// Revision date: 2026-09-03
+// Revision date: 2026-09-22
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
+
+// Enable or disable register
+    include "include/include_disable_register.php";
+    if( $disable_register == true ) {  header("location: login.php"); } 
+
     //Start session
     session_start();
 

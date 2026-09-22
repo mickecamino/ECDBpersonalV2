@@ -1,13 +1,18 @@
 <?php
 // File: register.php
 // Function: Register a new user
-// Revision date: 2026-09-16
+// Revision date: 2026-09-22
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 //
     session_start();
     require_once "include/debug.php";
+
+// Disable or enable register tab
+    include "include/include_disable_register.php";
+    if( $disable_register == true ) {  header("location: login.php"); } 
+
     // Custom Page Titles
     $pageTitle = _("Register");
     include "include/head.php";

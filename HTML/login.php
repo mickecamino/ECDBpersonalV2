@@ -1,7 +1,7 @@
 <?php
 // File: login.php
 // Function: Login dialog
-// Revision date: 2026-09-21
+// Revision date: 2026-09-22
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -20,6 +20,9 @@
         $language = "en_US.utf8";
     }
     require_once "include/debug.php";
+
+    include "include/include_disable_register.php";
+ 
  // Custom Page Titles
     $pageTitle = _("Login");
     include "include/head.php";
@@ -34,7 +37,9 @@
 // Main menu
     echo '<div id="menu"><ul>';
         echo '<li><a href="."><span class="fa fa-key fa-lg"></span> ' . _("Login") . '</a></li> ';
-        echo '<li><a href="register.php"><span class="fa fa-user fa-lg"></span> ' . _("Register") . '</a></li> ';
+        if( $disable_register == false ) {
+            echo '<li><a href="register.php"><span class="fa fa-user fa-lg"></span> ' . _("Register") . '</a></li> ';
+        }
     echo '</ul></div>';
 // END
 // Main content
