@@ -497,7 +497,7 @@ function report_success($row, $field1, $field2, $successlevel)
 {
     if( $successlevel = 1 ) {
         echo '<span style="color: green">';
-        echo sprintf(_("Row %s with name %s and category %s imported"), $row, $field1, gettext($field2["name"]) . "<br>";
+        echo sprintf(_("Row %s with name %s and category %s imported"), $row, $field1, gettext($field2["name"]) . "<br>");
         echo '<span>';
         return;
     }
