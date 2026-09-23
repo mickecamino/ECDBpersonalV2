@@ -1,7 +1,7 @@
 <?php
 // File: include/include.php
 // Function: Add functions: Index, Category, Seacrh and Add
-// Revision date: 2026-09-21
+// Revision date: 2026-09-23
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -625,7 +625,13 @@ class ShowComponents {
 
             $comment          = strip_tags(mysqli_real_escape_string($connection,$_POST['comment']));
             $order_quantity   = (int)$_POST['orderquant'];
-            $project_quantity = (int)$_POST['projquant'];
+            if( $order_quantity == '' ) $order_quantity = 0; // If empty, set to int 0
+            // If there are no projects, then projquant is not defined, take care of that here
+            if( isset($_POST['projquant'])) {
+                $project_quantity = $_POST['projquant']; // projquant is defined
+            } else {
+                $project_quantity = 0; // No, projquant is undefined, set it to int 0
+            }
             $price            = str_replace(',', '.', strip_tags(mysqli_real_escape_string($connection,$_POST['price'])));
             $location         = strip_tags(mysqli_real_escape_string($connection,$_POST['location']));
             $manufacturer     = strip_tags(mysqli_real_escape_string($connection,$_POST['manufacturer']));
