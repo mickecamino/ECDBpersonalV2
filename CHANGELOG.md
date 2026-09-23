@@ -2,9 +2,9 @@
 This is a list of changes made to my version of ecDB personal V2.
 
 ## [Unreleased]
-* Update ecDB.sql file from a mysqldump of MariaDB
-* Add export for Shopping list  
+* Automatic add of component to shopping list if project quantity > quantity + order_quantity
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
+* Add export for Shopping list  
 
 ## [2026-09.23]
 * Added display numner of units in the project list
