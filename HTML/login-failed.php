@@ -25,7 +25,7 @@ include "include/include_disable_register.php";
 // END
     echo '<body><div id="wrapper">';
 // Header
-    echo '<div><img src="img/logov2.png" alt="ecDB personalV2" style="width:175px;height:75px;"></div>';
+    echo '<div><img src="img/logov2.png" alt="ecDB personalV2" style="width:200px;height:75px;"></div>';
 // END
 // Main menu
     echo '<div id="menu"><ul>';
