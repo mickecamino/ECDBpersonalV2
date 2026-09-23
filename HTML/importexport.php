@@ -1,7 +1,7 @@
 <?php
 // File: importexport.php
 // Function: Export, import, add or delete components from the database
-// Revision date: 2026-09-20
+// Revision date: 2026-09-23
 // Created by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -497,7 +497,7 @@ function report_success($row, $field1, $field2, $successlevel)
 {
     if( $successlevel = 1 ) {
         echo '<span style="color: green">';
-        echo sprintf(_("Row %s with name %s and category %s imported"), $row, $field1, gettext($field2["name"]) . "<br>");
+        echo sprintf(_("Row %s with name %s and category %s imported"), $row, $field1, gettext($field2["name"])) . "<br>";
         echo '<span>';
         return;
     }
