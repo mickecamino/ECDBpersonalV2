@@ -1,7 +1,7 @@
 <?php
 // File: proj_list.php
 // Function: List prejects
-// Revision date: 2026-09-20
+// Revision date: 2026-09-23
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -55,9 +55,10 @@
             }
         echo '">' . _("Name") . '</a>';
         echo '</th><th>' . _("Number of components") . '</th>';
+        echo '<th>' . _("Number of units") . '</th>';
         echo '<th>' . _("Total cost") . '</th>';
         echo '</tr></thead><tbody>';
-    
+
         include "include/include_proj_list_projets.php";
         $ProjList = new Proj;
         $ProjList->ProjList();
