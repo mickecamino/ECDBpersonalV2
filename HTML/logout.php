@@ -1,7 +1,7 @@
 <?php
 // File: looout.php
 // Function: Log out from ecDBpersonal
-// Revision date: 2026-09-16
+// Revision date: 2026-09-24
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -13,6 +13,7 @@
     unset($_SESSION['SESS_FIRST_NAME']);
     unset($_SESSION['SESS_LAST_NAME']);
     require_once "include/debug.php";
+    include "include/include_disable_register.php";
  // Custom Page Titles
  $pageTitle = _("Logout");
  include "include/head.php";
@@ -33,7 +34,9 @@
 // Main menu
     echo '<div id="menu"><ul>';
     echo '<li><a href="."><span class="fas fa-key fa-lg"></span> ' . _("Login") . '</a></li>';
-    echo '<li><a href="register.php"><span class="fas fa-user fa-lg"></span> ' . _("Register") . '</a></li>';
+    if( $disable_register == false ) {
+        echo '<li><a href="register.php"><span class="fas fa-user fa-lg"></span> ' . _("Register") . '</a></li>';
+    }
     echo '</ul></div>';
 // END
 // Main content
