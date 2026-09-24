@@ -7,7 +7,7 @@ This is a list of changes made to my version of ecDB personal V2.
 * Add export for Shopping list  
 
 ## [2026-09.23]
-* Added display numner of units in the project list
+* Added display number of units in the project list
 
 ## [2026-09-22]
 * Added function to disable the register tab. Edit include/include_disable_register.php and change false to true.  
@@ -42,7 +42,7 @@ sudo systemctl restart apache2
 ## [2026-09-16]
 * Switched from Fontawesome v4 to v5.
 * Replaced a couple of images
-* Fixed formatting in sum för projects and shoppinglist
+* Fixed formatting in sum for projects and shoppinglist
 * Removed a bunch of directories and files that was not used in the code
 
 ## [2026-09-15]
