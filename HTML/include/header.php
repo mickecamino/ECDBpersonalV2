@@ -1,7 +1,7 @@
 <?php
 // File: header.php
 // Function: show the generic shared header
-// Revision date: 2026-09-21
+// Revision date: 2026-09-26
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -42,6 +42,7 @@
         if ($searchTitle == "Home" ||
             $searchTitle == "Categories" ||
             $searchTitle == "View component" ||
+            $searchTitle == "Edit component" ||
             $searchTitle == "Search")
         {
             echo '<div class="searchContent">';

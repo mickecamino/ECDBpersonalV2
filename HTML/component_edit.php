@@ -1,7 +1,7 @@
 <?php
 // File: component_edit.php
 // Function: Edit components
-// Revision date: 2026-09-18
+// Revision date: 2026-09-26
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -89,6 +89,8 @@
 
 // Custom Page Titles
     $pageTitle = _("Edit component");
+    // Search from Edit component
+    $searchTitle = "Edit component";
     include "include/head.php";
 
     echo '<body><div id="wrapper">';
