@@ -29,7 +29,7 @@ class ProjectShow {
             if($by == 'price' or $by == 'quantity') {
                 $GetDataComponentsAll = "SELECT * FROM projects_data, data WHERE owner = ".$owner." AND projects_data.projects_data_component_id = data.id AND projects_data.projects_data_project_id = ".$project_id." ORDER by ".$by." +0 ".$order."";
             }
-            elseif($by == 'name' or $by == 'category' or $by == 'manufacturer' or $by =='package' or $by =='smd') {
+            elseif($by == 'name' or $by == 'category' or $by == 'manufacturer' or $by =='package') {
                 $GetDataComponentsAll = "SELECT * FROM projects_data, data WHERE owner = ".$owner." AND projects_data.projects_data_component_id = data.id AND projects_data.projects_data_project_id = ".$project_id." ORDER by ".$by." ".$order."";
             }
             else {
