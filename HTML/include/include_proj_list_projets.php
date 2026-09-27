@@ -1,7 +1,7 @@
 <?php
 // File: include/include_proj_list_project.php
 // Function: List all projects, used in proj_list.php
-// Revision date: 2026-09-23
+// Revision date: 2026-09-27
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -72,11 +72,12 @@ class Proj {
             // fourth column
             echo '<td>';
             if( $number_components > 0 ) { // if there are components in the project
-                $NoOfComponents = mysqli_fetch_assoc($components); // get the component quantity
-                if ( $NoOfComponents['projects_data_quantity'] == "" ) { // empty?
+                $NoOfComponentsQry = mysqli_query($connection,"SELECT SUM(projects_data_quantity) FROM projects_data WHERE projects_data_project_id = ".$showDetails['project_id']."");
+                $NoOfComponents = mysqli_fetch_assoc($NoOfComponentsQry);
+                if ( $NoOfComponents['SUM(projects_data_quantity)'] == "" ) { // empty?
                     echo "0"; // yes, display a zero
                 } else {
-                    echo $NoOfComponents['projects_data_quantity']; // display the unit count
+                    echo $NoOfComponents['SUM(projects_data_quantity)']; // display the unit count
                 }
             } else {
                 echo "0"; // No components in the project
