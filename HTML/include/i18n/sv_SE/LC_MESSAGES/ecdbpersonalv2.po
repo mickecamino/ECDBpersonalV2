@@ -665,7 +665,7 @@ msgstr "Omkopplare"
 
 #: include/category_text.php:143
 msgid "Relay"
-msgstr "Reläs"
+msgstr "Reläer"
 
 #: include/category_text.php:144
 msgid "DIP"
@@ -789,7 +789,7 @@ msgstr "Nixierör"
 
 #: include/category_text.php:183
 msgid "Moisture"
-msgstr "Fukts"
+msgstr "Fukt"
 
 #: include/category_text.php:185
 msgid "Pressure"
@@ -1072,7 +1072,7 @@ msgid ""
 "already in the database"
 msgstr ""
 "Fel på rad %s - komponenten med namnet %s, kategorin %s och platsen %s finns "
-"redan i daabasen"
+"redan i databasen"
 
 #: importexport.php:464
 #, php-format
