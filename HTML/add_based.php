@@ -82,7 +82,7 @@ include "include/head.php";
         echo '<option class="main_category" value="';
         echo $HeadCategory['id'];
         echo '" disabled>';
-        echo $HeadCategory['name'];
+        echo gettext($HeadCategory['name']);
         echo '</option>';
 
         $subcatfrom = $HeadCategory['id'] * 100;
@@ -101,7 +101,7 @@ include "include/head.php";
                 echo ' selected';
                 }
             echo '>';
-            echo $SubCategory['name'];
+            echo gettext($SubCategory['name']);
             echo '</option>';
         } // end while - $SubCategory = mysqli_fetch_array($sql_exec_subcat)
     } // end while - $HeadCategory = mysqli_fetch_array($sql_exec_headcat)
