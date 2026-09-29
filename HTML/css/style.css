@@ -1,9 +1,9 @@
 /*
     Created: 2011-09-03
-    Last edit: 2026-09-06 by Mikael Karlsson
+    Last edit: 2026-09-29 by Mikael Karlsson
 */
 @font-face {
-  font-family: 'Abel';
+  font-family: Abel;
   src:  url('../webfonts/abel-regular-webfont.woff') format('woff');
 }
 
@@ -15,7 +15,7 @@
     padding: 0;
     border-top: 10px solid #74839C;
     background-color: #f6f6f6;
-    font: normal 16px "Abel", arial, sans-serif;
+    font: normal 16px Abel, Arial, sans-serif;
     }
 }
 
@@ -26,17 +26,15 @@ body {
     padding: 0;
     border-top: 10px solid #74839C;
     background-color: #f6f6f6;
-    font: normal 16px "Abel", arial, sans-serif;
+    font: normal 16px Abel, Arial, sans-serif;
 }
 
 form textarea,
 form input,
 form select {
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
     padding: 6px;
-    font: normal 16px "Abel", arial, sans-serif;
+    font: normal 16px Abel, Arial, sans-serif;
     border: 1px solid #ccc;
     /* #fff */
     border-bottom: 1px solid #ccc;
@@ -55,7 +53,7 @@ form select:focus {
 ----------------------------------*/
 
 .ui-widget {
-    font-family: "Abel", Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+    font-family: Abel, "Trebuchet MS", Tahoma, Verdana, Arial, sans-serif;
     width: 200px;
 }
 
@@ -67,7 +65,7 @@ form select:focus {
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button {
-    font-family: "Abel", Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+    font-family: Abel, "Trebuchet MS", Tahoma, Verdana, Arial, sans-serif;
 }
 
 .ui-widget-content {
@@ -82,7 +80,7 @@ form select:focus {
 
 .ui-widget-header {
     border: 1px solid #e78f08;
-    background: #f6a828 url(images/ui-bg_gloss-wave_35_f6a828_500x100.png) 50% 50% repeat-x;
+    background: #f6a828;
     color: #ffffff;
     font-weight: bold;
 }
@@ -216,7 +214,7 @@ form input.big {
 button.button {
     color: #000;
     cursor: pointer;
-    font: bold 12px "Abel", arial, sans-serif;
+    font: bold 12px Abel, Arial, sans-serif;
     line-height: 20px;
     font-size: 17px;
     letter-spacing: .5px;
@@ -224,8 +222,6 @@ button.button {
     background-color: #e2e2e2;
     padding: 6px 18px;
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
 }
 
 
@@ -323,11 +319,7 @@ table.globalTables tbody tr td.comment div span.comment {
     overflow-y: auto;
     overflow-x: hidden;
     border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
     box-shadow: 0 0 5px #494949;
-    -moz-box-shadow: 0 0 5px #494949;
-    -webkit-box-shadow: 0 0 5px #494949;
     padding: 8px;
     display: none;
     z-index: 1000;
@@ -353,11 +345,7 @@ table.globalTables tbody tr td a.thumbnail span.imgB {
     padding: 17px;
     line-height: 0;
     border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
     box-shadow: 0 0 3px #666;
-    -moz-box-shadow: 0 0 3px #666;
-    -webkit-box-shadow: 0 0 3px #666;
     position: absolute;
     left: 32px;
     bottom: -20px;
@@ -420,7 +408,7 @@ div#header div.searchContent {
 
 div#header div.searchContent form.search input {
     border: 1px solid #fff !important;
-    font: normal 14px "Abel", "Abel", arial, sans-serif;
+    font: normal 14px Abel, Arial, sans-serif;
     background-color: #eee;
     box-shadow: none;
     padding: 5px 15px 5px 5px;
@@ -454,12 +442,7 @@ div#menu ul li a {
     text-decoration: none;
     padding: 7px 10px 7px 10px;
     background-color: #f8f8f8;
-    background-image: -moz-linear-gradient(100% 100% 90deg, #e9e9e9, #f8f8f8);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#e9e9e9));
     border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-top-right-radius: 4px;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
 }
@@ -474,42 +457,6 @@ div#menu ul li a.selected {
     background-color: #ddd;
     cursor: default;
     color: #000;
-    border-bottom: 1px solid #fff;
-}
-
-div#menu ul li.public a {
-    border-bottom: 1px solid #bbdbff;
-    background-color: #d7eaff;
-    background-image: -moz-linear-gradient(100% 100% 90deg, #d7eaff, #f8f8f8);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#d7eaff));
-}
-
-div#menu ul li.public a:hover {
-    background-image: none;
-    background-color: #d7eaff;
-}
-
-div#menu ul li.public a.selected {
-    background-image: none;
-    background-color: #fff;
-    border-bottom: 1px solid #fff;
-}
-
-div#menu ul li.donate a {
-    border-bottom: 1px solid #8aea6f;
-    background-color: #c9f5bc;
-    background-image: -moz-linear-gradient(100% 100% 90deg, #c9f5bc, #f8f8f8);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#c9f5bc));
-}
-
-div#menu ul li.donate a:hover {
-    background-image: none;
-    background-color: #c9f5bc;
-}
-
-div#menu ul li.donate a.selected {
-    background-image: none;
-    background-color: #fff;
     border-bottom: 1px solid #fff;
 }
 
@@ -541,8 +488,6 @@ div.subMenu ul li a {
     margin: 0;
     text-decoration: none;
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
 }
 
 div.subMenu ul li a.selected {
@@ -565,8 +510,6 @@ div.subMenu ul li a.isComponents {
     margin: 0;
     text-decoration: none;
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
 }
 
 div.subMenu ul li a.isComponents:hover {
@@ -604,8 +547,6 @@ div.subSubMenu ul li a {
     margin: 0;
     text-decoration: none;
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
 }
 
 div.subSubMenu ul li a.selected {
@@ -628,8 +569,6 @@ div.subSubMenu ul li a.isComponents {
     margin: 0;
     text-decoration: none;
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
 }
 
 div.subSubMenu ul li a.isComponents:hover {
@@ -641,8 +580,6 @@ div.subSubMenu ul li a.isComponents:hover {
     padding: 15px;
     margin: 0 0 20px;
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
     border: 1px solid #fff;
 }
 
@@ -747,8 +684,6 @@ div#content {
     background-color: #fff;
     position: relative;
     border-radius: 6px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
     border-bottom: 2px solid #ccc;
     width: 1024px;
     margin: 0 auto 0 auto;
@@ -838,8 +773,6 @@ div.componentGallery div.bigImage img {
     max-width: 158px;
     min-height: 158px;
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
 }
 
 div.componentGallery div.bigImage div.componentNoImg {
@@ -853,8 +786,6 @@ div.componentGallery div.bigImage div.componentNoImg {
     font-size: 16px;
     text-shadow: 0 1px 0 #fff;
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
 }
 
 div.componentGallery div.smallImages {
@@ -879,8 +810,6 @@ div.componentGallery div.smallImages ul li img {
     max-height: 58px;
     max-width: 58px;
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
 }
 
 div.componentInfo {
@@ -894,8 +823,6 @@ div.componentLog {
     padding: 15px;
     margin: 15px 0 0 0;
     border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
 }
 
 div.componentLog div.logsMenu {
@@ -943,7 +870,7 @@ form#contactform input {
 }
 
 form#contactform textarea {
-    font-family: "Abel", arial, Tahoma, Helvetica, sans-serif;
+    font-family: Abel, Arial, Tahoma, Helvetica, sans-serif;
     font-size: 100%;
     padding: 0.6em 0.5em 0.7em;
     border-color: #B7B7B7 #E8E8E8 #E8E8E8 #B7B7B7;
