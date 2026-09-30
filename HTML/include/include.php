@@ -1,7 +1,7 @@
 <?php
 // File: include/include.php
 // Function: Add functions: Index, Category, Seacrh and Add
-// Revision date: 2026-09-23
+// Revision date: 2026-09-30
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -55,20 +55,14 @@ class ShowComponents {
             echo "</a></td>";
 // third column
             echo "<td>";
-            if ($showDetails['category'] < 999) {
-                $head_cat_id = substr($showDetails['category'], -3, 1);
-            }
-            else {
-                $head_cat_id = substr($showDetails['category'], -4, 2);
-            }
             $subcatid = $showDetails['category'];
-            $CategoryName = "SELECT * FROM category_head WHERE id = ".$head_cat_id."";
+            $CategoryName = "SELECT name FROM category_sub WHERE id = " . $subcatid . "";
             $sql_exec_catname = mysqli_Query($connection,$CategoryName);
 
             while($showDetailsCat = mysqli_fetch_array($sql_exec_catname)) {
                 $catname = $showDetailsCat['name'];
             }
-            echo '<a href="category.php?cat=$head_cat_id">' . gettext($catname) . '</a>';
+            echo gettext($catname);
             echo "</td>";
 // Fourth column
             echo "<td>";
@@ -185,7 +179,7 @@ class ShowComponents {
                 }
             } // end second if isset
             else {
-                $ComponentsCategory = "SELECT id, name, category, package, pins, datasheet, cimage, location, quantity, comment FROM data WHERE category BETWEEN ".$subcatfrom." AND ".$subcatto."     AND owner = ".$owner." ORDER by name ASC";
+                $ComponentsCategory = "SELECT id, name, category, package, pins, datasheet, cimage, location, quantity, comment FROM data WHERE category BETWEEN ".$subcatfrom." AND ".$subcatto." AND owner = ".$owner." ORDER by name ASC";
             }
 
             $sql_exec_component = mysqli_Query($connection,$ComponentsCategory);
@@ -204,7 +198,7 @@ class ShowComponents {
 
                 echo "<td>";
                 $subcatid = $showDetails['category'];
-                $CategoryName = "SELECT * FROM category_sub WHERE id = ".$subcatid."";
+                $CategoryName = "SELECT name FROM category_sub WHERE id = ".$subcatid."";
                 $sql_exec_catname = mysqli_Query($connection,$CategoryName);
                 while($showDetailsCat = mysqli_fetch_array($sql_exec_catname)) {
                     $catname = $showDetailsCat['name'];
@@ -479,20 +473,13 @@ class ShowComponents {
                     echo "</a></td>";
 
                     echo "<td>";
-                    if ($showDetails['category'] < 999) {
-                        $head_cat_id = substr($showDetails['category'], -3, 1);
-                    }
-                    else {
-                        $head_cat_id = substr($showDetails['category'], -4, 2);
-                    }
                     $subcatid = $showDetails['category'];
-                    $CategoryName = "SELECT * FROM category_head WHERE id = ".$head_cat_id."";
+                    $CategoryName = "SELECT name FROM category_sub WHERE id = ".$subcatid."";
                     $sql_exec_catname = mysqli_Query($connection,$CategoryName);
-
                     while($showDetailsCat = mysqli_fetch_array($sql_exec_catname)) {
                         $catname = $showDetailsCat['name'];
                     }
-                    echo $catname;
+                    echo gettext($catname);
                     echo "</td>";
 
                     echo "<td>";
@@ -624,13 +611,12 @@ class ShowComponents {
             }
 
             $comment          = strip_tags(mysqli_real_escape_string($connection,$_POST['comment']));
-            $order_quantity   = (int)$_POST['orderquant'];
+            $order_quantity   = $_POST['orderquant'];
             if( $order_quantity == '' ) $order_quantity = 0; // If empty, set to int 0
-            // If there are no projects, then projquant is not defined, take care of that here
             if( isset($_POST['projquant'])) {
-                $project_quantity = $_POST['projquant']; // projquant is defined
+                $project_quantity = $_POST['projquant'];
             } else {
-                $project_quantity = 0; // No, projquant is undefined, set it to int 0
+                $project_quantity = 0;
             }
             $price            = str_replace(',', '.', strip_tags(mysqli_real_escape_string($connection,$_POST['price'])));
             $location         = strip_tags(mysqli_real_escape_string($connection,$_POST['location']));
