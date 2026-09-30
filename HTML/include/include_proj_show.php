@@ -1,7 +1,7 @@
 <?php
 // File: include/include_proj_show.php
 // Function: Show projects
-// Revision date: 2026-09-16
+// Revision date: 2026-09-30
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -56,16 +56,7 @@ class ProjectShow {
             echo "</a></td>";
 
             echo "<td>";
-
-            if ($showDetails['category'] < 999) {
-                $head_cat_id = substr($showDetails['category'], -3, 1);
-            }
-            else {
-                $head_cat_id = substr($showDetails['category'], -4, 2);
-            }
-            $subcatid = $showDetails['category'];
-
-            $CategoryName = "SELECT * FROM category_head WHERE id = ".$head_cat_id."";
+            $CategoryName = "SELECT name FROM category_sub WHERE id = " . $showDetails['category'] . "";
             $sql_exec_catname = mysqli_Query($connection,$CategoryName);
 
             while($showDetailsCat = mysqli_fetch_array($sql_exec_catname)) {
@@ -139,7 +130,7 @@ class ProjectShow {
                 }
             echo "</td>";
             echo "</tr>";
-        }
+        } // End while
     }
 }
 ?>
