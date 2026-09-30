@@ -75,6 +75,7 @@ INSERT INTO `category_sub` VALUES
 (203,'Polyester'),
 (204,'Tantalum'),
 (205,'Variable'),
+(206,'Styrol'),
 (299,'Misc'),
 (301,'Audio'),
 (302,'Coax'),
