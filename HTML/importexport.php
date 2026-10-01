@@ -404,14 +404,14 @@ function import_components($owner, $connection, $filename)
                 }
             default:
                 echo '<span style="color: red">';
-                echo sprintf(_("Error on row, %s - action keyword is not 'add', 'edit' or 'delete'"), $row) . "<br>";
+                echo sprintf(_("Error on row %s - action keyword is not 'add', 'edit' or 'delete'"), $row) . "<br>";
                 echo '</span>';
 
                 break;
             } // end switch
         } else { // header and csvdata differs in fields
             echo '<span style="color: red">';
-            echo sprintf(_("Row, %s - The number of header fields differs against the number of data fields"), $row) . "<br>";
+            echo sprintf(_("Row %s - The number of header fields differs against the number of data fields"), $row) . "<br>";
             echo '</span>';
             exit();
         } // end header and csvdata differs in fields
