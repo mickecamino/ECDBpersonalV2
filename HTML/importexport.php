@@ -1,7 +1,7 @@
 <?php
 // File: importexport.php
 // Function: Export, import, add or delete components from the database
-// Revision date: 2026-09-23
+// Revision date: 2026-10-01
 // Created by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -80,7 +80,9 @@ function import_components($owner, $connection, $filename)
     $sqlqueryIsGoodToGo = false; // make sure that there are at least one field to update
     $row = 1;
     $headers=fgetcsv($handle, 1400, ";"); // read the header, we use it as key
-
+    if( check_headers($headers) == false ) { // check_headers, if not tru, then exit
+        exit();
+    }
     while (($csvdata = fgetcsv($handle, 1400, ";")) !== FALSE) // Loop through all records
     {
         if( count($headers) == count($csvdata)) { // If the header and the data contains the same number of objects, then continue
@@ -400,7 +402,11 @@ function import_components($owner, $connection, $filename)
                     echo sprintf(_("Row %s - id is not an integer"), $row) . "<br>";
                     echo '</span>';
                 }
-            case "default":
+            default:
+                echo '<span style="color: red">';
+                echo sprintf(_("Error on row, %s - action keyword is not 'add', 'edit' or 'delete'"), $row) . "<br>";
+                echo '</span>';
+
                 break;
             } // end switch
         } else { // header and csvdata differs in fields
@@ -506,6 +512,26 @@ function report_success($row, $field1, $field2, $successlevel)
         echo sprintf(_("Row %s with name %s imported"), $row, $field1) . "<br>";
         echo '<span>';
         return;
+    }
+}
+
+function check_headers($headers)
+{
+    $headercount = count($headers); // Count the headers, should be 2 or 15 for a valid csv
+    if( $headercount == 2 || $headercount == 15 ) { // Do we have a correct header count
+        if( $headers[0] == "action") { // Do we have a correct keyword?
+            return true; // Houston: You have a GO on the header
+        } else {
+            echo '<span style="color: red">';
+            echo sprintf(_("Error - header count is %s but the first field does not contain a valid keyword, should be 'action'"), $headercount) . "<br>";
+            echo '</span>';
+            return false;
+        }
+    } else { // 
+        echo '<span style="color: red">';
+        echo sprintf(_("Error - header count is %s it should be 2 or 15"), $headercount) . "<br>";
+        echo '</span>';
+        return false;
     }
 }
 ?>
