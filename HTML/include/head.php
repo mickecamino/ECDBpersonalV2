@@ -6,9 +6,11 @@
         <link rel="shortcut icon" href="favicon.ico" >
         <link rel="stylesheet" href="css/all.css">
         <!-- Primarily for Autocomplete -->
-        <link href = "css/jquery-ui-1.9.2.custom.css" rel = "stylesheet">
-        <script src = "js/jquery-1.8.3.js"></script>
-        <script src = "js/jquery-ui-1.9.2.custom.js"></script>
+        <link href = "css/jquery-ui-1.14.2.custom.min.css" rel = "stylesheet">
+        <script src="js/jquery-4.0.0.min.js"></script>
+        <script src = "js/jquery-ui-1.14.2.custom.min.js"></script>
+
+
         <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
         <title><?php echo $pageTitle ?></title>
 <script>
@@ -51,7 +53,7 @@ $(function() {
     });
   });
 
-  $(function() {
+$(function() {
     $( "#name" ).autocomplete({
       source: 'autocomplete_name.php',
       min_length:2
