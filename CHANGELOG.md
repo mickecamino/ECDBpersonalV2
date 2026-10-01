@@ -6,6 +6,9 @@ This is a list of changes made to my version of ecDB personal V2.
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
 * Add export for Shopping list  
 
+## [2026-10-01]
+* Upgraded jQuery to latest version.
+
 ## [2026-09-30]
 * All listings should now display subcategory names instead om category names. When listing a project or when searching for a component, it is much better to see 'Polyester' or 'Ceramic' instead of 'Capacitor'. 
 
