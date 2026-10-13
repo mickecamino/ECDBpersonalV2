@@ -1,7 +1,7 @@
 <?php
 // File: component.php
 // Function: Show components
-// Revision date: 2026-09-22
+// Revision date: 2026-10-13
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -100,232 +100,203 @@
         header("location: " . $_SERVER['REQUEST_URI']);
     }
 
-// Custom Page Titles
-$pageTitle = _("View component");
-// Hidden Search title for search dialogue
-// pageTitle did not work when localized, see header.php
-$searchTitle = "View component";
+    // Custom Page Titles
+    $pageTitle = _("View component");
+    // Hidden Search title for search dialogue
+    // pageTitle did not work when localized, see header.php
+    $searchTitle = "View component";
 
-include "include/head.php";
+    include "include/head.php";
+
+    echo '<body><div id="wrapper">';
+    // Header
+    include "include/header.php";
+    // END
+    // Main menu
+    include "include/menu.php";
+    // END
+    // Main content
+    echo '<div id="content">';
+    echo '<h2>';
+    echo '<a href="category.php?cat=';
+    echo $executesql_head_catname['id'];
+    echo '"> ';
+    echo gettext($executesql_head_catname['name']);
+    echo '</a> / ';
+
+    echo '<a href="category.php?subcat=';
+    echo $executesql_sub_catname['id'];
+    echo '"> ';
+    echo gettext($executesql_sub_catname['name']);
+    echo '</a>';
+    echo $executesql['name'];
+    echo '</h2>';
+
+    echo '<div class="aboutComponentHeader">';
+    echo '<div class="componentGallery">';
+    echo '<div class="bigImage">';
+    if ($executesql['cimage'] == "") {
+        echo '<div class="componentNoImg">';
+        echo _("No Image");
+        echo '</div>';
+    } else {
+        echo '<a href="img/parts/';
+        echo $executesql['cimage'];
+        echo '" target="_blank"><img src="img/parts/';
+        echo $executesql['cimage'];
+        echo '" alt=""></a>';
+    }
+    echo '</div></div>';
+    echo '<div class="componentComment">';
+    echo nl2br($executesql['comment']);
+    echo '</div></div>';
+    echo '<div class="componentInfo">';
+    echo '<table class="globalTables leftAlign noHover" cellpadding="0" cellspacing="0">';
+    echo '<tbody>';
+        echo '<tr>'; // First row
+        echo '<td class="boldText">' . _("Name") . '</td>'; // start and end first column
+        echo '<td>'; // start second column
+        echo $executesql['name'];
+        echo '</td>'; // end second column
+        echo '<td class="boldText">' . _("Category") . '</td>'; // start and end third column
+        echo '<td>'; // start fourth column
+        echo gettext($executesql_sub_catname['name']);
+        echo '</td>'; // end fourth column
+        echo '<td class="boldText">' . _("Quantity") . '</td>'; // start and end fifth column
+        echo '<td>'; // start sixth column
+        if ($executesql['quantity'] == 0) {
+            echo "-";
+        } else {
+            echo $executesql['quantity'];
+        }
+        echo '&nbsp;';
+        echo '<form class="globalForms inLine" method="post" action=""> ';
+        echo '<button class="button green small" name="quantity_increase" type="submit"><span class="far fa-plus-square fa-lg"></span></button>';
+        echo '<button class="button red small" name="quantity_decrease" type="submit"><span class="far fa-minus-square fa-lg"></span></button>';
+        echo '</form></td>'; // end sixth column
+        echo '</tr>'; // end first row
+        echo '<tr>'; // Second row
+        echo '<td class="boldText">' . _("Manufacturer") . '</td>'; // start and end first column
+        echo '<td>'; // start second column
+        if ($executesql['manufacturer'] == "") {
+            echo "-";
+        } else {
+            echo $executesql['manufacturer'];
+        }
+        echo '</td>'; // end second column
+        echo '<td class="boldText">' . _("Package") . '</td>'; // start and end third column
+        echo '<td>'; // start fourth column
+        if ($executesql['package'] == "") {
+            echo "-";
+        } else {
+            echo $executesql['package'];
+        }
+        echo '</td>'; // end fourth column
+        echo '<td class="boldText">' . _("Pins") . '</td>'; // start and end fifth column
+        echo '<td>'; // start sixth column
+        if ($executesql['pins'] == 0) {
+            echo "-";
+        } else {
+            echo $executesql['pins'];
+        }
+        echo '</td>'; // end sixth column
+        echo '</tr>'; // end second row
+        echo '<tr>';  // start third row
+        echo '<td class="boldText">' . _("Location") . '</td>'; // start and end first column
+        echo '<td>'; // start second column
+        if ($executesql['location'] == "") {
+            echo "-";
+        } else {
+            echo $executesql['location'];
+        }
+        echo '</td>'; // end second column
+        echo '<td class="boldText">' . _("Price") . '</td>'; // start and end third column
+        echo '<td>'; // start fourth column
+        if ($executesql['price'] == "" || $executesql['price'] == "0") {
+            $price = 0; 
+        } else {
+            $price = $executesql['price'];
+        }
+        echo format_currency($personal['language'],$personal['currency'], $price);
+        echo '</td>'; // end fourth column
+        echo '<td class="boldText">' . _("Order quantity") . '</td>'; // start and end fifth column
+        echo '<td>'; // start sixth column
+        if ($executesql['order_quantity'] == 0) {
+            echo "0";
+        } else {
+            echo $executesql['order_quantity'];
+        }
+        echo '&nbsp;';
+        echo '<form class="globalForms inLine" method="post" action="">';
+        echo '<button class="button green small" name="orderquant_increase" type="submit"><span class="far fa-plus-square fa-lg"></span></button>';
+        echo '<button class="button red small" name="orderquant_decrease" type="submit"><span class="far fa-minus-square fa-lg"></span></button>';
+        echo '</form></td>'; // end sixth column
+        echo '</tr><tr>'; // end third row, start fourth row
+        echo '<td class="boldText">' . _("Recycled") . '</td>'; // start and end first column
+        echo '<td>'; // start second column
+        if ($executesql['scrap'] == "Yes") {
+            echo '<span class="far fa-check-square fa-lg"></span>';
+        } else {
+            echo '<span class="far fa-square fa-lg"></span>';
+        }
+        echo '</td>'; // end second column
+        echo '<td></td><td></td><td></td><td></td>'; // start and end third to sixth column
+        echo '</tr><tr>'; // end fourth row, start fifth row
+        echo '<td class="boldText">' . _("Datasheet") . '</td>'; // start and end first column
+        echo '<td>'; // start second column
+        if ($executesql['datasheet'] == "") {
+            echo "-";
+        } else {
+            echo '<a href="sheets/';
+            echo $executesql['datasheet'];
+            echo '" target="_blank"><span class="far fa-file-pdf fa-lg"></a>';
+        }
+        echo '</td>'; // end second column
+        echo '<td class="boldText">' . _("Application Note") . '</td>'; // start and end third column
+        echo '<td>'; // start fourth column
+        if ($executesql['appnote'] == "") {
+            echo "-";
+        } else {
+            echo '<a href="appnotes/';
+            echo $executesql['appnote'];
+            echo '" target="_blank"><span class="far fa-file-pdf fa-lg"></a>';
+        }
+        echo '</td>'; // end fourth column
+
+// Show all projects where the component is added to, with hyperlink
+        if( $numrows > 0 ) {
+            echo '<td class="boldText">' . _("Included in project") . '</td>'; // start and end fifth column
+            echo '<td class="boldText">' ._("Quantity") . '</td>'; // start and end sixth column
+            while ($projectsql = mysqli_fetch_assoc($GetProjects)) {
+                echo '<tr>'; // start sixth row
+                echo '<td></td><td></td><td></td><td></td>'; // start and end first to fourth column
+                echo '<td>'; // start fifth column
+                echo '<a href="proj_show.php?proj_id=';
+                echo $projectsql['project_id'];
+                echo '">';
+                echo $projectsql['project_name'];
+                echo '</a>';
+                echo '</td><td>'; // end fifth column start sixth column
+                echo $projectsql['projects_data_quantity'];
+                echo '</td></tr>'; // end sixth column end sixth row, and so on
+            }
+        } else {
+            echo '<td></td>'; // start and end fifth column
+            echo '<td></td>'; // start and end sixth column
+            echo '</tr>'; // end fifth row
+        }
+
+    echo '</tbody></table></div>';
+    echo '<form class="globalForms noPadding" method="post" action="">';
+    echo '<div class="buttons">';
+    echo '<div class="input">';
+        echo '<button class="button" name="edit" type="submit"><span class=" fas fa-pencil-alt fa-lg"></span> ' . _(" Edit Component") . '</button> ';
+        echo '<button class="button" name="based" type="submit"><span class="fas fa-plus-square fa-lg"></span> ' . _(" New based on this") . '</button> ';
+        echo '<button class="button red" name="delete" type="submit"><span class="far fa-trash-alt fa-lg"></span> ' . _(" Delete component") . '</button> ';
+    echo '</div></div></form></div>';
+// END
+// Text outside the main content
+    include "include/footer.php";
+// END
+    echo '</div></body></html>';
 ?>
-    <body>
-        <div id="wrapper">
-            <!-- Header -->
-                <?php include "include/header.php"; ?>
-            <!-- END -->
-            <!-- Main menu -->
-                <?php include "include/menu.php"; ?>
-            <!-- END -->
-            <!-- Main content -->
-            <div id="content">
-                <h2>
-                <a href="category.php?cat=
-                    <?php
-                        echo $executesql_head_catname['id'];
-                        echo '"> ';
-                        echo gettext($executesql_head_catname['name']);
-                        echo '</a> / ';
-
-                        echo '<a href="category.php?subcat=';
-                        echo $executesql_sub_catname['id'];
-                        echo '"> ';
-                        echo gettext($executesql_sub_catname['name']);
-                    ?>
-                </a>  <?php echo $executesql['name']; ?>
-                </h2>
-
-                <div class="aboutComponentHeader">
-                    <div class="componentGallery">
-                        <div class="bigImage">
-                            <?php
-                                if ($executesql['cimage'] == "") {
-                                    echo '<div class="componentNoImg">';
-                                    echo _("No Image");
-                                    echo '</div>';
-                                }
-                                else {
-                                    echo '<a href="img/parts/';
-                                    echo $executesql['cimage'];
-                                    echo '" target="_blank"><img src="img/parts/';
-                                    echo $executesql['cimage'];
-                                    echo '" alt=""></a>';
-                                }
-                            ?>
-                        </div>
-                    </div>
-                    <div class="componentComment">
-                        <?php echo nl2br($executesql['comment']); ?>
-                    </div>
-                </div>
-
-                <div class="componentInfo">
-                    <table class="globalTables leftAlign noHover" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <?php echo '<td class="boldText">' . _("Location") . '</td>';?>
-                                <td>
-                                    <?php
-                                        if ($executesql['location'] == "") {
-                                            echo "-";
-                                        }
-                                        else {
-                                            echo $executesql['location'];
-                                        }
-                                    ?>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <?php echo '<td class="boldText">' . _("Quantity") . '</td>';
-                                echo '<td>';
-                                        if ($executesql['quantity'] == 0) {
-                                            echo "-";
-                                        }
-                                        else {
-                                            echo $executesql['quantity'];
-                                        }
-                                    ?>
-                                    <form class="globalForms inLine" method="post" action="">
-                                        <button class="button green small" name="quantity_increase" type="submit"><span class="far fa-plus-square fa-lg"></span></button>
-                                        <button class="button red small" name="quantity_decrease" type="submit"><span class="far fa-minus-square fa-lg"></span></button>
-                                    </form>
-                                </td>
-                                <?php echo '<td class="boldText">' . _("Price") . '</td>';
-                                echo '<td>';
-                                if ($executesql['price'] == "" || $executesql['price'] == "0") { 
-                                    $price = 0; 
-                                } else {
-                                    $price = $executesql['price'];
-                                }
-                                echo format_currency($personal['language'],$personal['currency'], $price);
-                                ?>
-                                </td>
-                                <?php echo '<td class="boldText">' . _("Order quantity") . '</td>';
-                                echo '<td>';
-                                        if ($executesql['order_quantity'] == 0) {
-                                            echo "0";
-                                        }
-                                        else {
-                                            echo $executesql['order_quantity'];
-                                        }
-                                    ?>
-                                    <form class="globalForms inLine" method="post" action="">
-                                        <button class="button green small" name="orderquant_increase" type="submit"><span class="far fa-plus-square fa-lg"></span></button>
-                                        <button class="button red small" name="orderquant_decrease" type="submit"><span class="far fa-minus-square fa-lg"></span></button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <?php echo '<td class="boldText">' . _("Manufacturer") . '</td>';
-                                echo '<td>';
-                                        if ($executesql['manufacturer'] == "") {
-                                            echo "-";
-                                        }
-                                        else {
-                                            echo $executesql['manufacturer'];
-                                        }
-                                echo '</td>';
-                                echo '<td class="boldText">' . _("Package") . '</td>';
-                                echo '<td>';
-                                        if ($executesql['package'] == "") {
-                                            echo "-";
-                                        }
-                                        else {
-                                            echo $executesql['package'];
-                                        }
-                                echo '</td>';
-                                echo '<td class="boldText">' . _("Pins") . '</td>';
-                                echo '<td>';
-                                        if ($executesql['pins'] == 0) {
-                                            echo "-";
-                                        }
-                                        else {
-                                            echo $executesql['pins'];
-                                        }
-                                echo '</td>';
-                                echo '</tr><tr>';
-                                echo '<td class="boldText">' . _("Recycled") . '</td>';
-                                echo '<td>';
-                                        if ($executesql['scrap'] == "Yes") {
-                                            echo '<span class="far fa-check-square fa-lg"></span>';
-                                        }
-                                        else {
-                                            echo '<span class="far fa-square fa-lg"></span>';
-                                        }
-                                echo '</td>';
-//                              4 Empty blocks
-                                echo '<td></td><td></td><td></td><td></td>';
-                                echo '</tr><tr>';
-                                echo '<td class="boldText">' . _("Datasheet") . '</td>';
-                                echo '<td>';
-                                        if ($executesql['datasheet'] == "") {
-                                            echo "-";
-                                        }
-                                        else {
-                                            echo '<a href="sheets/';
-                                            echo $executesql['datasheet'];
-                                            echo '" target="_blank"><span class="far fa-file-pdf fa-lg"></a>';
-                                        }
-                                echo '</td>';
-                                echo '<td class="boldText">' . _("Application Note") . '</td>';
-                                echo '<td>';
-                                        if ($executesql['appnote'] == "") {
-                                            echo "-";
-                                        }
-                                        else {
-                                            echo '<a href="appnotes/';
-                                            echo $executesql['appnote'];
-                                            echo '" target="_blank"><span class="far fa-file-pdf fa-lg"></a>';
-                                        }
-                                    ?>
-                                </td>
-<?php // Show all projects where the component is added to, with hyperlink
-                                if( $numrows > 0 ) {
-                                    echo '<td class="boldText">' . _("Included in project") . '</td><td class="boldText">' ._("Quantity") . '</td>';
-                                    while ($projectsql = mysqli_fetch_assoc($GetProjects)) {
-                                        echo '<tr>';
-                                        echo '<td></td><td></td><td></td><td></td>';
-                                        echo '<td>';
-                                        echo '<a href="proj_show.php?proj_id=';
-                                        echo $projectsql['project_id'];
-                                        echo '">';
-                                        echo $projectsql['project_name'];
-                                        echo '</a>';
-                                        echo '</td><td>';
-                                        echo $projectsql['projects_data_quantity'];
-                                        echo '</td></tr>';
-                                    }
-                                } else {
-                                    echo '<td></td>';
-                                    echo '<td></td>';
-                                    echo '</tr>';
-                                }
-?>
-
-                        </tbody>
-                    </table>
-                </div>
-
-                <form class="globalForms noPadding" method="post" action="">
-                    <div class="buttons">
-                        <div class="input">
-                            <?php
-                            echo '<button class="button" name="edit" type="submit"><span class=" fas fa-pencil-alt fa-lg"></span> ' . _(" Edit Component") . '</button> ';
-                            echo '<button class="button" name="based" type="submit"><span class="fas fa-plus-square fa-lg"></span> ' . _(" New based on this") . '</button> ';
-                            echo '<button class="button red" name="delete" type="submit"><span class="far fa-trash-alt fa-lg"></span> ' . _(" Delete component") . '</button> ';
-                            ?>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-            <!-- END -->
-            <!-- Text outside the main content -->
-                    <?php include "include/footer.php"; ?>
-            <!-- END -->
-        </div>
-    </body>
-</html>

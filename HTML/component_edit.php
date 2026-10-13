@@ -1,7 +1,7 @@
 <?php
 // File: component_edit.php
 // Function: Edit components
-// Revision date: 2026-09-26
+// Revision date: 2026-10-13
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -212,23 +212,21 @@
     echo '</td>';
 // start and end third to sixth columns, end fourth row
     echo '<td></td><td></td><td></td><td></td></tr>';
-// start fifth rows, start and end first column
+// start fifth row, start and end first column
     echo '<tr><td class="boldText">' . _("Datasheet") . '</td>';
 // start and end second column
     echo '<td><div class="ui-widget"><input id="datasheet" name="datasheet" type="text" value="' . $executesql['datasheet'] . '" ></div></td>';
 // start and end third column
-    echo '<td class="boldText">' . _("Image") . '</td>';
+    echo '<td class="boldText">' . _("Application Note") . '</td>';
 // start and end fourth column
-    echo '<td><div class="ui-widget"><input id="images" name="cimage" type="text" value="' . $executesql['cimage'] . '" ></div></td>';
-// start and end fifth and sixth columns, end fifth row
-    echo '<td></td><td></td></tr>';
-// start sixth row, start and end first column
-    echo '<tr><td class="boldText">' . _("Application Note") . '</td>';
-// start and end second column
     echo '<td><div class="ui-widget"><input id="appnote" name="appnote" type="text" value="' . $executesql['appnote'] . '" ></div></td>';
-// start and end third to sixth columns. end sixth row
-    echo '<td></td><td></td><td></td><td></td></tr>';
-// start seventh row, start and end first column
+// start and end fifth column
+    echo '<td class="boldText">' . _("Image") . '</td>';
+// start and end sixth column
+    echo '<td><div class="ui-widget"><input id="images" name="cimage" type="text" value="' . $executesql['cimage'] . '" ></div></td>';
+// end fifth row
+    echo '</tr>';
+// start sixth row, start and end first column
     echo '<tr><td></td>';
 
 // Don't display Add to project if there are no project(s)
