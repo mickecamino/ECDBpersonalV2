@@ -714,7 +714,7 @@ class ShowComponents {
                             $projects = array_search($quantity_proj_add, $proj);
                             $sqlDeleteProject = "DELETE FROM projects_data WHERE projects_data_component_id = '$id' AND projects_data_project_id = '$projects'";
                             $sql_exec_project_delete = mysqli_query($connection,$sqlDeleteProject);
-
+                            if( $quantity_proj_add == '' ) {$quantity_proj_add = 0;} // If empty, set it to 0 to keep sql happy
                             if ($quantity_proj_add == 0){
                                 echo 'None';
                             }
