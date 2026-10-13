@@ -6,6 +6,9 @@ This is a list of changes made to my version of ecDB personal V2.
 * Add Fulfill for Shopping list, updates the quantity and resets the Shopping list except for backorder items  
 * Add export for Shopping list  
 
+## [2026-10-13]
+* Changed layout for component view/edit to be consistent with each other
+
 ## [2026-10-01]
 * Upgraded jQuery to latest version.
 
