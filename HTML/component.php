@@ -1,7 +1,7 @@
 <?php
 // File: component.php
 // Function: Show components
-// Revision date: 2026-10-13
+// Revision date: 2026-10-14
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -165,7 +165,7 @@
         echo '<td class="boldText">' . _("Quantity") . '</td>'; // start and end fifth column
         echo '<td>'; // start sixth column
         if ($executesql['quantity'] == 0) {
-            echo "-";
+            echo "0";
         } else {
             echo $executesql['quantity'];
         }

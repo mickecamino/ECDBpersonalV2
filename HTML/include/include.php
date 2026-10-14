@@ -1,7 +1,7 @@
 <?php
 // File: include/include.php
 // Function: Add functions: Index, Category, Seacrh and Add
-// Revision date: 2026-09-30
+// Revision date: 2026-10-14
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -122,7 +122,7 @@ class ShowComponents {
             echo "<td>";
             $quantity = $showDetails['quantity'];
             if ($quantity == ""){
-                echo "-";
+                echo "0";
             }
             else{
                 echo $quantity;
@@ -265,7 +265,7 @@ class ShowComponents {
                 echo "<td>";
                 $quantity = $showDetails['quantity'];
                 if ($quantity == ""){
-                    echo "-";
+                    echo "0";
                 }
                 else{
                     echo $quantity;
@@ -390,7 +390,7 @@ class ShowComponents {
                 echo "<td>";
                 $quantity = $showDetails['quantity'];
                 if ($quantity == ""){
-                    echo "-";
+                    echo "0";
                     }
                 else{
                     echo $quantity;
