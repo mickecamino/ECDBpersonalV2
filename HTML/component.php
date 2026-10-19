@@ -1,7 +1,7 @@
 <?php
 // File: component.php
 // Function: Show components
-// Revision date: 2026-10-14
+// Revision date: 2026-10-19
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -130,6 +130,7 @@
     echo gettext($executesql_sub_catname['name']);
     echo '</a>';
     echo $executesql['name'];
+    echo ' (ID: ' . $id . ')';
     echo '</h2>';
 
     echo '<div class="aboutComponentHeader">';
