@@ -1,7 +1,7 @@
 <?php
 // File: add.php
 // Function: sadd component
-// Revision date: 2026-09-21
+// Revision date: 2026-10-19
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -36,53 +36,76 @@
     echo '</textarea></div></div>';
 // Table start
     echo '<table class="globalTables leftAlign noHover" cellpadding="0" cellspacing="0"><tbody>';
-// First row
-    echo '<tr><td class="boldText">'. _("Name") . '</td>'; //first column
-    echo '<td><input name="name" id="name" type="text" class="medium" value="'; //start second column
+// start first row, start and end first column
+    echo '<tr><td class="boldText">'. _("Name") . '</td>';
+//start second column
+    echo '<td><input name="name" id="name" type="text" class="medium" value="';
     if(isset($_POST['submit'])) { echo $_POST['name']; }
-    echo '" autofocus tabindex="0"></td>'; // end second column
-    echo '<td class="boldText">' . _("Category") . '</td>'; // third column
-    echo '<td><select name="category">'; // start fourth column
-    // Include the category selector menu.
+// end second column
+    echo '" autofocus tabindex="0"></td>';
+// start and end third column
+    echo '<td class="boldText">' . _("Category") . '</td>';
+// start fourth column
+    echo '<td><select name="category">';
+// Include the category selector menu.
     include "include/include_component_add_category_menu.php";
     $MenuCat = new AddMenuCat;
     $MenuCat->MenuCat();
-    echo '</select></td>'; // end fourth column
-    echo '<td class="boldText">' . _("Quantity") . '</td>'; // fifth column
-    echo '<td><input name="quantity" type="text" class="small" value="'; // start sixth column
+// end fourth column
+    echo '</select></td>';
+// start and end fifth column
+    echo '<td class="boldText">' . _("Quantity") . '</td>';
+// start sixth column
+    echo '<td><input name="quantity" class="small" type="numeric" pattern="[0-9]*" title="' ._("Numbers only") .'" value="';
     if(isset($_POST['submit'])) { echo $_POST['quantity']; }
-    echo '"></td></tr>'; // end input name, end sixth column, end first row
-// Second row
-    echo '<tr><td class="boldText">' . _("Manufacturer") . '</td>'; // first column
-    echo '<td><div class="ui-widget"><input name="manufacturer" id="manufacturer" type="text"  value="'; // start second column
+// end sixth column, end first row
+    echo '"></td></tr>';
+// start second row, start and end first column
+    echo '<tr><td class="boldText">' . _("Manufacturer") . '</td>';
+// start second column
+    echo '<td><div class="ui-widget"><input name="manufacturer" id="manufacturer" type="text"  value="';
     if(isset($_POST['submit'])) { echo $_POST['manufacturer']; }
-    echo '"></div></td>'; // end value, end second column
-    echo '<td class="boldText">' . _("Package") . '</td>'; // third column
-    echo '<td><div class="ui-widget"><input name="package" id="package" type="text"  value="'; // start fourth column
+// end second column
+    echo '"></div></td>';
+// start and end third column
+    echo '<td class="boldText">' . _("Package") . '</td>';
+// start fourth column
+    echo '<td><div class="ui-widget"><input name="package" id="package" type="text"  value="';
     if(isset($_POST['submit'])) { echo $_POST['package']; }
-    echo '" ></div></td>'; // end value, end fourth column
-    echo '<td class="boldText">' . _("Pins") . '</td>'; // fifth column
-    echo '<td><input name="pins" type="text" class="small" value="'; // start sixth column
+// end fourth column
+    echo '" ></div></td>';
+// start and end fifth column
+    echo '<td class="boldText">' . _("Pins") . '</td>';
+// start sixth column
+    echo '<td><input name="pins" class="small" type="numeric" pattern="[0-9]*" title="' ._("Numbers only") .'" value="';
     if(isset($_POST['submit'])) { echo $_POST['pins']; }
-    echo '"></td></tr>'; // end sixth column
-// Third row
-    echo '<tr><td class="boldText">' . _("Location") . '</td>'; // first column
-    echo '<td><div class="ui-widget"><input name="location" id="location" type="text" value="'; // start second column
+// end sixth column, end second row
+    echo '"></td></tr>';
+// start third row, start and edn first column
+    echo '<tr><td class="boldText">' . _("Location") . '</td>';
+// start second column
+    echo '<td><div class="ui-widget"><input name="location" id="location" type="text" value="';
     if(isset($_POST['submit'])) { echo $_POST['location']; }
-    echo '"></div></td>'; // end value, end second column
-    echo '<td class="boldText">' . _("Price") . '</td>'; // third column
-    echo '<td><input name="price" type="text" class="small" value="'; // start fourth column
+// end second column
+    echo '"></div></td>'; 
+// start and end third column
+    echo '<td class="boldText">' . _("Price") . '</td>';
+// start fourth column
+    echo '<td><input name="price" type="text" pattern="^\d+(?:[.]\d{1,2}|$)$" class="price" title="' ._("Positive value only, up to two decimals") .'" value="';
     if(isset($_POST['submit'])) { echo $_POST['price']; }
-    echo '">' . $personal['currency'] . '</td>'; // end value, end fourth column
-    echo '<td class="boldText">' . _("To order") . '</td>'; // start sixth column
-    echo '<td><input name="orderquant" type="text" class="small" value="';
+// end fourth column
+    echo '"></td>';
+// start and end fifth column
+    echo '<td class="boldText">' . _("To order") . '</td>';
+// start sixth column
+    echo '<td><input name="orderquant" class="small" type="numeric" pattern="[0-9]*" title="' ._("Numbers only") .'" value="';
     if(isset($_POST['submit'])) { echo $_POST['orderquant']; }
-    echo '"></td></tr>'; // end value, end sixth column, end third row
-// Fourth row, six columns
-    echo '<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
-// Fifth row
-    echo '<tr><td class="boldText"> ' . _("Recycled") . '</td>'; // first column
-    echo '<td>'; // start second column
+// end sixth column, end third row
+    echo '"></td></tr>';
+// start fourth row start and end first column
+    echo '<tr><td class="boldText"> ' . _("Recycled") . '</td>';
+// start second column
+    echo '<td>';
     if(isset($_POST['submit']) && $_POST['scrap'] == 'Yes'){
         echo '<input type="radio" name="scrap" value="Yes" checked="checked" > ' . _("Yes") . ' ';
         echo '<input type="radio" name="scrap" value="No" > ' . _("No");
@@ -91,49 +114,61 @@
         echo '<input type="radio" name="scrap" value="Yes" > ' . _("Yes") . ' ';
         echo '<input type="radio" name="scrap" value="No" checked="checked" > ' . _("No");
         }
-    echo '</td>'; // end second column
-    echo '<td></td><td></td><td></td><td></td></tr>'; // end third, fourth, fifth, sixth columns, end fifth row
-// Sixth  row, six columns
-    echo '<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
-// Seventh row
-    echo '<tr><td class="boldText">' . _("Datasheet") . '</td>'; // first column
-    echo '<td><div class = "ui-widget"><input id="datasheet" name="datasheet" type="text" value="'; // start second column
+// end second column
+    echo '</td>';
+// end third to sixth columns, end fourth row
+    echo '<td></td><td></td><td></td><td></td></tr>'; 
+// start fifth row, start and end first column
+    echo '<tr><td class="boldText">' . _("Datasheet") . '</td>';
+// start second column
+    echo '<td><div class = "ui-widget"><input id="datasheet" name="datasheet" type="text" value="';
     if(isset($_POST['submit'])) { echo $_POST['datasheet']; }
-    echo '"></div></td>'; // end second column
-    echo '<td class="boldText">' . _("Image") . '</td>'; //third column
+// end second column
+    echo '"></div></td>';
+// start and end third column
+    echo '<td class="boldText">' . _("Application Note") . '</td>';
+// start fourth column
+    echo '<td><div class = "ui-widget"><input id="appnote" name="appnote" type="text" value="';
+    if(isset($_POST['submit'])) { echo $_POST['appnote']; }
+// end fourth column
+    echo '"></div></td>';
+// start and end fifth column
+    echo '<td class="boldText">' . _("Image") . '</td>';
+// start sixth column
     echo '<td><div class = "ui-widget"><input id="images" name="cimage" type="text"  value="';
     if(isset($_POST['submit'])) { echo $_POST['cimage']; }
-    echo '"></div></td>'; // fourth column
-    echo '<td></td><td></td></tr>'; // fifth and sixth column, end seventh row
-// Eight row
-    echo '<tr><td class="boldText">' . _("Application Note") . '</td>'; // first column
-    echo '<td><div class = "ui-widget"><input id="appnote" name="appnote" type="text" value="'; // start second column
-    if(isset($_POST['submit'])) { echo $_POST['appnote']; }
-    echo '"></div></td>'; // end second column
-    echo '<td></td><td></td><td></td><td></td></tr>'; // third, fourth, fifth and sixth column, end eight row
-
+// end sixth column, end fifth row
+    echo '"></div></td></tr>'; 
 // Don't display Add to project if there are no project(s)
     $projects_qry = "SELECT project_id FROM projects WHERE project_owner = $owner";
     $projects_res = mysqli_query($connection,$projects_qry);
     $numrows = mysqli_num_rows($projects_res);
 // If there are no projects, skip section for project display
     if ($numrows > 0) {
-// Ninth row
-    echo '<tr><td></td>'; // start ninth row, first column
-    echo '<td  class="boldText">' . _("Add component to project") . '</td>'; // second column
-    echo '<td  class="boldText">' . _("Quantity") . '</td>'; // third column
-    echo '<td></td><td></td><td></td></tr>'; // fourth, fifth and sixth column, end ninth row
-// Tenth row
-    echo '<tr><td></td>'; // start eleventh row, first column
-    echo '<td><select name="project">'; // second column, start select
+// start sixth row, start and end first column
+    echo '<tr><td></td>';
+// start and end second column
+    echo '<td  class="boldText">' . _("Add component to project") . '</td>';
+// start and end third column
+    echo '<td  class="boldText">' . _("Quantity") . '</td>';
+// start and end fourth to sixth column, end sixth row
+    echo '<td></td><td></td><td></td></tr>';
+// start seventh row, start and end first column 
+    echo '<tr><td></td>';
+// start second column
+    echo '<td><select name="project">';
     include "include/include_component_add_project.php";
     $MenuProj = new AddMenuProj;
     $MenuProj->MenuProj();
-    echo '</select></td>'; // end select, end second column
-    echo '<td><input name="projquant" type="text" class="small" value="'; // third column
+// end second column
+    echo '</select></td>';
+// start third column
+    echo '<td><input name="projquant" class="small" type="numeric" pattern="[0-9]*" title="' ._("Numbers only") .'" value="';
     if(isset($_POST['submit'])) { echo $_POST['projquant']; }
-    echo '"></td>'; // end value, end third column
-    echo '<td></td><td></td><td></td></tr>'; // fourth, fifth and sixth column, end eleventh row
+// end third column
+    echo '"></td>'; 
+// start and end fourth to sixth column, end seventh row
+    echo '<td></td><td></td><td></td></tr>'; 
     } // end if numrows
 
     echo '</tbody></table>'; // end table
