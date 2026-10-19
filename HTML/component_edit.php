@@ -1,7 +1,7 @@
 <?php
 // File: component_edit.php
 // Function: Edit components
-// Revision date: 2026-10-13
+// Revision date: 2026-10-19
 // Revised by: Mikael Karlsson
 // This file is distributed under the license:
 // Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -161,7 +161,7 @@
 // start and end fifth column
     echo '<td class="boldText">' . _("Quantity") . '</td>';
 // start and end sixth column
-    echo '<td><input name="quantity" type="text" class="small" value="' . $executesql['quantity'] . '" id="quantity"> ';
+    echo '<td><input name="quantity" class="small" type="numeric" pattern="[0-9]*" title="' ._("Numbers only") .'" value="' . $executesql['quantity'] . '" id="quantity"> ';
     echo '<button class="button green small" name="quantity_increase" type="submit"><span class="far fa-plus-square fa-lg"></span></button> ';
     echo '<button class="button red small" name="quantity_decrease" type="submit"><span class="far fa-minus-square fa-lg"></span></button></td>';
 // end first row, start second row
@@ -177,8 +177,7 @@
 // start and end fifth column
     echo'<td class="boldText">' . _("Pins") . '</td>';
 // start and end sixth column
-    if( $executesql['pins'] == 0) { $pins = ""; } else { $pins = $executesql['pins']; }
-    echo '<td><input name="pins" type="text" class="small" value="' . $pins . '" ></td>';
+    echo '<td><input name="pins" class="small" type="numeric" pattern="[0-9]*" title="' ._("Numbers only") .'" value="' . $executesql['pins'] . '" ></td>';
 // end second row, start third row
     echo '</tr><tr>';
 // start and end first column
@@ -192,7 +191,7 @@
 // start and end fifth column
     echo '<td class="boldText">' . _("To order") . '</td>';
 // start and end sixth column
-    echo '<td><input name="orderquant" type="text" class="small" value="' . $executesql['order_quantity'] . '" id="orderquant"> ';
+    echo '<td><input name="orderquant" class="small" type="numeric" pattern="[0-9]*" title="' ._("Numbers only") .'" value="' . $executesql['order_quantity'] . '" id="orderquant"> ';
     echo '<button class="button green small" name="orderquant_increase" type="submit"><span class="far fa-plus-square fa-lg"></span></button> ';
     echo '<button class="button red small" name="orderquant_decrease" type="submit"><span class="far fa-minus-square fa-lg"></span></button></td>';
 // end third row, start fourth row
@@ -270,11 +269,7 @@
 // end select, end second column
     echo '</select></td>';
 // start and end third column
-    echo '<td><input name="projquant" type="text" class="small" value="';
-    if(isset($_POST['submit'])) {
-        echo $_POST['projquant'];
-    }
-    echo '" ></td>';
+    echo '<td><input name="projquant" class="small" type="numeric" pattern="[0-9]*" title="' . _("Numbers only") .'" value="0"></td>';
 // start fourth column
     echo '<td>'; // rest is in this include
     include "include/include_component_edit_project_edit.php";
